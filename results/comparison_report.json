@@ -1,0 +1,1949 @@
+{
+  "created": "2026-10-21T16:54:44",
+  "independent_ground_truth_available": false,
+  "reference_role": "supplemented version; version agreement only",
+  "preparation": {
+    "created": "2026-10-21T16:30:10.117378",
+    "before_source": "data/before/Label",
+    "after_source": "data/after",
+    "reference_role": "supplemented_annotation_as_final_version_reference_not_independent_ground_truth",
+    "independent_gt_available": false,
+    "resampling": "none",
+    "mask_fusion": "none; overlapping channels retained separately",
+    "structures": {
+      "airway": {
+        "before_file": "./inputs/before/airway.nii.gz",
+        "after_file": "./inputs/after/airway.nii.gz",
+        "original_before_file": "data/before/Label/airway.nii.gz",
+        "original_after_file": "data/after/airway.seg.nrrd",
+        "before_source_sha256": "a1ceb57ff009eac50d1416911c21403d3e05c0644a8ecdf4e2f36e63eb4e6ddb",
+        "before_copy_sha256": "a1ceb57ff009eac50d1416911c21403d3e05c0644a8ecdf4e2f36e63eb4e6ddb",
+        "after_source_sha256": "3f469082f41d4be15ce7470a7c50416c125dab01658f4709c3a779a50a31c890",
+        "after_nifti_sha256": "1a976dccc1fb7e066baa813b17a7a778752add93ba20fd053ccf71db9dc2b733",
+        "shape_xyz": [
+          512,
+          512,
+          657
+        ],
+        "spacing_xyz_mm": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "affine_ras": [
+          [
+            -0.8769530057907104,
+            0.0,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            -0.8769530057907104,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.6249999999999999,
+            -439.37399291992176
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "before_voxels": 183975,
+        "after_voxels": 183975,
+        "shared_voxels": 183975,
+        "added_voxels": 0,
+        "removed_voxels": 0,
+        "net_voxel_change": 0,
+        "identical_voxelwise": true,
+        "before_volume_ml": 88.42833969929214,
+        "after_volume_ml": 88.42833969929214,
+        "net_volume_change_ml": 0.0,
+        "version_agreement_Dice": 1.0,
+        "before_components": {
+          "6": {
+            "components": 156,
+            "largest_voxels": 181745,
+            "largest_fraction": 0.9878787878787879,
+            "outside_largest_voxels": 2230,
+            "components_ge20": 24,
+            "components_ge100": 4,
+            "largest10_sizes": [
+              181745,
+              764,
+              135,
+              112,
+              75,
+              58,
+              52,
+              51,
+              42,
+              40
+            ]
+          },
+          "26": {
+            "components": 66,
+            "largest_voxels": 182557,
+            "largest_fraction": 0.9922924310368256,
+            "outside_largest_voxels": 1418,
+            "components_ge20": 9,
+            "components_ge100": 3,
+            "largest10_sizes": [
+              182557,
+              764,
+              159,
+              79,
+              51,
+              42,
+              29,
+              29,
+              26,
+              19
+            ]
+          }
+        },
+        "after_components": {
+          "6": {
+            "components": 156,
+            "largest_voxels": 181745,
+            "largest_fraction": 0.9878787878787879,
+            "outside_largest_voxels": 2230,
+            "components_ge20": 24,
+            "components_ge100": 4,
+            "largest10_sizes": [
+              181745,
+              764,
+              135,
+              112,
+              75,
+              58,
+              52,
+              51,
+              42,
+              40
+            ]
+          },
+          "26": {
+            "components": 66,
+            "largest_voxels": 182557,
+            "largest_fraction": 0.9922924310368256,
+            "outside_largest_voxels": 1418,
+            "components_ge20": 9,
+            "components_ge100": 3,
+            "largest10_sizes": [
+              182557,
+              764,
+              159,
+              79,
+              51,
+              42,
+              29,
+              29,
+              26,
+              19
+            ]
+          }
+        }
+      },
+      "lung": {
+        "before_file": "./inputs/before/lung.nii.gz",
+        "after_file": "./inputs/after/lung.nii.gz",
+        "original_before_file": "data/before/Label/lung.nii.gz",
+        "original_after_file": "data/after/lung.seg.nrrd",
+        "before_source_sha256": "9039c45a7d8a1c3619d8574c8b7af16c8f492c5b61cfa40a604f62aaa4f439fb",
+        "before_copy_sha256": "9039c45a7d8a1c3619d8574c8b7af16c8f492c5b61cfa40a604f62aaa4f439fb",
+        "after_source_sha256": "e666956340ce510e138f2b6f7b47cc759b5c31d62e05cda8145d6c34f752b049",
+        "after_nifti_sha256": "e540128302c44425a9f2e75a9747f5777d4803ac95fc4c3342114dbe6cc30e58",
+        "shape_xyz": [
+          512,
+          512,
+          657
+        ],
+        "spacing_xyz_mm": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "affine_ras": [
+          [
+            -0.8769530057907104,
+            0.0,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            -0.8769530057907104,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.6249999999999999,
+            -439.37399291992176
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "before_voxels": 16793887,
+        "after_voxels": 16793887,
+        "shared_voxels": 16793887,
+        "added_voxels": 0,
+        "removed_voxels": 0,
+        "net_voxel_change": 0,
+        "identical_voxelwise": true,
+        "before_volume_ml": 8072.050792268113,
+        "after_volume_ml": 8072.050792268113,
+        "net_volume_change_ml": 0.0,
+        "version_agreement_Dice": 1.0,
+        "before_components": {
+          "6": {
+            "components": 3,
+            "largest_voxels": 8830021,
+            "largest_fraction": 0.5257878060034583,
+            "outside_largest_voxels": 7963866,
+            "components_ge20": 2,
+            "components_ge100": 2,
+            "largest10_sizes": [
+              8830021,
+              7963864,
+              2
+            ]
+          },
+          "26": {
+            "components": 2,
+            "largest_voxels": 16793885,
+            "largest_fraction": 0.9999998809090475,
+            "outside_largest_voxels": 2,
+            "components_ge20": 1,
+            "components_ge100": 1,
+            "largest10_sizes": [
+              16793885,
+              2
+            ]
+          }
+        },
+        "after_components": {
+          "6": {
+            "components": 3,
+            "largest_voxels": 8830021,
+            "largest_fraction": 0.5257878060034583,
+            "outside_largest_voxels": 7963866,
+            "components_ge20": 2,
+            "components_ge100": 2,
+            "largest10_sizes": [
+              8830021,
+              7963864,
+              2
+            ]
+          },
+          "26": {
+            "components": 2,
+            "largest_voxels": 16793885,
+            "largest_fraction": 0.9999998809090475,
+            "outside_largest_voxels": 2,
+            "components_ge20": 1,
+            "components_ge100": 1,
+            "largest10_sizes": [
+              16793885,
+              2
+            ]
+          }
+        }
+      },
+      "pulmonary_artery": {
+        "before_file": "./inputs/before/pulmonary_artery.nii.gz",
+        "after_file": "./inputs/after/pulmonary_artery.nii.gz",
+        "original_before_file": "data/before/Label/pulmonary_artery.nii.gz",
+        "original_after_file": "data/after/pulmonary_artery.seg.nrrd",
+        "before_source_sha256": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+        "before_copy_sha256": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+        "after_source_sha256": "fcb30f79ee2884ce3e77a53dce7cc9a4c523cb415b0dc699fa683833c32f1b44",
+        "after_nifti_sha256": "ff3224dcc66767a1926a647ce5beb3a46b3eddb4423303fa137341cb6ebf67de",
+        "shape_xyz": [
+          512,
+          512,
+          657
+        ],
+        "spacing_xyz_mm": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "affine_ras": [
+          [
+            -0.8769530057907104,
+            0.0,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            -0.8769530057907104,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.6249999999999999,
+            -439.37399291992176
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "before_voxels": 649130,
+        "after_voxels": 654909,
+        "shared_voxels": 643244,
+        "added_voxels": 11665,
+        "removed_voxels": 5886,
+        "net_voxel_change": 5779,
+        "identical_voxelwise": false,
+        "before_volume_ml": 312.007001761117,
+        "after_volume_ml": 314.7847018569029,
+        "net_volume_change_ml": 2.7777000957858906,
+        "version_agreement_Dice": 0.9865410467018241,
+        "before_components": {
+          "6": {
+            "components": 221,
+            "largest_voxels": 634934,
+            "largest_fraction": 0.9781307288216536,
+            "outside_largest_voxels": 14196,
+            "components_ge20": 69,
+            "components_ge100": 28,
+            "largest10_sizes": [
+              634934,
+              5034,
+              796,
+              747,
+              519,
+              491,
+              428,
+              384,
+              282,
+              272
+            ]
+          },
+          "26": {
+            "components": 132,
+            "largest_voxels": 635561,
+            "largest_fraction": 0.9790966370372652,
+            "outside_largest_voxels": 13569,
+            "components_ge20": 62,
+            "components_ge100": 27,
+            "largest10_sizes": [
+              635561,
+              5034,
+              796,
+              764,
+              520,
+              491,
+              430,
+              384,
+              324,
+              282
+            ]
+          }
+        },
+        "after_components": {
+          "6": {
+            "components": 185,
+            "largest_voxels": 653536,
+            "largest_fraction": 0.9979035255279741,
+            "outside_largest_voxels": 1373,
+            "components_ge20": 14,
+            "components_ge100": 3,
+            "largest10_sizes": [
+              653536,
+              125,
+              105,
+              68,
+              37,
+              31,
+              29,
+              29,
+              29,
+              28
+            ]
+          },
+          "26": {
+            "components": 3,
+            "largest_voxels": 654736,
+            "largest_fraction": 0.9997358411626653,
+            "outside_largest_voxels": 173,
+            "components_ge20": 3,
+            "components_ge100": 2,
+            "largest10_sizes": [
+              654736,
+              105,
+              68
+            ]
+          }
+        }
+      },
+      "pulmonary_vein": {
+        "before_file": "./inputs/before/pulmonary_vein.nii.gz",
+        "after_file": "./inputs/after/pulmonary_vein.nii.gz",
+        "original_before_file": "data/before/Label/pulmonary_vein.nii.gz",
+        "original_after_file": "data/after/pulmonary_vein.seg.nrrd",
+        "before_source_sha256": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+        "before_copy_sha256": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+        "after_source_sha256": "0a15f9e06b9ce936d3c1adffa258512cf71f70f01770da44d2ee85b874bb79ca",
+        "after_nifti_sha256": "d392426c3835cbbe829289f6b1fb5d3b2f397d380df8f9e956c22627f00a0561",
+        "shape_xyz": [
+          512,
+          512,
+          657
+        ],
+        "spacing_xyz_mm": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "affine_ras": [
+          [
+            -0.8769530057907104,
+            0.0,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            -0.8769530057907104,
+            0.0,
+            224.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.6249999999999999,
+            -439.37399291992176
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "before_voxels": 748838,
+        "after_voxels": 751130,
+        "shared_voxels": 744980,
+        "added_voxels": 6150,
+        "removed_voxels": 3858,
+        "net_voxel_change": 2292,
+        "identical_voxelwise": false,
+        "before_volume_ml": 359.93206165913045,
+        "after_volume_ml": 361.03372087690883,
+        "net_volume_change_ml": 1.1016592177783806,
+        "version_agreement_Dice": 0.9933278576609634,
+        "before_components": {
+          "6": {
+            "components": 148,
+            "largest_voxels": 738155,
+            "largest_fraction": 0.9857338970511647,
+            "outside_largest_voxels": 10683,
+            "components_ge20": 50,
+            "components_ge100": 22,
+            "largest10_sizes": [
+              738155,
+              2686,
+              1273,
+              575,
+              542,
+              513,
+              452,
+              390,
+              311,
+              255
+            ]
+          },
+          "26": {
+            "components": 86,
+            "largest_voxels": 738339,
+            "largest_fraction": 0.9859796110774293,
+            "outside_largest_voxels": 10499,
+            "components_ge20": 49,
+            "components_ge100": 22,
+            "largest10_sizes": [
+              738339,
+              2686,
+              1273,
+              575,
+              542,
+              513,
+              452,
+              390,
+              311,
+              255
+            ]
+          }
+        },
+        "after_components": {
+          "6": {
+            "components": 102,
+            "largest_voxels": 750008,
+            "largest_fraction": 0.9985062505824558,
+            "outside_largest_voxels": 1122,
+            "components_ge20": 3,
+            "components_ge100": 2,
+            "largest10_sizes": [
+              750008,
+              650,
+              46,
+              18,
+              17,
+              17,
+              16,
+              15,
+              14,
+              13
+            ]
+          },
+          "26": {
+            "components": 46,
+            "largest_voxels": 750813,
+            "largest_fraction": 0.9995779691930824,
+            "outside_largest_voxels": 317,
+            "components_ge20": 2,
+            "components_ge100": 1,
+            "largest10_sizes": [
+              750813,
+              46,
+              18,
+              17,
+              17,
+              17,
+              16,
+              15,
+              14,
+              9
+            ]
+          }
+        }
+      }
+    },
+    "overlaps": {
+      "before": {
+        "airway__pulmonary_artery": {
+          "voxels": 0,
+          "components_26": 0,
+          "volume_ml": 0.0
+        },
+        "airway__pulmonary_vein": {
+          "voxels": 0,
+          "components_26": 0,
+          "volume_ml": 0.0
+        },
+        "pulmonary_artery__pulmonary_vein": {
+          "voxels": 0,
+          "components_26": 0,
+          "volume_ml": 0.0
+        }
+      },
+      "after": {
+        "airway__pulmonary_artery": {
+          "voxels": 27,
+          "components_26": 11,
+          "volume_ml": 0.012977660942415477
+        },
+        "airway__pulmonary_vein": {
+          "voxels": 0,
+          "components_26": 0,
+          "volume_ml": 0.0
+        },
+        "pulmonary_artery__pulmonary_vein": {
+          "voxels": 836,
+          "components_26": 24,
+          "volume_ml": 0.40182683510590145
+        }
+      }
+    },
+    "complete": true
+  },
+  "metrics": {
+    "pulmonary_artery": {
+      "structure": "pulmonary_artery",
+      "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+      "independent_gt_available": false,
+      "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+      "grid_shape": [
+        512,
+        512,
+        657
+      ],
+      "spacing_mm_array_axes": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "evaluation_extent": "entire identical original grid",
+      "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+      "nsd_tolerance_mm": 1.0,
+      "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+      "versions": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "scikit-image": "0.26.0",
+        "nibabel": "5.4.2",
+        "surface-distance": "0.1"
+      },
+      "metric_sets": {
+        "vesmamba": {
+          "metrics": {
+            "binary.Dice": 0.9865410467018241,
+            "binary.clDice": 0.9352923164078595,
+            "binary.HD95_mm": 0.0,
+            "binary.NSD": 0.9714951280751596
+          },
+          "status": {
+            "binary.Dice": "ok",
+            "binary.clDice": "ok",
+            "binary.HD95_mm": "ok",
+            "binary.NSD": "ok"
+          },
+          "notes": [],
+          "protocol": {
+            "implementation": "independent fixed protocol, not VesMamba authors code",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "NSD_tolerance_mm": 1.0,
+            "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+            "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+            "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+            "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+            "scale": "Dice/clDice/NSD fractions, HD95 mm",
+            "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+          }
+        },
+        "airrc": {
+          "metrics": {
+            "pulmonary_artery.DSC": 0.9865410467018241,
+            "pulmonary_artery.Precision": 0.9909324788563154,
+            "pulmonary_artery.Recall": 0.9821883651011056,
+            "pulmonary_artery.FPR": 3.4305957348392893e-05
+          },
+          "status": {
+            "pulmonary_artery.DSC": "ok_standard_definition",
+            "pulmonary_artery.Precision": "ok_standard_definition",
+            "pulmonary_artery.Recall": "ok_standard_definition",
+            "pulmonary_artery.FPR": "ok_supplementary_FPR"
+          },
+          "notes": [
+            "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+            "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+            "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+            "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+            "Airway BDR/DLR not requested: pass airway_label to include their availability status."
+          ],
+          "protocol": {
+            "name": "AirRC_independent_evaluation_v1",
+            "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+            "author_repository": "https://github.com/b-niu/AirRC",
+            "author_code_check": {
+              "date": "2026-10-20",
+              "inspected_files": [
+                "config_loss.py",
+                "pulmonary_structure_segmentation_tools.py",
+                "train_stage1.py",
+                "train_stage2.py"
+              ],
+              "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+            },
+            "scale": "ratios in [0,1], not percentages",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "labels": {
+              "pulmonary_artery": 1
+            },
+            "zero_denominator": "None, with reason in status; never add epsilon",
+            "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+            "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+            "branch_protocol": null
+          }
+        },
+        "hipas": {
+          "metrics": {
+            "artery_DSC": 0.9865410467018241,
+            "artery_SEN": 0.9821883651011056,
+            "artery_SPE": 0.9999656940426516,
+            "artery_FPR": 3.4305957348392893e-05,
+            "artery_HD95_mm": 0.0,
+            "artery_AUC": null,
+            "artery_BC_proxy_pred": 740.0,
+            "artery_BC_proxy_gt": 865.0,
+            "artery_BC_proxy_ratio": 0.8554913294797688,
+            "artery_SL_voxels_proxy_pred": 20351.0,
+            "artery_SL_voxels_proxy_gt": 22280.0,
+            "artery_SL_voxels_proxy_ratio": 0.9134201077199282
+          },
+          "status": {
+            "artery_DSC": "ok",
+            "artery_SEN": "ok",
+            "artery_SPE": "ok",
+            "artery_FPR": "ok",
+            "artery_HD95_mm": "ok_area_weighted_directional95_max",
+            "artery_AUC": "not_computed_probability_not_supplied",
+            "artery_BC_proxy_pred": "native_grid_proxy_not_paper_exact",
+            "artery_BC_proxy_gt": "native_grid_proxy_not_paper_exact",
+            "artery_BC_proxy_ratio": "native_grid_proxy_abundance_ratio",
+            "artery_SL_voxels_proxy_pred": "native_grid_proxy_not_paper_exact",
+            "artery_SL_voxels_proxy_gt": "native_grid_proxy_not_paper_exact",
+            "artery_SL_voxels_proxy_ratio": "native_grid_proxy_abundance_ratio"
+          },
+          "protocol": {
+            "source": "https://doi.org/10.1038/s41467-025-56505-6",
+            "source_location": "Methods: Statistical analyses; Results: Fig. 2",
+            "implementation": "independent; hard-label metrics plus explicitly named native-grid skeleton proxies",
+            "spacing_mm_array_axis_order": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "geometry_requirement": "same shape, shared aligned orthogonal voxel grid; affine agreement must be checked by caller",
+            "artery_label": 1,
+            "vein_label": 2,
+            "other_labels": "treated as nonvascular background",
+            "fraction_scale": "0 to 1, not percent; MCS printed-formula interpretation is 0 to 0.5",
+            "roi_scope": "full_volume",
+            "roi_voxel_count": 172228608,
+            "surface_and_skeleton_scope": "full_volume_even_when_roi_supplied",
+            "FPR": "FP/(FP+TN) = 1-SPE; negatives are one-vs-rest within the confusion-count scope",
+            "HD95": "surface-distance 0.1; surfel-area-weighted 95th percentile in each direction, then maximum, in mm",
+            "HD95_caveat": "unified package convention; the paper's exact surface implementation was not verified",
+            "empty_DSC": "both empty: None; exactly one empty: 0",
+            "empty_HD95": "None if either surface is empty",
+            "undefined_denominator": "None, with per-metric status; not replaced by zero or infinity",
+            "MCS": "(|P_A intersect G_V| + |P_V intersect G_A|) / (|P_A union P_V| + |G_A union G_V|)",
+            "MCS_caveat": "literal printed P+T denominator interpreted as total predicted plus reference vascular counts; official evaluator not verified",
+            "skeletonization": "scikit-image skeletonize(method='lee'), no pruning or component removal",
+            "BC_proxy": "26-connected component count of skeleton voxels with 26-neighbour degree >=3",
+            "SL_voxels_proxy": "number of foreground skeleton voxels, not length in mm",
+            "proxy_ratio": "prediction count / reference count; undefined when reference count is zero; not branch matching recall",
+            "resampling": "none; original paper's standardized grid is not silently applied",
+            "paper_standard_spacing_mm": [
+              0.65234375,
+              0.65234375,
+              1.0
+            ],
+            "AUC": "per-case one-vs-rest Mann-Whitney U/(n_positive*n_negative), scipy rankdata average ties; no hard-label substitution",
+            "AUC_probability_supplied": {
+              "artery": false,
+              "vein": false
+            },
+            "AUC_pooling_caveat": "author cohort-level ROC pooling/aggregation was not verified; this implementation returns per-case AUC",
+            "reader_scores": "human-assessed outcomes, not computed automatically"
+          },
+          "notes": [
+            "Independent implementation; source-paper evaluator equivalence is not established.",
+            "HD95 follows the package-wide surface-distance 0.1 protocol: surfel-area-weighted directional 95th percentiles, then their maximum.",
+            "BC_proxy and SL_voxels_proxy use native-grid Lee skeletonization; no resampling is performed.",
+            "The paper standardizes to 334/512 x 334/512 x 1.00 mm and uses an octree-based skeleton method; these proxies are not paper-exact BC/SL.",
+            "SL_voxels_proxy counts skeleton voxels, not physical millimetres; compare only on explicitly matched grids.",
+            "BC/SL ratios are abundance ratios, not matched-branch recall; excess branches or length do not establish better segmentation.",
+            "MCS uses the printed numerator divided by predicted-plus-reference vascular voxel counts; no factor of two is added. Complete A/V swapping gives 0.5.",
+            "AUC uses only separately supplied probability maps, one-vs-rest per case; no AUC is inferred from hard labels.",
+            "The paper's expert reader scores require human review and are not automated by this evaluator."
+          ],
+          "adapter_note": "Supplied evaluate_hipas called on one genuine binary channel (label 1); results for absent dummy label 2 and MCS are discarded. Other binary channels and overlaps are preserved in their own evaluations.",
+          "MCS": null,
+          "MCS_status": "not_computed_nonexclusive_av_masks"
+        }
+      },
+      "not_computable": {
+        "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+        "AUC": "No probability maps supplied.",
+        "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+        "airway_wall": "No airway-wall mask; lung is not wall.",
+        "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+      },
+      "elapsed_seconds": 45.450616121292114,
+      "actual_proxy_changes": {
+        "BC_proxy": {
+          "before": 740.0,
+          "after": 865.0,
+          "delta_after_minus_before": 125.0,
+          "relative_change_percent": 16.89189189189189,
+          "interpretation": "Native-grid count proxy; increase is not evidence of improved accuracy or branch recall."
+        },
+        "SL_voxels_proxy": {
+          "before": 20351.0,
+          "after": 22280.0,
+          "delta_after_minus_before": 1929.0,
+          "relative_change_percent": 9.478649697803547,
+          "interpretation": "Native-grid count proxy; increase is not evidence of improved accuracy or branch recall."
+        }
+      },
+      "complete": true
+    },
+    "pulmonary_vein": {
+      "structure": "pulmonary_vein",
+      "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+      "independent_gt_available": false,
+      "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+      "grid_shape": [
+        512,
+        512,
+        657
+      ],
+      "spacing_mm_array_axes": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "evaluation_extent": "entire identical original grid",
+      "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+      "nsd_tolerance_mm": 1.0,
+      "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+      "versions": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "scikit-image": "0.26.0",
+        "nibabel": "5.4.2",
+        "surface-distance": "0.1"
+      },
+      "metric_sets": {
+        "vesmamba": {
+          "metrics": {
+            "binary.Dice": 0.9933278576609634,
+            "binary.clDice": 0.9818149066828317,
+            "binary.HD95_mm": 0.0,
+            "binary.NSD": 0.9867208324383689
+          },
+          "status": {
+            "binary.Dice": "ok",
+            "binary.clDice": "ok",
+            "binary.HD95_mm": "ok",
+            "binary.NSD": "ok"
+          },
+          "notes": [],
+          "protocol": {
+            "implementation": "independent fixed protocol, not VesMamba authors code",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "NSD_tolerance_mm": 1.0,
+            "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+            "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+            "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+            "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+            "scale": "Dice/clDice/NSD fractions, HD95 mm",
+            "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+          }
+        },
+        "airrc": {
+          "metrics": {
+            "pulmonary_vein.DSC": 0.9933278576609634,
+            "pulmonary_vein.Precision": 0.9948480178623413,
+            "pulmonary_vein.Recall": 0.9918123360803057,
+            "pulmonary_vein.FPR": 2.2498581417205122e-05
+          },
+          "status": {
+            "pulmonary_vein.DSC": "ok_standard_definition",
+            "pulmonary_vein.Precision": "ok_standard_definition",
+            "pulmonary_vein.Recall": "ok_standard_definition",
+            "pulmonary_vein.FPR": "ok_supplementary_FPR"
+          },
+          "notes": [
+            "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+            "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+            "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+            "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+            "Airway BDR/DLR not requested: pass airway_label to include their availability status."
+          ],
+          "protocol": {
+            "name": "AirRC_independent_evaluation_v1",
+            "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+            "author_repository": "https://github.com/b-niu/AirRC",
+            "author_code_check": {
+              "date": "2026-10-20",
+              "inspected_files": [
+                "config_loss.py",
+                "pulmonary_structure_segmentation_tools.py",
+                "train_stage1.py",
+                "train_stage2.py"
+              ],
+              "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+            },
+            "scale": "ratios in [0,1], not percentages",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "labels": {
+              "pulmonary_vein": 1
+            },
+            "zero_denominator": "None, with reason in status; never add epsilon",
+            "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+            "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+            "branch_protocol": null
+          }
+        },
+        "hipas": {
+          "metrics": {
+            "vein_DSC": 0.9933278576609634,
+            "vein_SEN": 0.9918123360803057,
+            "vein_SPE": 0.9999775014185828,
+            "vein_FPR": 2.2498581417205122e-05,
+            "vein_HD95_mm": 0.0,
+            "vein_AUC": null,
+            "vein_BC_proxy_pred": 958.0,
+            "vein_BC_proxy_gt": 988.0,
+            "vein_BC_proxy_ratio": 0.9696356275303644,
+            "vein_SL_voxels_proxy_pred": 23134.0,
+            "vein_SL_voxels_proxy_gt": 23375.0,
+            "vein_SL_voxels_proxy_ratio": 0.9896898395721925
+          },
+          "status": {
+            "vein_DSC": "ok",
+            "vein_SEN": "ok",
+            "vein_SPE": "ok",
+            "vein_FPR": "ok",
+            "vein_HD95_mm": "ok_area_weighted_directional95_max",
+            "vein_AUC": "not_computed_probability_not_supplied",
+            "vein_BC_proxy_pred": "native_grid_proxy_not_paper_exact",
+            "vein_BC_proxy_gt": "native_grid_proxy_not_paper_exact",
+            "vein_BC_proxy_ratio": "native_grid_proxy_abundance_ratio",
+            "vein_SL_voxels_proxy_pred": "native_grid_proxy_not_paper_exact",
+            "vein_SL_voxels_proxy_gt": "native_grid_proxy_not_paper_exact",
+            "vein_SL_voxels_proxy_ratio": "native_grid_proxy_abundance_ratio"
+          },
+          "protocol": {
+            "source": "https://doi.org/10.1038/s41467-025-56505-6",
+            "source_location": "Methods: Statistical analyses; Results: Fig. 2",
+            "implementation": "independent; hard-label metrics plus explicitly named native-grid skeleton proxies",
+            "spacing_mm_array_axis_order": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "geometry_requirement": "same shape, shared aligned orthogonal voxel grid; affine agreement must be checked by caller",
+            "artery_label": 2,
+            "vein_label": 1,
+            "other_labels": "treated as nonvascular background",
+            "fraction_scale": "0 to 1, not percent; MCS printed-formula interpretation is 0 to 0.5",
+            "roi_scope": "full_volume",
+            "roi_voxel_count": 172228608,
+            "surface_and_skeleton_scope": "full_volume_even_when_roi_supplied",
+            "FPR": "FP/(FP+TN) = 1-SPE; negatives are one-vs-rest within the confusion-count scope",
+            "HD95": "surface-distance 0.1; surfel-area-weighted 95th percentile in each direction, then maximum, in mm",
+            "HD95_caveat": "unified package convention; the paper's exact surface implementation was not verified",
+            "empty_DSC": "both empty: None; exactly one empty: 0",
+            "empty_HD95": "None if either surface is empty",
+            "undefined_denominator": "None, with per-metric status; not replaced by zero or infinity",
+            "MCS": "(|P_A intersect G_V| + |P_V intersect G_A|) / (|P_A union P_V| + |G_A union G_V|)",
+            "MCS_caveat": "literal printed P+T denominator interpreted as total predicted plus reference vascular counts; official evaluator not verified",
+            "skeletonization": "scikit-image skeletonize(method='lee'), no pruning or component removal",
+            "BC_proxy": "26-connected component count of skeleton voxels with 26-neighbour degree >=3",
+            "SL_voxels_proxy": "number of foreground skeleton voxels, not length in mm",
+            "proxy_ratio": "prediction count / reference count; undefined when reference count is zero; not branch matching recall",
+            "resampling": "none; original paper's standardized grid is not silently applied",
+            "paper_standard_spacing_mm": [
+              0.65234375,
+              0.65234375,
+              1.0
+            ],
+            "AUC": "per-case one-vs-rest Mann-Whitney U/(n_positive*n_negative), scipy rankdata average ties; no hard-label substitution",
+            "AUC_probability_supplied": {
+              "artery": false,
+              "vein": false
+            },
+            "AUC_pooling_caveat": "author cohort-level ROC pooling/aggregation was not verified; this implementation returns per-case AUC",
+            "reader_scores": "human-assessed outcomes, not computed automatically"
+          },
+          "notes": [
+            "Independent implementation; source-paper evaluator equivalence is not established.",
+            "HD95 follows the package-wide surface-distance 0.1 protocol: surfel-area-weighted directional 95th percentiles, then their maximum.",
+            "BC_proxy and SL_voxels_proxy use native-grid Lee skeletonization; no resampling is performed.",
+            "The paper standardizes to 334/512 x 334/512 x 1.00 mm and uses an octree-based skeleton method; these proxies are not paper-exact BC/SL.",
+            "SL_voxels_proxy counts skeleton voxels, not physical millimetres; compare only on explicitly matched grids.",
+            "BC/SL ratios are abundance ratios, not matched-branch recall; excess branches or length do not establish better segmentation.",
+            "MCS uses the printed numerator divided by predicted-plus-reference vascular voxel counts; no factor of two is added. Complete A/V swapping gives 0.5.",
+            "AUC uses only separately supplied probability maps, one-vs-rest per case; no AUC is inferred from hard labels.",
+            "The paper's expert reader scores require human review and are not automated by this evaluator."
+          ],
+          "adapter_note": "Supplied evaluate_hipas called on one genuine binary channel (label 1); results for absent dummy label 2 and MCS are discarded. Other binary channels and overlaps are preserved in their own evaluations.",
+          "MCS": null,
+          "MCS_status": "not_computed_nonexclusive_av_masks"
+        }
+      },
+      "not_computable": {
+        "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+        "AUC": "No probability maps supplied.",
+        "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+        "airway_wall": "No airway-wall mask; lung is not wall.",
+        "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+      },
+      "elapsed_seconds": 47.71134686470032,
+      "actual_proxy_changes": {
+        "BC_proxy": {
+          "before": 958.0,
+          "after": 988.0,
+          "delta_after_minus_before": 30.0,
+          "relative_change_percent": 3.1315240083507305,
+          "interpretation": "Native-grid count proxy; increase is not evidence of improved accuracy or branch recall."
+        },
+        "SL_voxels_proxy": {
+          "before": 23134.0,
+          "after": 23375.0,
+          "delta_after_minus_before": 241.0,
+          "relative_change_percent": 1.0417567217083081,
+          "interpretation": "Native-grid count proxy; increase is not evidence of improved accuracy or branch recall."
+        }
+      },
+      "complete": true
+    },
+    "airway": {
+      "structure": "airway",
+      "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+      "independent_gt_available": false,
+      "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+      "grid_shape": [
+        512,
+        512,
+        657
+      ],
+      "spacing_mm_array_axes": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "evaluation_extent": "entire identical original grid",
+      "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+      "nsd_tolerance_mm": 1.0,
+      "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+      "versions": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "scikit-image": "0.26.0",
+        "nibabel": "5.4.2",
+        "surface-distance": "0.1"
+      },
+      "metric_sets": {
+        "vesmamba": {
+          "metrics": {
+            "binary.Dice": 1.0,
+            "binary.clDice": 1.0,
+            "binary.HD95_mm": 0.0,
+            "binary.NSD": 1.0
+          },
+          "status": {
+            "binary.Dice": "ok",
+            "binary.clDice": "ok",
+            "binary.HD95_mm": "ok",
+            "binary.NSD": "ok"
+          },
+          "notes": [
+            "binary: prediction and reference are identical; check that the evaluation is not against itself."
+          ],
+          "protocol": {
+            "implementation": "independent fixed protocol, not VesMamba authors code",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "NSD_tolerance_mm": 1.0,
+            "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+            "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+            "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+            "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+            "scale": "Dice/clDice/NSD fractions, HD95 mm",
+            "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+          }
+        },
+        "airrc": {
+          "metrics": {
+            "airway.DSC": 1.0,
+            "airway.Precision": 1.0,
+            "airway.Recall": 1.0,
+            "airway.FPR": 0.0,
+            "airway.BDR_gt80_independent": null,
+            "airway.DLR_matched_gt_length_independent": null
+          },
+          "status": {
+            "airway.DSC": "ok_standard_definition",
+            "airway.Precision": "ok_standard_definition",
+            "airway.Recall": "ok_standard_definition",
+            "airway.FPR": "ok_supplementary_FPR",
+            "airway.BDR_gt80_independent": "not_computed_requires_fixed_reference_branch_labels",
+            "airway.DLR_matched_gt_length_independent": "not_computed_requires_fixed_reference_branch_labels"
+          },
+          "notes": [
+            "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+            "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+            "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+            "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+            "AirRC does not fully specify branch extraction/matching in the inspected text. These branch metrics are an independent GT-centreline coverage protocol, not author-exact BDR/DLR."
+          ],
+          "protocol": {
+            "name": "AirRC_independent_evaluation_v1",
+            "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+            "author_repository": "https://github.com/b-niu/AirRC",
+            "author_code_check": {
+              "date": "2026-10-20",
+              "inspected_files": [
+                "config_loss.py",
+                "pulmonary_structure_segmentation_tools.py",
+                "train_stage1.py",
+                "train_stage2.py"
+              ],
+              "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+            },
+            "scale": "ratios in [0,1], not percentages",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "labels": {
+              "airway": 1
+            },
+            "zero_denominator": "None, with reason in status; never add epsilon",
+            "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+            "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+            "branch_protocol": {
+              "id": "fixed_gt_branch_26edge_mm_strict_gt80_v1_independent",
+              "author_exact_reproduction": false,
+              "airway_name": "airway",
+              "airway_label": 1,
+              "branch_definition": "fixed supplied reference branch IDs; no automatic branch extraction",
+              "length": "sum of unique 26-neighbour intra-ID centerline edge lengths in mm",
+              "edge_coverage": "edge is covered only if BOTH endpoints lie in predicted airway lumen",
+              "detected": "covered_reference_branch_length / reference_branch_length > 0.80",
+              "BDR": "number of detected supplied GT branches / number of supplied GT branches",
+              "DLR": "FULL lengths of detected supplied GT branches / lengths of all supplied GT branches",
+              "prediction_branch_matching": "none; uses prediction lumen mask, not predicted branch IDs",
+              "reference_completeness": "caller must review completeness and freeze branch IDs before comparisons",
+              "junction_convention": "cross-ID edges and unlabelled junction voxels excluded from length denominator"
+            }
+          }
+        }
+      },
+      "not_computable": {
+        "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+        "AUC": "No probability maps supplied.",
+        "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+        "airway_wall": "No airway-wall mask; lung is not wall.",
+        "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+      },
+      "elapsed_seconds": 17.287516593933105,
+      "complete": true
+    },
+    "lung": {
+      "structure": "lung",
+      "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+      "independent_gt_available": false,
+      "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+      "grid_shape": [
+        512,
+        512,
+        657
+      ],
+      "spacing_mm_array_axes": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "evaluation_extent": "entire identical original grid",
+      "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+      "nsd_tolerance_mm": 1.0,
+      "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+      "versions": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "scikit-image": "0.26.0",
+        "nibabel": "5.4.2",
+        "surface-distance": "0.1"
+      },
+      "metric_sets": {
+        "vesmamba": {
+          "status": "not_applied_to_lung_parenchyma",
+          "reason": "Lung is an auxiliary ROI structure, not a tubular vascular/airway endpoint. Its voxelwise equivalence and standard overlap scores are provided separately."
+        },
+        "airrc": {
+          "metrics": {
+            "lung.DSC": 1.0,
+            "lung.Precision": 1.0,
+            "lung.Recall": 1.0,
+            "lung.FPR": 0.0
+          },
+          "status": {
+            "lung.DSC": "ok_standard_definition",
+            "lung.Precision": "ok_standard_definition",
+            "lung.Recall": "ok_standard_definition",
+            "lung.FPR": "ok_supplementary_FPR"
+          },
+          "notes": [
+            "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+            "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+            "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+            "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+            "Airway BDR/DLR not requested: pass airway_label to include their availability status."
+          ],
+          "protocol": {
+            "name": "AirRC_independent_evaluation_v1",
+            "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+            "author_repository": "https://github.com/b-niu/AirRC",
+            "author_code_check": {
+              "date": "2026-10-20",
+              "inspected_files": [
+                "config_loss.py",
+                "pulmonary_structure_segmentation_tools.py",
+                "train_stage1.py",
+                "train_stage2.py"
+              ],
+              "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+            },
+            "scale": "ratios in [0,1], not percentages",
+            "spacing_mm_array_axes": [
+              0.8769530057907104,
+              0.8769530057907104,
+              0.625
+            ],
+            "labels": {
+              "lung": 1
+            },
+            "zero_denominator": "None, with reason in status; never add epsilon",
+            "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+            "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+            "branch_protocol": null
+          },
+          "scope_note": "Supplementary binary overlap on lung; not an AirRC airway-wall endpoint."
+        }
+      },
+      "not_computable": {
+        "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+        "AUC": "No probability maps supplied.",
+        "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+        "airway_wall": "No airway-wall mask; lung is not wall.",
+        "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+      },
+      "elapsed_seconds": 1.8670134544372559,
+      "complete": true
+    }
+  },
+  "component_lineage": {
+    "created": "2026-10-21T16:40:51",
+    "connectivity": 26,
+    "comparison": "Original before-component membership followed to after component IDs; no resampling or input changes.",
+    "categories_partition_original_nonmain_components": {
+      "retained_only_in_new_main": "At least one old voxel survives; all surviving voxels lie in the new largest component. Some original voxels may have been deleted.",
+      "all_deleted": "No original voxel from this old component remains foreground after editing.",
+      "retained_only_in_one_new_nonmain": "At least one old voxel survives; all surviving voxels lie in exactly one new component other than the largest. It may have merged with another old nonmain component.",
+      "retained_in_multiple_new_components": "Surviving old voxels occupy at least two new components, possibly including the largest."
+    },
+    "interpretation_limits": [
+      "Connectivity and voxel retention are not anatomical accuracy or branch-detection measurements.",
+      "A lower component count alone cannot distinguish adding connections from deleting fragments.",
+      "Categories describe surviving original voxels; they do not label new voxels as anatomically correct bridges.",
+      "Component IDs are local to this cropped-volume run and should not be matched to IDs in separate audits."
+    ],
+    "structures": {
+      "pulmonary_artery": {
+        "before_path": "./inputs/before/pulmonary_artery.nii.gz",
+        "after_path": "./inputs/after/pulmonary_artery.nii.gz",
+        "before_sha256": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+        "after_sha256": "ff3224dcc66767a1926a647ce5beb3a46b3eddb4423303fa137341cb6ebf67de",
+        "shape_xyz": [
+          512,
+          512,
+          657
+        ],
+        "union_foreground_bbox_xyz_half_open": [
+          [
+            60,
+            411
+          ],
+          [
+            152,
+            401
+          ],
+          [
+            117,
+            600
+          ]
+        ],
+        "cropped_shape_xyz": [
+          351,
+          249,
+          483
+        ],
+        "estimated_resident_mask_and_label_arrays_bytes": 422137170,
+        "voxel_volume_mm3": 0.48065410897835115,
+        "before_components": 132,
+        "after_components": 3,
+        "before_main_component_id": 3,
+        "after_main_component_id": 1,
+        "before_foreground_voxels": 649130,
+        "after_foreground_voxels": 654909,
+        "added_voxels": 11665,
+        "deleted_voxels": 5886,
+        "after_components_containing_only_added_voxels": [
+          {
+            "after_component_id": 2,
+            "voxels": 68,
+            "is_main": false
+          }
+        ],
+        "after_components_containing_only_added_voxels_count": 1,
+        "after_components_containing_any_retained_voxel_count": 2,
+        "original_main_retention": {
+          "structure": "pulmonary_artery",
+          "before_component_id": 3,
+          "before_is_main": true,
+          "before_voxels": 635561,
+          "retained_voxels": 635220,
+          "deleted_voxels": 341,
+          "retained_fraction": 0.9994634661346432,
+          "retained_in_after_main_voxels": 635220,
+          "retained_in_after_nonmain_voxels": 0,
+          "number_of_after_components_containing_retained_voxels": 1,
+          "after_component_voxel_map": "{\"1\": 635220}",
+          "category": "retained_only_in_new_main"
+        },
+        "original_nonmain_voxels": {
+          "total": 13569,
+          "retained_in_after_main": 7919,
+          "retained_in_after_nonmain": 105,
+          "deleted": 5545,
+          "accounting_check_passed": true
+        },
+        "original_nonmain_components": {
+          "total": 131,
+          "categories": {
+            "retained_only_in_new_main": 30,
+            "all_deleted": 100,
+            "retained_only_in_one_new_nonmain": 1,
+            "retained_in_multiple_new_components": 0
+          },
+          "accounting_check_passed": true
+        },
+        "category_original_voxel_totals": {
+          "retained_only_in_new_main": 8198,
+          "all_deleted": 5266,
+          "retained_only_in_one_new_nonmain": 105,
+          "retained_in_multiple_new_components": 0
+        }
+      },
+      "pulmonary_vein": {
+        "before_path": "./inputs/before/pulmonary_vein.nii.gz",
+        "after_path": "./inputs/after/pulmonary_vein.nii.gz",
+        "before_sha256": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+        "after_sha256": "d392426c3835cbbe829289f6b1fb5d3b2f397d380df8f9e956c22627f00a0561",
+        "shape_xyz": [
+          512,
+          512,
+          657
+        ],
+        "union_foreground_bbox_xyz_half_open": [
+          [
+            60,
+            413
+          ],
+          [
+            150,
+            401
+          ],
+          [
+            112,
+            595
+          ]
+        ],
+        "cropped_shape_xyz": [
+          353,
+          251,
+          483
+        ],
+        "estimated_resident_mask_and_label_arrays_bytes": 427952490,
+        "voxel_volume_mm3": 0.48065410897835115,
+        "before_components": 86,
+        "after_components": 46,
+        "before_main_component_id": 4,
+        "after_main_component_id": 4,
+        "before_foreground_voxels": 748838,
+        "after_foreground_voxels": 751130,
+        "added_voxels": 6150,
+        "deleted_voxels": 3858,
+        "after_components_containing_only_added_voxels": [
+          {
+            "after_component_id": 19,
+            "voxels": 15,
+            "is_main": false
+          },
+          {
+            "after_component_id": 20,
+            "voxels": 6,
+            "is_main": false
+          },
+          {
+            "after_component_id": 22,
+            "voxels": 5,
+            "is_main": false
+          },
+          {
+            "after_component_id": 34,
+            "voxels": 5,
+            "is_main": false
+          },
+          {
+            "after_component_id": 39,
+            "voxels": 46,
+            "is_main": false
+          },
+          {
+            "after_component_id": 42,
+            "voxels": 3,
+            "is_main": false
+          }
+        ],
+        "after_components_containing_only_added_voxels_count": 6,
+        "after_components_containing_any_retained_voxel_count": 40,
+        "original_main_retention": {
+          "structure": "pulmonary_vein",
+          "before_component_id": 4,
+          "before_is_main": true,
+          "before_voxels": 738339,
+          "retained_voxels": 738217,
+          "deleted_voxels": 122,
+          "retained_fraction": 0.999834764247859,
+          "retained_in_after_main_voxels": 738217,
+          "retained_in_after_nonmain_voxels": 0,
+          "number_of_after_components_containing_retained_voxels": 1,
+          "after_component_voxel_map": "{\"4\": 738217}",
+          "category": "retained_only_in_new_main"
+        },
+        "original_nonmain_voxels": {
+          "total": 10499,
+          "retained_in_after_main": 6526,
+          "retained_in_after_nonmain": 237,
+          "deleted": 3736,
+          "accounting_check_passed": true
+        },
+        "original_nonmain_components": {
+          "total": 85,
+          "categories": {
+            "retained_only_in_new_main": 18,
+            "all_deleted": 29,
+            "retained_only_in_one_new_nonmain": 37,
+            "retained_in_multiple_new_components": 1
+          },
+          "accounting_check_passed": true
+        },
+        "category_original_voxel_totals": {
+          "retained_only_in_new_main": 6976,
+          "all_deleted": 3020,
+          "retained_only_in_one_new_nonmain": 457,
+          "retained_in_multiple_new_components": 46
+        }
+      }
+    },
+    "complete": true
+  },
+  "notes_zh": {
+    "主要结论": "此次修改集中于肺动脉和肺静脉；气道、肺掩码逐体素完全相同。血管主块占比提高、非主块体素减少，同时引入跨类别重叠。",
+    "比较方向": "版本一致性表以补标后的掩码为参考、补标前为待比较对象。反向计算时 Precision / Recall 会互换。",
+    "不能推断的结论": "没有独立于两版本的真值，不能给出补标前后对同一独立真值的准确率提升。未把补标后与自身比较的100%当作性能提升。",
+    "工具来源": "直接调用用户 ZIP 中的 VesMamba / HiPaS / AirRC 指标函数；原包26个文件保持原样，26项自带测试通过。包本身属于独立实现，不等同于已经验证的论文官方评测器。",
+    "坐标与范围": "512×512×657；体素间距0.8769530058×0.8769530058×0.625 mm；NRRD LPS 转为 NIfTI RAS 后与原标签网格一致，无重采样、平滑、删碎片或优先级合并。混淆计数使用整幅原始体积。",
+    "互相重叠的标签": "各结构保留为独立二值通道。补标后动脉/静脉836体素、气道/动脉27体素重叠，未通过覆盖标签人为消除。",
+    "连通性定义": "主表使用26邻域，面/边/角接触均算连通；另列6邻域，只有面接触算连通。组件数降低和主块占比提高仅说明几何连通性变化。",
+    "连通块去向": "按原组件的保留体素追踪。保留体素全部进入新主块不代表原组件完整保留；组件减少也可能来自删除。",
+    "Dice与clDice": "Dice描述体积重叠；clDice描述骨架与掩码的相互覆盖。此处均是前后版本一致性，不能用其差值直接判定补标对错。",
+    "HD95定义": "surface-distance 0.1：两方向按表面元面积加权的95%距离分位数，取较大值，单位mm。局部修改占比较小时可为0，不表示所有表面完全相同。",
+    "NSD阈值": "本次固定1.0 mm用于探索性比较，不宣称该阈值为论文原始协议。表面元面积加权。",
+    "BC_proxy": "Lee骨架中26邻域度数≥3的骨架体素形成的26连通簇数量，称分叉簇代理计数；不是人工确认的真实分支数，也不是分支检出率。",
+    "SL_voxels_proxy": "Lee骨架前景体素数；单位为体素，不是毫米长度。两版在同一原生网格比较；未采用原论文的标准化网格或骨架方法。",
+    "代理指标的增减": "BC / SL 增加描述骨架数量变化，不能单独证明分割更准确或分支召回提高。",
+    "HiPaS调用适配": "对真实二值动脉、静脉通道分别调用，保留对应类别结果；弃去为接口兼容设置的空类别结果及MCS。原包协议字段与适配说明一并保存在JSON。",
+    "AUC缺失": "未提供概率图，NA；不使用二值标签代替概率。",
+    "BDR与DLR缺失": "缺少经过确认并冻结的参考分支ID中心线图，NA；不从补标后自动造出真值再声称独立分支检出率。",
+    "MCS缺失": "补标后动静脉不互斥，标准单标签MCS不适用，NA；需先人工确定重叠归属。",
+    "肺与气道壁": "肺只提供辅助二值重叠与结构变化；肺不是气道壁。肺未运行血管/气道骨架与表面指标。",
+    "统计范围": "单个病例的描述性比较；不提供群体显著性结论、置信区间或未经支持的准确率增益。",
+    "缺失值约定": "NA表示本次未计算/条件不足，原因见本说明；空值不按0解释。",
+    "源数据": "原始与补标源文件未改动；计算副本、转换后NIfTI、增删掩码、原始JSON、工具哈希与复跑脚本均保存在本目录。",
+    "前版本来源": "data/before/Label",
+    "后版本来源": "data/after",
+    "ZIP来源": "source_archive/VesMamba_HiPaS_AirRC_metrics.zip",
+    "ZIP SHA256": "b8bfcb878dc19473272d59eac55dec3876cd2a1f11026b19307a790572a4943c",
+    "运行环境": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]; {\"numpy\": \"2.3.5\", \"scipy\": \"1.17.0\", \"scikit-image\": \"0.26.0\", \"nibabel\": \"5.4.2\", \"surface-distance\": \"0.1\"}"
+  },
+  "tool_manifest": {
+    "archive": "source_archive/VesMamba_HiPaS_AirRC_metrics.zip",
+    "archive_sha256": "b8bfcb878dc19473272d59eac55dec3876cd2a1f11026b19307a790572a4943c",
+    "files": [
+      {
+        "file": "pulmonary_metrics/airrc_metrics.py",
+        "sha256": "4682e505750cb2749e1191637d87b9bd406f59fdd5ac5eeae12caeafa5cc2f0e",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/airrc_notes.txt",
+        "sha256": "5390e0f13e17efc81742ddd18af95174bc1278d4f7e42e66352f96b134f81e89",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/airrc_result.csv",
+        "sha256": "2745fbc0104c4c8a34d77b2c2e2aa2e2d2bcb41455c178b7af5f472dc61d6245",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/airrc_result.json",
+        "sha256": "f8f3eb03cd1eadc789189390e02880c5149194b5007237ec757da20c75b1a82a",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/artery_prob.nii.gz",
+        "sha256": "1ddd382b15ca0a1bd3476cc8315f8248c95ccca3def554a4559d6c576a277792",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/corrected.nii.gz",
+        "sha256": "ac4d7e6991f143de5f1dcfaf473b3f7663c13e76bcf037ba7ca064b33eb03499",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/gt.nii.gz",
+        "sha256": "25822bbc8475f27d08538565152193ab19f6841fd00bc20a0210f8c671a99ed8",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/gt_branch_ids.nii.gz",
+        "sha256": "0049d3ca189442651367b7d99a2218d284f74a0124fab8cf9e7cc549de832763",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/hipas_result.csv",
+        "sha256": "1a5d364237dd874bd38b4534eddc25600b36dd17909939df5e78b1d19fab0d18",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/hipas_result.json",
+        "sha256": "66f5aec573cea06e1007f2b0cfef4b159ec4207dd664875400684644ce6b78c4",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/initial.nii.gz",
+        "sha256": "400e81d5c16630909ee430acafa71b15346238eb59120f5326768a28ae265cb8",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/vein_prob.nii.gz",
+        "sha256": "84572e958ce0cd3df19a79d657115870302a86058527c3f843a2bdb68ae37cb8",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/vesmamba_result.csv",
+        "sha256": "642919d3ee49d2ceded489dfcecca859e57e1943c93d2ad44dfb80c964988146",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/demo/vesmamba_result.json",
+        "sha256": "9078582741c9ef5f69d5057c43d625ed2fe29a577aa45cdc44c4257d941c2b75",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/evaluate.py",
+        "sha256": "f6a0d5b8a5d75d4291408821c6af75cccd77047f149824f911d13b056c96f293",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/hipas_metrics.py",
+        "sha256": "8f0ece28654585530ead22ed408bfa8dfecd7d38d32bdda9e3cc7875727a111d",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/hipas_notes.txt",
+        "sha256": "3217dcbd6047d8ff92793690ca0a93b53a0cab831306685f09a53fccc85fec6f",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/io_utils.py",
+        "sha256": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/make_demo.py",
+        "sha256": "410f2c674069464a06c38c0726690d47110716c17aa467aa9ff89711f1c9584d",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/requirements.txt",
+        "sha256": "96e27a075209e71a460af70150be62851edc67e578e3df37eb988dcc8ed3ed93",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/test_airrc.py",
+        "sha256": "8818e89dcc1150e8ca7112007b5b72a7660ccb23d8b7793244b3b618be08f2ae",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/test_hipas.py",
+        "sha256": "b77878b350830b2b51e99e74534782c7f60cb5509b632c63862f5921e481335d",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/test_metrics.py",
+        "sha256": "fad2b3df3998cc5e5b6592964b1b0f02fc87734d5c45ae4943d7e93be14466d0",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/vesmamba_metrics.py",
+        "sha256": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/使用说明.txt",
+        "sha256": "2f7c5f605f27ef1dc4005634f33b9f7ad3a0bd173a24606eb6b7447e176611c9",
+        "matches_previously_reviewed_copy": true
+      },
+      {
+        "file": "pulmonary_metrics/验证记录.txt",
+        "sha256": "e83e89ac6d480dbaab9d874aaff80b51218fb89b4984ee568bd39af5a5bda782",
+        "matches_previously_reviewed_copy": true
+      }
+    ]
+  },
+  "versions": {
+    "python": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "scikit-image": "0.26.0",
+      "nibabel": "5.4.2",
+      "surface-distance": "0.1"
+    }
+  },
+  "verification": [
+    {
+      "check": "source ZIP SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/airrc_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/airrc_notes.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/airrc_result.csv",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/airrc_result.json",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/artery_prob.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/corrected.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/gt.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/gt_branch_ids.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/hipas_result.csv",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/hipas_result.json",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/initial.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/vein_prob.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/vesmamba_result.csv",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/vesmamba_result.json",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/evaluate.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/hipas_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/hipas_notes.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/io_utils.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/make_demo.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/test_airrc.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/test_hipas.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/test_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/vesmamba_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/使用说明.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/验证记录.txt",
+      "passed": true
+    },
+    {
+      "check": "airway original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway count partition",
+      "passed": true
+    },
+    {
+      "check": "airway Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "airway precision from counts",
+      "passed": true
+    },
+    {
+      "check": "airway recall from counts",
+      "passed": true
+    },
+    {
+      "check": "airway before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "airway after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "airway before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "airway after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung count partition",
+      "passed": true
+    },
+    {
+      "check": "lung Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "lung precision from counts",
+      "passed": true
+    },
+    {
+      "check": "lung recall from counts",
+      "passed": true
+    },
+    {
+      "check": "lung before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery count partition",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery precision from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery recall from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein count partition",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein precision from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein recall from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "independent GT not claimed",
+      "passed": true
+    }
+  ]
+}

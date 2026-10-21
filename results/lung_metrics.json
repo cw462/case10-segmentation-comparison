@@ -1,0 +1,92 @@
+{
+  "structure": "lung",
+  "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+  "independent_gt_available": false,
+  "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+  "grid_shape": [
+    512,
+    512,
+    657
+  ],
+  "spacing_mm_array_axes": [
+    0.8769530057907104,
+    0.8769530057907104,
+    0.625
+  ],
+  "evaluation_extent": "entire identical original grid",
+  "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+  "nsd_tolerance_mm": 1.0,
+  "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "metric_sets": {
+    "vesmamba": {
+      "status": "not_applied_to_lung_parenchyma",
+      "reason": "Lung is an auxiliary ROI structure, not a tubular vascular/airway endpoint. Its voxelwise equivalence and standard overlap scores are provided separately."
+    },
+    "airrc": {
+      "metrics": {
+        "lung.DSC": 1.0,
+        "lung.Precision": 1.0,
+        "lung.Recall": 1.0,
+        "lung.FPR": 0.0
+      },
+      "status": {
+        "lung.DSC": "ok_standard_definition",
+        "lung.Precision": "ok_standard_definition",
+        "lung.Recall": "ok_standard_definition",
+        "lung.FPR": "ok_supplementary_FPR"
+      },
+      "notes": [
+        "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+        "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+        "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+        "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+        "Airway BDR/DLR not requested: pass airway_label to include their availability status."
+      ],
+      "protocol": {
+        "name": "AirRC_independent_evaluation_v1",
+        "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+        "author_repository": "https://github.com/b-niu/AirRC",
+        "author_code_check": {
+          "date": "2026-10-20",
+          "inspected_files": [
+            "config_loss.py",
+            "pulmonary_structure_segmentation_tools.py",
+            "train_stage1.py",
+            "train_stage2.py"
+          ],
+          "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+        },
+        "scale": "ratios in [0,1], not percentages",
+        "spacing_mm_array_axes": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "labels": {
+          "lung": 1
+        },
+        "zero_denominator": "None, with reason in status; never add epsilon",
+        "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+        "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+        "branch_protocol": null
+      },
+      "scope_note": "Supplementary binary overlap on lung; not an AirRC airway-wall endpoint."
+    }
+  },
+  "not_computable": {
+    "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+    "AUC": "No probability maps supplied.",
+    "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+    "airway_wall": "No airway-wall mask; lung is not wall.",
+    "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+  },
+  "elapsed_seconds": 1.8670134544372559,
+  "complete": true
+}

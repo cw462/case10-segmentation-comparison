@@ -1,0 +1,23 @@
+# Local patient images and new analysis runs
+/inputs/
+/changes/
+/data/
+/local_runs/
+*.nrrd
+*.mrml
+*.dcm
+*.nii
+*.nii.gz
+# Only the original metric package's tiny synthetic fixtures are tracked.
+!/tool/pulmonary_metrics/demo/*.nii.gz
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+*.pem
+*.key
+*.log
+~$*
+

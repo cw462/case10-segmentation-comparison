@@ -1,0 +1,10 @@
+{
+  "python": "3.12.13 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  }
+}

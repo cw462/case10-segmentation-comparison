@@ -1,0 +1,334 @@
+{
+  "paper_metric_set": "airrc",
+  "implementation_notice": "Independent implementation with explicit protocols; not an exact reproduction of undisclosed author evaluation code.",
+  "inputs": {
+    "before": "demo/initial.nii.gz",
+    "after": "demo/corrected.nii.gz",
+    "gt": "demo/gt.nii.gz",
+    "branch_labels": "demo/gt_branch_ids.nii.gz"
+  },
+  "spacing_mm_array_axes": [
+    0.800000011920929,
+    0.800000011920929,
+    1.0
+  ],
+  "package_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "results": {
+    "before": {
+      "metrics": {
+        "airway.DSC": 0.8275862068965517,
+        "airway.Precision": 1.0,
+        "airway.Recall": 0.7058823529411765,
+        "airway.FPR": 0.0,
+        "wall.DSC": 1.0,
+        "wall.Precision": 1.0,
+        "wall.Recall": 1.0,
+        "wall.FPR": 0.0,
+        "artery.DSC": 0.8125,
+        "artery.Precision": 0.8666666666666667,
+        "artery.Recall": 0.7647058823529411,
+        "artery.FPR": 0.00014485405953501847,
+        "vein.DSC": 0.9375,
+        "vein.Precision": 1.0,
+        "vein.Recall": 0.8823529411764706,
+        "vein.FPR": 0.0,
+        "airway.BDR_gt80_independent": 0.0,
+        "airway.DLR_matched_gt_length_independent": 0.0
+      },
+      "status": {
+        "airway.DSC": "ok_standard_definition",
+        "airway.Precision": "ok_standard_definition",
+        "airway.Recall": "ok_standard_definition",
+        "airway.FPR": "ok_supplementary_FPR",
+        "wall.DSC": "ok_standard_definition",
+        "wall.Precision": "ok_standard_definition",
+        "wall.Recall": "ok_standard_definition",
+        "wall.FPR": "ok_supplementary_FPR",
+        "artery.DSC": "ok_standard_definition",
+        "artery.Precision": "ok_standard_definition",
+        "artery.Recall": "ok_standard_definition",
+        "artery.FPR": "ok_supplementary_FPR",
+        "vein.DSC": "ok_standard_definition",
+        "vein.Precision": "ok_standard_definition",
+        "vein.Recall": "ok_standard_definition",
+        "vein.FPR": "ok_supplementary_FPR",
+        "airway.BDR_gt80_independent": "ok_independent_protocol_not_author_exact",
+        "airway.DLR_matched_gt_length_independent": "ok_independent_protocol_not_author_exact"
+      },
+      "notes": [
+        "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+        "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+        "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+        "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+        "AirRC does not fully specify branch extraction/matching in the inspected text. These branch metrics are an independent GT-centreline coverage protocol, not author-exact BDR/DLR.",
+        "Branch denominator includes only supplied IDs. Missing branch IDs bias BDR/DLR and must be corrected before use.",
+        "DLR here counts whole detected reference branches; it is not raw skeleton coverage, and may exceed that coverage fraction."
+      ],
+      "protocol": {
+        "name": "AirRC_independent_evaluation_v1",
+        "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+        "author_repository": "https://github.com/b-niu/AirRC",
+        "author_code_check": {
+          "date": "2026-10-20",
+          "inspected_files": [
+            "config_loss.py",
+            "pulmonary_structure_segmentation_tools.py",
+            "train_stage1.py",
+            "train_stage2.py"
+          ],
+          "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+        },
+        "scale": "ratios in [0,1], not percentages",
+        "spacing_mm_array_axes": [
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "labels": {
+          "airway": 1,
+          "wall": 2,
+          "artery": 3,
+          "vein": 4
+        },
+        "zero_denominator": "None, with reason in status; never add epsilon",
+        "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+        "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+        "branch_protocol": {
+          "id": "fixed_gt_branch_26edge_mm_strict_gt80_v1_independent",
+          "author_exact_reproduction": false,
+          "airway_name": "airway",
+          "airway_label": 1,
+          "branch_definition": "fixed supplied reference branch IDs; no automatic branch extraction",
+          "length": "sum of unique 26-neighbour intra-ID centerline edge lengths in mm",
+          "edge_coverage": "edge is covered only if BOTH endpoints lie in predicted airway lumen",
+          "detected": "covered_reference_branch_length / reference_branch_length > 0.80",
+          "BDR": "number of detected supplied GT branches / number of supplied GT branches",
+          "DLR": "FULL lengths of detected supplied GT branches / lengths of all supplied GT branches",
+          "prediction_branch_matching": "none; uses prediction lumen mask, not predicted branch IDs",
+          "reference_completeness": "caller must review completeness and freeze branch IDs before comparisons",
+          "junction_convention": "cross-ID edges and unlabelled junction voxels excluded from length denominator",
+          "branches": [
+            {
+              "branch_id": 1,
+              "voxel_count": 17,
+              "reference_length_mm": 12.800000190734863,
+              "covered_length_mm": 8.800000131130219,
+              "coverage_fraction": 0.6875,
+              "detected_gt80": false
+            }
+          ],
+          "total_reference_length_mm": 12.800000190734863,
+          "detected_full_reference_length_mm": 0.0
+        }
+      }
+    },
+    "after": {
+      "metrics": {
+        "airway.DSC": 0.9696969696969697,
+        "airway.Precision": 1.0,
+        "airway.Recall": 0.9411764705882353,
+        "airway.FPR": 0.0,
+        "wall.DSC": 1.0,
+        "wall.Precision": 1.0,
+        "wall.Recall": 1.0,
+        "wall.FPR": 0.0,
+        "artery.DSC": 0.9411764705882353,
+        "artery.Precision": 0.9411764705882353,
+        "artery.Recall": 0.9411764705882353,
+        "artery.FPR": 7.242702976750923e-05,
+        "vein.DSC": 0.9696969696969697,
+        "vein.Precision": 1.0,
+        "vein.Recall": 0.9411764705882353,
+        "vein.FPR": 0.0,
+        "airway.BDR_gt80_independent": 1.0,
+        "airway.DLR_matched_gt_length_independent": 1.0
+      },
+      "status": {
+        "airway.DSC": "ok_standard_definition",
+        "airway.Precision": "ok_standard_definition",
+        "airway.Recall": "ok_standard_definition",
+        "airway.FPR": "ok_supplementary_FPR",
+        "wall.DSC": "ok_standard_definition",
+        "wall.Precision": "ok_standard_definition",
+        "wall.Recall": "ok_standard_definition",
+        "wall.FPR": "ok_supplementary_FPR",
+        "artery.DSC": "ok_standard_definition",
+        "artery.Precision": "ok_standard_definition",
+        "artery.Recall": "ok_standard_definition",
+        "artery.FPR": "ok_supplementary_FPR",
+        "vein.DSC": "ok_standard_definition",
+        "vein.Precision": "ok_standard_definition",
+        "vein.Recall": "ok_standard_definition",
+        "vein.FPR": "ok_supplementary_FPR",
+        "airway.BDR_gt80_independent": "ok_independent_protocol_not_author_exact",
+        "airway.DLR_matched_gt_length_independent": "ok_independent_protocol_not_author_exact"
+      },
+      "notes": [
+        "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+        "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+        "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+        "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+        "AirRC does not fully specify branch extraction/matching in the inspected text. These branch metrics are an independent GT-centreline coverage protocol, not author-exact BDR/DLR.",
+        "Branch denominator includes only supplied IDs. Missing branch IDs bias BDR/DLR and must be corrected before use.",
+        "DLR here counts whole detected reference branches; it is not raw skeleton coverage, and may exceed that coverage fraction."
+      ],
+      "protocol": {
+        "name": "AirRC_independent_evaluation_v1",
+        "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+        "author_repository": "https://github.com/b-niu/AirRC",
+        "author_code_check": {
+          "date": "2026-10-20",
+          "inspected_files": [
+            "config_loss.py",
+            "pulmonary_structure_segmentation_tools.py",
+            "train_stage1.py",
+            "train_stage2.py"
+          ],
+          "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+        },
+        "scale": "ratios in [0,1], not percentages",
+        "spacing_mm_array_axes": [
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "labels": {
+          "airway": 1,
+          "wall": 2,
+          "artery": 3,
+          "vein": 4
+        },
+        "zero_denominator": "None, with reason in status; never add epsilon",
+        "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+        "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+        "branch_protocol": {
+          "id": "fixed_gt_branch_26edge_mm_strict_gt80_v1_independent",
+          "author_exact_reproduction": false,
+          "airway_name": "airway",
+          "airway_label": 1,
+          "branch_definition": "fixed supplied reference branch IDs; no automatic branch extraction",
+          "length": "sum of unique 26-neighbour intra-ID centerline edge lengths in mm",
+          "edge_coverage": "edge is covered only if BOTH endpoints lie in predicted airway lumen",
+          "detected": "covered_reference_branch_length / reference_branch_length > 0.80",
+          "BDR": "number of detected supplied GT branches / number of supplied GT branches",
+          "DLR": "FULL lengths of detected supplied GT branches / lengths of all supplied GT branches",
+          "prediction_branch_matching": "none; uses prediction lumen mask, not predicted branch IDs",
+          "reference_completeness": "caller must review completeness and freeze branch IDs before comparisons",
+          "junction_convention": "cross-ID edges and unlabelled junction voxels excluded from length denominator",
+          "branches": [
+            {
+              "branch_id": 1,
+              "voxel_count": 17,
+              "reference_length_mm": 12.800000190734863,
+              "covered_length_mm": 12.000000178813934,
+              "coverage_fraction": 0.9375,
+              "detected_gt80": true
+            }
+          ],
+          "total_reference_length_mm": 12.800000190734863,
+          "detected_full_reference_length_mm": 12.800000190734863
+        }
+      }
+    }
+  },
+  "changes": {
+    "airway.DSC": {
+      "before": 0.8275862068965517,
+      "after": 0.9696969696969697,
+      "delta_after_minus_before": 0.142110762800418
+    },
+    "airway.Precision": {
+      "before": 1.0,
+      "after": 1.0,
+      "delta_after_minus_before": 0.0
+    },
+    "airway.Recall": {
+      "before": 0.7058823529411765,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.23529411764705876
+    },
+    "airway.FPR": {
+      "before": 0.0,
+      "after": 0.0,
+      "delta_after_minus_before": 0.0
+    },
+    "wall.DSC": {
+      "before": 1.0,
+      "after": 1.0,
+      "delta_after_minus_before": 0.0
+    },
+    "wall.Precision": {
+      "before": 1.0,
+      "after": 1.0,
+      "delta_after_minus_before": 0.0
+    },
+    "wall.Recall": {
+      "before": 1.0,
+      "after": 1.0,
+      "delta_after_minus_before": 0.0
+    },
+    "wall.FPR": {
+      "before": 0.0,
+      "after": 0.0,
+      "delta_after_minus_before": 0.0
+    },
+    "artery.DSC": {
+      "before": 0.8125,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.12867647058823528
+    },
+    "artery.Precision": {
+      "before": 0.8666666666666667,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.07450980392156858
+    },
+    "artery.Recall": {
+      "before": 0.7647058823529411,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.17647058823529416
+    },
+    "artery.FPR": {
+      "before": 0.00014485405953501847,
+      "after": 7.242702976750923e-05,
+      "delta_after_minus_before": -7.242702976750923e-05
+    },
+    "vein.DSC": {
+      "before": 0.9375,
+      "after": 0.9696969696969697,
+      "delta_after_minus_before": 0.032196969696969724
+    },
+    "vein.Precision": {
+      "before": 1.0,
+      "after": 1.0,
+      "delta_after_minus_before": 0.0
+    },
+    "vein.Recall": {
+      "before": 0.8823529411764706,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.05882352941176472
+    },
+    "vein.FPR": {
+      "before": 0.0,
+      "after": 0.0,
+      "delta_after_minus_before": 0.0
+    },
+    "airway.BDR_gt80_independent": {
+      "before": 0.0,
+      "after": 1.0,
+      "delta_after_minus_before": 1.0
+    },
+    "airway.DLR_matched_gt_length_independent": {
+      "before": 0.0,
+      "after": 1.0,
+      "delta_after_minus_before": 1.0
+    }
+  },
+  "notes": [],
+  "comparison_rule": "Deltas are after minus before. Counts and count ratios do not by themselves establish segmentation accuracy."
+}

@@ -1,0 +1,220 @@
+{
+  "structure": "pulmonary_vein",
+  "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+  "independent_gt_available": false,
+  "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+  "grid_shape": [
+    512,
+    512,
+    657
+  ],
+  "spacing_mm_array_axes": [
+    0.8769530057907104,
+    0.8769530057907104,
+    0.625
+  ],
+  "evaluation_extent": "entire identical original grid",
+  "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+  "nsd_tolerance_mm": 1.0,
+  "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "metric_sets": {
+    "vesmamba": {
+      "metrics": {
+        "binary.Dice": 0.9933278576609634,
+        "binary.clDice": 0.9818149066828317,
+        "binary.HD95_mm": 0.0,
+        "binary.NSD": 0.9867208324383689
+      },
+      "status": {
+        "binary.Dice": "ok",
+        "binary.clDice": "ok",
+        "binary.HD95_mm": "ok",
+        "binary.NSD": "ok"
+      },
+      "notes": [],
+      "protocol": {
+        "implementation": "independent fixed protocol, not VesMamba authors code",
+        "spacing_mm_array_axes": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "NSD_tolerance_mm": 1.0,
+        "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+        "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+        "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+        "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+        "scale": "Dice/clDice/NSD fractions, HD95 mm",
+        "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+      }
+    },
+    "airrc": {
+      "metrics": {
+        "pulmonary_vein.DSC": 0.9933278576609634,
+        "pulmonary_vein.Precision": 0.9948480178623413,
+        "pulmonary_vein.Recall": 0.9918123360803057,
+        "pulmonary_vein.FPR": 2.2498581417205122e-05
+      },
+      "status": {
+        "pulmonary_vein.DSC": "ok_standard_definition",
+        "pulmonary_vein.Precision": "ok_standard_definition",
+        "pulmonary_vein.Recall": "ok_standard_definition",
+        "pulmonary_vein.FPR": "ok_supplementary_FPR"
+      },
+      "notes": [
+        "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+        "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+        "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+        "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+        "Airway BDR/DLR not requested: pass airway_label to include their availability status."
+      ],
+      "protocol": {
+        "name": "AirRC_independent_evaluation_v1",
+        "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+        "author_repository": "https://github.com/b-niu/AirRC",
+        "author_code_check": {
+          "date": "2026-10-20",
+          "inspected_files": [
+            "config_loss.py",
+            "pulmonary_structure_segmentation_tools.py",
+            "train_stage1.py",
+            "train_stage2.py"
+          ],
+          "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+        },
+        "scale": "ratios in [0,1], not percentages",
+        "spacing_mm_array_axes": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "labels": {
+          "pulmonary_vein": 1
+        },
+        "zero_denominator": "None, with reason in status; never add epsilon",
+        "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+        "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+        "branch_protocol": null
+      }
+    },
+    "hipas": {
+      "metrics": {
+        "vein_DSC": 0.9933278576609634,
+        "vein_SEN": 0.9918123360803057,
+        "vein_SPE": 0.9999775014185828,
+        "vein_FPR": 2.2498581417205122e-05,
+        "vein_HD95_mm": 0.0,
+        "vein_AUC": null,
+        "vein_BC_proxy_pred": 958.0,
+        "vein_BC_proxy_gt": 988.0,
+        "vein_BC_proxy_ratio": 0.9696356275303644,
+        "vein_SL_voxels_proxy_pred": 23134.0,
+        "vein_SL_voxels_proxy_gt": 23375.0,
+        "vein_SL_voxels_proxy_ratio": 0.9896898395721925
+      },
+      "status": {
+        "vein_DSC": "ok",
+        "vein_SEN": "ok",
+        "vein_SPE": "ok",
+        "vein_FPR": "ok",
+        "vein_HD95_mm": "ok_area_weighted_directional95_max",
+        "vein_AUC": "not_computed_probability_not_supplied",
+        "vein_BC_proxy_pred": "native_grid_proxy_not_paper_exact",
+        "vein_BC_proxy_gt": "native_grid_proxy_not_paper_exact",
+        "vein_BC_proxy_ratio": "native_grid_proxy_abundance_ratio",
+        "vein_SL_voxels_proxy_pred": "native_grid_proxy_not_paper_exact",
+        "vein_SL_voxels_proxy_gt": "native_grid_proxy_not_paper_exact",
+        "vein_SL_voxels_proxy_ratio": "native_grid_proxy_abundance_ratio"
+      },
+      "protocol": {
+        "source": "https://doi.org/10.1038/s41467-025-56505-6",
+        "source_location": "Methods: Statistical analyses; Results: Fig. 2",
+        "implementation": "independent; hard-label metrics plus explicitly named native-grid skeleton proxies",
+        "spacing_mm_array_axis_order": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "geometry_requirement": "same shape, shared aligned orthogonal voxel grid; affine agreement must be checked by caller",
+        "artery_label": 2,
+        "vein_label": 1,
+        "other_labels": "treated as nonvascular background",
+        "fraction_scale": "0 to 1, not percent; MCS printed-formula interpretation is 0 to 0.5",
+        "roi_scope": "full_volume",
+        "roi_voxel_count": 172228608,
+        "surface_and_skeleton_scope": "full_volume_even_when_roi_supplied",
+        "FPR": "FP/(FP+TN) = 1-SPE; negatives are one-vs-rest within the confusion-count scope",
+        "HD95": "surface-distance 0.1; surfel-area-weighted 95th percentile in each direction, then maximum, in mm",
+        "HD95_caveat": "unified package convention; the paper's exact surface implementation was not verified",
+        "empty_DSC": "both empty: None; exactly one empty: 0",
+        "empty_HD95": "None if either surface is empty",
+        "undefined_denominator": "None, with per-metric status; not replaced by zero or infinity",
+        "MCS": "(|P_A intersect G_V| + |P_V intersect G_A|) / (|P_A union P_V| + |G_A union G_V|)",
+        "MCS_caveat": "literal printed P+T denominator interpreted as total predicted plus reference vascular counts; official evaluator not verified",
+        "skeletonization": "scikit-image skeletonize(method='lee'), no pruning or component removal",
+        "BC_proxy": "26-connected component count of skeleton voxels with 26-neighbour degree >=3",
+        "SL_voxels_proxy": "number of foreground skeleton voxels, not length in mm",
+        "proxy_ratio": "prediction count / reference count; undefined when reference count is zero; not branch matching recall",
+        "resampling": "none; original paper's standardized grid is not silently applied",
+        "paper_standard_spacing_mm": [
+          0.65234375,
+          0.65234375,
+          1.0
+        ],
+        "AUC": "per-case one-vs-rest Mann-Whitney U/(n_positive*n_negative), scipy rankdata average ties; no hard-label substitution",
+        "AUC_probability_supplied": {
+          "artery": false,
+          "vein": false
+        },
+        "AUC_pooling_caveat": "author cohort-level ROC pooling/aggregation was not verified; this implementation returns per-case AUC",
+        "reader_scores": "human-assessed outcomes, not computed automatically"
+      },
+      "notes": [
+        "Independent implementation; source-paper evaluator equivalence is not established.",
+        "HD95 follows the package-wide surface-distance 0.1 protocol: surfel-area-weighted directional 95th percentiles, then their maximum.",
+        "BC_proxy and SL_voxels_proxy use native-grid Lee skeletonization; no resampling is performed.",
+        "The paper standardizes to 334/512 x 334/512 x 1.00 mm and uses an octree-based skeleton method; these proxies are not paper-exact BC/SL.",
+        "SL_voxels_proxy counts skeleton voxels, not physical millimetres; compare only on explicitly matched grids.",
+        "BC/SL ratios are abundance ratios, not matched-branch recall; excess branches or length do not establish better segmentation.",
+        "MCS uses the printed numerator divided by predicted-plus-reference vascular voxel counts; no factor of two is added. Complete A/V swapping gives 0.5.",
+        "AUC uses only separately supplied probability maps, one-vs-rest per case; no AUC is inferred from hard labels.",
+        "The paper's expert reader scores require human review and are not automated by this evaluator."
+      ],
+      "adapter_note": "Supplied evaluate_hipas called on one genuine binary channel (label 1); results for absent dummy label 2 and MCS are discarded. Other binary channels and overlaps are preserved in their own evaluations.",
+      "MCS": null,
+      "MCS_status": "not_computed_nonexclusive_av_masks"
+    }
+  },
+  "not_computable": {
+    "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+    "AUC": "No probability maps supplied.",
+    "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+    "airway_wall": "No airway-wall mask; lung is not wall.",
+    "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+  },
+  "elapsed_seconds": 47.71134686470032,
+  "actual_proxy_changes": {
+    "BC_proxy": {
+      "before": 958.0,
+      "after": 988.0,
+      "delta_after_minus_before": 30.0,
+      "relative_change_percent": 3.1315240083507305,
+      "interpretation": "Native-grid count proxy; increase is not evidence of improved accuracy or branch recall."
+    },
+    "SL_voxels_proxy": {
+      "before": 23134.0,
+      "after": 23375.0,
+      "delta_after_minus_before": 241.0,
+      "relative_change_percent": 1.0417567217083081,
+      "interpretation": "Native-grid count proxy; increase is not evidence of improved accuracy or branch recall."
+    }
+  },
+  "complete": true
+}

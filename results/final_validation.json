@@ -1,0 +1,369 @@
+{
+  "created": "2026-10-21T16:54:44",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "source ZIP SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/airrc_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/airrc_notes.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/airrc_result.csv",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/airrc_result.json",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/artery_prob.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/corrected.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/gt.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/gt_branch_ids.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/hipas_result.csv",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/hipas_result.json",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/initial.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/vein_prob.nii.gz",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/vesmamba_result.csv",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/demo/vesmamba_result.json",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/evaluate.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/hipas_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/hipas_notes.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/io_utils.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/make_demo.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/test_airrc.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/test_hipas.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/test_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/vesmamba_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/使用说明.txt",
+      "passed": true
+    },
+    {
+      "check": "unmodified tool: pulmonary_metrics/验证记录.txt",
+      "passed": true
+    },
+    {
+      "check": "airway original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "airway count partition",
+      "passed": true
+    },
+    {
+      "check": "airway Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "airway precision from counts",
+      "passed": true
+    },
+    {
+      "check": "airway recall from counts",
+      "passed": true
+    },
+    {
+      "check": "airway before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "airway after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "airway before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "airway after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "lung count partition",
+      "passed": true
+    },
+    {
+      "check": "lung Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "lung precision from counts",
+      "passed": true
+    },
+    {
+      "check": "lung recall from counts",
+      "passed": true
+    },
+    {
+      "check": "lung before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "lung after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery count partition",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery precision from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery recall from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_artery after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein original_before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein original_after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein before_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein after_file SHA256 unchanged",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein count partition",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein Dice from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein precision from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein recall from counts",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein before 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein after 6 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein before 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "pulmonary_vein after 26 CC count",
+      "passed": true
+    },
+    {
+      "check": "independent GT not claimed",
+      "passed": true
+    },
+    {
+      "check": "workbook sheet count",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 说明与结论",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 真实结构变化",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 增加删除体素",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 前后版本一致性",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 骨架代理变化",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 类别重叠",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 连通块去向",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 工具原始指标",
+      "passed": true
+    },
+    {
+      "check": "workbook rows: 重叠区域定位",
+      "passed": true
+    },
+    {
+      "check": "workbook Dice: pulmonary_artery",
+      "passed": true
+    },
+    {
+      "check": "workbook Dice: pulmonary_vein",
+      "passed": true
+    },
+    {
+      "check": "workbook Dice: airway",
+      "passed": true
+    },
+    {
+      "check": "workbook Dice: lung",
+      "passed": true
+    }
+  ],
+  "original_local_workbook_sha256": "701c01fb03da7aae5659300b498d11994e5fc1e739b233b397084a2186553c9c",
+  "published_workbook_sha256": "29162f88529cc45471d14ee09833fe467f6074b65435bc662ded75fd8a6c3f3c",
+  "scope_note": "Original checks describe the local completed run. The publication copy replaces local source paths; metric values are unchanged. Published workbook has a distinct checksum."
+}

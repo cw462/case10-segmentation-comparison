@@ -1,0 +1,364 @@
+{
+  "created": "2026-10-21T17:21:22",
+  "destination": "cw462/case10-segmentation-comparison",
+  "visibility": "public",
+  "patient_images_included": false,
+  "synthetic_demo_images_included": true,
+  "numeric_results_unchanged": true,
+  "original_tool_files_verified": 26,
+  "path_sanitized_files": [
+    "Case10补标前后指标对比.xlsx",
+    "tool_manifest.json",
+    "结果解读.txt",
+    "results/comparison_report.json",
+    "results/lineage_summary.json",
+    "results/lung_reference_metrics.json",
+    "results/overlap_regions.csv",
+    "results/preparation.json",
+    "results/unit_tests.txt",
+    "results/说明与结论.csv",
+    "results/重叠区域定位.csv"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 303,
+      "sha256": "b065d9076a01cec9eb31e345843003cb843abe8be0fe05c6c2eb5a65b98ecf2c"
+    },
+    {
+      "path": "build_gt_report.py",
+      "bytes": 4716,
+      "sha256": "f47ffe443fa66b65a3cdaf8ccd062040eddb5753b0cf714ffd8b32d476d5ab1d"
+    },
+    {
+      "path": "build_report.py",
+      "bytes": 21099,
+      "sha256": "a5886a08ea1a989f411514ff2ee78d72cd31c0362acaec8cefa5de6399177402"
+    },
+    {
+      "path": "Case10_以补标后为GT_补标前指标.xlsx",
+      "bytes": 7034,
+      "sha256": "9d81beb9a86233a1386ee968aa17d5442dc58361f6299054578c4a91b22a59d2"
+    },
+    {
+      "path": "Case10补标前后指标对比.xlsx",
+      "bytes": 26318,
+      "sha256": "29162f88529cc45471d14ee09833fe467f6074b65435bc662ded75fd8a6c3f3c"
+    },
+    {
+      "path": "compute_lung_reference_metrics.py",
+      "bytes": 4476,
+      "sha256": "150509dff4722691f71178e0b16e8fc062cc587de49ef7b5ea0b50304be6b955"
+    },
+    {
+      "path": "lineage_audit.py",
+      "bytes": 11297,
+      "sha256": "40b1e3202e1e22229a4a80872e4ca6b4fd9c5288b61d8971a8ff4d2a35a7fe37"
+    },
+    {
+      "path": "overlap_audit.py",
+      "bytes": 5355,
+      "sha256": "e9c1c0c8356d0594e47a4fb92ac576260334e645575bce145fd1bf0b184046d6"
+    },
+    {
+      "path": "prepare_comparison.py",
+      "bytes": 7325,
+      "sha256": "62344cf20208ef7aba47cf557e2dc7736592b5e7d7e811ac597f33f337ed12c4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6300,
+      "sha256": "a3afddf24345025cee3b7f76435f7861c8bc6fb3ebe86924956a91f524093450"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 103,
+      "sha256": "5ea14fe62a5e13a26c7ae5029abae38d5fc6e9a5aa1b72278169e1ff1bef5709"
+    },
+    {
+      "path": "rerun_metrics.ps1",
+      "bytes": 568,
+      "sha256": "1e9db3868e26c2b9b35e5ae059a8843a4f5af4744d0ce7b177385c910e167102"
+    },
+    {
+      "path": "results/airway_metrics.json",
+      "bytes": 6299,
+      "sha256": "f2a4cfa3ef8d7c38ae2873fc2d95e879f62da3499d8d1c1a1d98752765b48666"
+    },
+    {
+      "path": "results/comparison_report.json",
+      "bytes": 77248,
+      "sha256": "f1da985f7335197cee51a5dc4b7efac667f0d93bc189dbd0dd71af640c040708"
+    },
+    {
+      "path": "results/environment_versions.json",
+      "bytes": 242,
+      "sha256": "370b614db7399299fc3c07789b7f28c67edbb06604d5e19312f45dbe33fd44d6"
+    },
+    {
+      "path": "results/final_validation.json",
+      "bytes": 9036,
+      "sha256": "d6dfdca1915a56f365cb5201529a78da24f642cb2b17110fc1554f752c9e45e2"
+    },
+    {
+      "path": "results/lineage_components.csv",
+      "bytes": 15863,
+      "sha256": "9954016b238eff0e4865deb7324543d793342f42dc08fa64ed70d03de6e49749"
+    },
+    {
+      "path": "results/lineage_summary.json",
+      "bytes": 7497,
+      "sha256": "76e9c34b155fb06908ea4b6b07ce83363ce82403c9a65872ebb687eaad6d2f0b"
+    },
+    {
+      "path": "results/lung_metrics.json",
+      "bytes": 3853,
+      "sha256": "4086d97718a740fdbdf2ed0fe0aeeed3c0294174cb918a4f1f7ff8efd7e42984"
+    },
+    {
+      "path": "results/lung_reference_metrics.json",
+      "bytes": 2979,
+      "sha256": "c3c94fad9b5304797fd0e8c27f0eadd015d54f67d8fe1deae27e7a113857ba74"
+    },
+    {
+      "path": "results/overlap_regions.csv",
+      "bytes": 9230,
+      "sha256": "9e104386328c627d6d2a94b6cccdce811b508d96a8bac3699c3176f65bbe28bc"
+    },
+    {
+      "path": "results/preparation.json",
+      "bytes": 15395,
+      "sha256": "f31007cc8ab4057e8975b836a3d0f3bb8299ae7e64928dac847ffb3b8649cee4"
+    },
+    {
+      "path": "results/pulmonary_artery_metrics.json",
+      "bytes": 11071,
+      "sha256": "e3cf2722ccf3126032b3ec4ae8bb3c0fbfa703d37b12c216861c9f61eba4e49d"
+    },
+    {
+      "path": "results/pulmonary_vein_metrics.json",
+      "bytes": 11002,
+      "sha256": "461c9a47eba831b60a127bc42fadbc477b74e0e6333e30dbf326609901a24b7c"
+    },
+    {
+      "path": "results/structural_changes.csv",
+      "bytes": 1100,
+      "sha256": "a175acf8fb02d86995345047a9c28db9654e5da5ea0ac8c779033e04a061e41c"
+    },
+    {
+      "path": "results/unit_tests.txt",
+      "bytes": 4549,
+      "sha256": "e33fe84dd7f56ababa86706a51ceee586c59226a1e972f2a166c4a885e275720"
+    },
+    {
+      "path": "results/user_designated_gt_metrics.json",
+      "bytes": 2317,
+      "sha256": "9fb9eec84178fedea09e999d0b766e3b3e1b0b66891851733f3459c2e9df6bff"
+    },
+    {
+      "path": "results/以补标后为GT_补标前指标.csv",
+      "bytes": 427,
+      "sha256": "0da95b770f3f63dcb2fbf01f1a11361517bd51c0abe3c2b48b8d52430e608886"
+    },
+    {
+      "path": "results/前后版本一致性.csv",
+      "bytes": 581,
+      "sha256": "ba87d0ba1a0cdc0c4c328ea34763e6137ef0bd57429ceb8cd792b710e723a083"
+    },
+    {
+      "path": "results/增加删除体素.csv",
+      "bytes": 280,
+      "sha256": "9b29a6bc6b1591f880bef7285e38a5f8487ea920fcd6f4ad3dcb1831615b76cf"
+    },
+    {
+      "path": "results/工具原始指标.csv",
+      "bytes": 6201,
+      "sha256": "9690f066cf486f27cf7dc58e558455cf7e3a552f1e2b36e7267ebbfa54fd051f"
+    },
+    {
+      "path": "results/真实结构变化.csv",
+      "bytes": 3610,
+      "sha256": "873fa794d0a13b44c41863946b68160c5bc376605a3ddb024f118ca65d672771"
+    },
+    {
+      "path": "results/类别重叠.csv",
+      "bytes": 286,
+      "sha256": "fdc2379c5016f2f27e399ee5bffd900d00c223d511c2de69310c20c599c5ca64"
+    },
+    {
+      "path": "results/说明与结论.csv",
+      "bytes": 3919,
+      "sha256": "153baa2d2e5ced4641bf1b2221296c798b3792ce71fcb78dd2ecc1e4c9404af0"
+    },
+    {
+      "path": "results/连通块去向.csv",
+      "bytes": 2340,
+      "sha256": "3df249c884949ba9a9e61d1f746df2cedd9767083ea74bd4d77ee22b711b0cb8"
+    },
+    {
+      "path": "results/重叠区域定位.csv",
+      "bytes": 9230,
+      "sha256": "9e104386328c627d6d2a94b6cccdce811b508d96a8bac3699c3176f65bbe28bc"
+    },
+    {
+      "path": "results/骨架代理变化.csv",
+      "bytes": 705,
+      "sha256": "78f06dbe6948270c0f232630fe834193ee641a27b0c208042876010a7d5b8b34"
+    },
+    {
+      "path": "run_case10.py",
+      "bytes": 4079,
+      "sha256": "6678a0476c31688926931c17dc3ce83fee6cf7ae5e03cc4bcc9f1ad3330e2f8e"
+    },
+    {
+      "path": "run_metric_sets.py",
+      "bytes": 5432,
+      "sha256": "1a218e5970e5e583c0cac9d4f82b6c0f7f85e9db679173b3a292b911c9ff52e8"
+    },
+    {
+      "path": "source_archive/VesMamba_HiPaS_AirRC_metrics.zip",
+      "bytes": 45073,
+      "sha256": "b8bfcb878dc19473272d59eac55dec3876cd2a1f11026b19307a790572a4943c"
+    },
+    {
+      "path": "tool/pulmonary_metrics/airrc_metrics.py",
+      "bytes": 12039,
+      "sha256": "4682e505750cb2749e1191637d87b9bd406f59fdd5ac5eeae12caeafa5cc2f0e"
+    },
+    {
+      "path": "tool/pulmonary_metrics/airrc_notes.txt",
+      "bytes": 5696,
+      "sha256": "5390e0f13e17efc81742ddd18af95174bc1278d4f7e42e66352f96b134f81e89"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/airrc_result.csv",
+      "bytes": 2326,
+      "sha256": "2745fbc0104c4c8a34d77b2c2e2aa2e2d2bcb41455c178b7af5f472dc61d6245"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/airrc_result.json",
+      "bytes": 13696,
+      "sha256": "f8f3eb03cd1eadc789189390e02880c5149194b5007237ec757da20c75b1a82a"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/artery_prob.nii.gz",
+      "bytes": 406,
+      "sha256": "1ddd382b15ca0a1bd3476cc8315f8248c95ccca3def554a4559d6c576a277792"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/corrected.nii.gz",
+      "bytes": 234,
+      "sha256": "ac4d7e6991f143de5f1dcfaf473b3f7663c13e76bcf037ba7ca064b33eb03499"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/gt.nii.gz",
+      "bytes": 223,
+      "sha256": "25822bbc8475f27d08538565152193ab19f6841fd00bc20a0210f8c671a99ed8"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/gt_branch_ids.nii.gz",
+      "bytes": 179,
+      "sha256": "0049d3ca189442651367b7d99a2218d284f74a0124fab8cf9e7cc549de832763"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/hipas_result.csv",
+      "bytes": 1644,
+      "sha256": "1a5d364237dd874bd38b4534eddc25600b36dd17909939df5e78b1d19fab0d18"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/hipas_result.json",
+      "bytes": 7121,
+      "sha256": "66f5aec573cea06e1007f2b0cfef4b159ec4207dd664875400684644ce6b78c4"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/initial.nii.gz",
+      "bytes": 235,
+      "sha256": "400e81d5c16630909ee430acafa71b15346238eb59120f5326768a28ae265cb8"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/vein_prob.nii.gz",
+      "bytes": 402,
+      "sha256": "84572e958ce0cd3df19a79d657115870302a86058527c3f843a2bdb68ae37cb8"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/vesmamba_result.csv",
+      "bytes": 793,
+      "sha256": "642919d3ee49d2ceded489dfcecca859e57e1943c93d2ad44dfb80c964988146"
+    },
+    {
+      "path": "tool/pulmonary_metrics/demo/vesmamba_result.json",
+      "bytes": 4713,
+      "sha256": "9078582741c9ef5f69d5057c43d625ed2fe29a577aa45cdc44c4257d941c2b75"
+    },
+    {
+      "path": "tool/pulmonary_metrics/evaluate.py",
+      "bytes": 8622,
+      "sha256": "f6a0d5b8a5d75d4291408821c6af75cccd77047f149824f911d13b056c96f293"
+    },
+    {
+      "path": "tool/pulmonary_metrics/hipas_metrics.py",
+      "bytes": 14803,
+      "sha256": "8f0ece28654585530ead22ed408bfa8dfecd7d38d32bdda9e3cc7875727a111d"
+    },
+    {
+      "path": "tool/pulmonary_metrics/hipas_notes.txt",
+      "bytes": 5412,
+      "sha256": "3217dcbd6047d8ff92793690ca0a93b53a0cab831306685f09a53fccc85fec6f"
+    },
+    {
+      "path": "tool/pulmonary_metrics/io_utils.py",
+      "bytes": 4139,
+      "sha256": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e"
+    },
+    {
+      "path": "tool/pulmonary_metrics/make_demo.py",
+      "bytes": 1169,
+      "sha256": "410f2c674069464a06c38c0726690d47110716c17aa467aa9ff89711f1c9584d"
+    },
+    {
+      "path": "tool/pulmonary_metrics/requirements.txt",
+      "bytes": 85,
+      "sha256": "96e27a075209e71a460af70150be62851edc67e578e3df37eb988dcc8ed3ed93"
+    },
+    {
+      "path": "tool/pulmonary_metrics/test_airrc.py",
+      "bytes": 5393,
+      "sha256": "8818e89dcc1150e8ca7112007b5b72a7660ccb23d8b7793244b3b618be08f2ae"
+    },
+    {
+      "path": "tool/pulmonary_metrics/test_hipas.py",
+      "bytes": 7670,
+      "sha256": "b77878b350830b2b51e99e74534782c7f60cb5509b632c63862f5921e481335d"
+    },
+    {
+      "path": "tool/pulmonary_metrics/test_metrics.py",
+      "bytes": 5482,
+      "sha256": "fad2b3df3998cc5e5b6592964b1b0f02fc87734d5c45ae4943d7e93be14466d0"
+    },
+    {
+      "path": "tool/pulmonary_metrics/vesmamba_metrics.py",
+      "bytes": 6031,
+      "sha256": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7"
+    },
+    {
+      "path": "tool/pulmonary_metrics/使用说明.txt",
+      "bytes": 8964,
+      "sha256": "2f7c5f605f27ef1dc4005634f33b9f7ad3a0bd173a24606eb6b7447e176611c9"
+    },
+    {
+      "path": "tool/pulmonary_metrics/验证记录.txt",
+      "bytes": 922,
+      "sha256": "e83e89ac6d480dbaab9d874aaff80b51218fb89b4984ee568bd39af5a5bda782"
+    },
+    {
+      "path": "tool_manifest.json",
+      "bytes": 5448,
+      "sha256": "0a5a7405e5066e693cd762906db1e4d92351b3b5eb2e9e820baa844791a06c50"
+    },
+    {
+      "path": "结果解读.txt",
+      "bytes": 7107,
+      "sha256": "69d13427ed145889e803df0f3b59cb242065583139a7d15e284c0274cf98b275"
+    }
+  ]
+}

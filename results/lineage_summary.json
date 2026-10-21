@@ -1,0 +1,217 @@
+{
+  "created": "2026-10-21T16:40:51",
+  "connectivity": 26,
+  "comparison": "Original before-component membership followed to after component IDs; no resampling or input changes.",
+  "categories_partition_original_nonmain_components": {
+    "retained_only_in_new_main": "At least one old voxel survives; all surviving voxels lie in the new largest component. Some original voxels may have been deleted.",
+    "all_deleted": "No original voxel from this old component remains foreground after editing.",
+    "retained_only_in_one_new_nonmain": "At least one old voxel survives; all surviving voxels lie in exactly one new component other than the largest. It may have merged with another old nonmain component.",
+    "retained_in_multiple_new_components": "Surviving old voxels occupy at least two new components, possibly including the largest."
+  },
+  "interpretation_limits": [
+    "Connectivity and voxel retention are not anatomical accuracy or branch-detection measurements.",
+    "A lower component count alone cannot distinguish adding connections from deleting fragments.",
+    "Categories describe surviving original voxels; they do not label new voxels as anatomically correct bridges.",
+    "Component IDs are local to this cropped-volume run and should not be matched to IDs in separate audits."
+  ],
+  "structures": {
+    "pulmonary_artery": {
+      "before_path": "./inputs/before/pulmonary_artery.nii.gz",
+      "after_path": "./inputs/after/pulmonary_artery.nii.gz",
+      "before_sha256": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+      "after_sha256": "ff3224dcc66767a1926a647ce5beb3a46b3eddb4423303fa137341cb6ebf67de",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "union_foreground_bbox_xyz_half_open": [
+        [
+          60,
+          411
+        ],
+        [
+          152,
+          401
+        ],
+        [
+          117,
+          600
+        ]
+      ],
+      "cropped_shape_xyz": [
+        351,
+        249,
+        483
+      ],
+      "estimated_resident_mask_and_label_arrays_bytes": 422137170,
+      "voxel_volume_mm3": 0.48065410897835115,
+      "before_components": 132,
+      "after_components": 3,
+      "before_main_component_id": 3,
+      "after_main_component_id": 1,
+      "before_foreground_voxels": 649130,
+      "after_foreground_voxels": 654909,
+      "added_voxels": 11665,
+      "deleted_voxels": 5886,
+      "after_components_containing_only_added_voxels": [
+        {
+          "after_component_id": 2,
+          "voxels": 68,
+          "is_main": false
+        }
+      ],
+      "after_components_containing_only_added_voxels_count": 1,
+      "after_components_containing_any_retained_voxel_count": 2,
+      "original_main_retention": {
+        "structure": "pulmonary_artery",
+        "before_component_id": 3,
+        "before_is_main": true,
+        "before_voxels": 635561,
+        "retained_voxels": 635220,
+        "deleted_voxels": 341,
+        "retained_fraction": 0.9994634661346432,
+        "retained_in_after_main_voxels": 635220,
+        "retained_in_after_nonmain_voxels": 0,
+        "number_of_after_components_containing_retained_voxels": 1,
+        "after_component_voxel_map": "{\"1\": 635220}",
+        "category": "retained_only_in_new_main"
+      },
+      "original_nonmain_voxels": {
+        "total": 13569,
+        "retained_in_after_main": 7919,
+        "retained_in_after_nonmain": 105,
+        "deleted": 5545,
+        "accounting_check_passed": true
+      },
+      "original_nonmain_components": {
+        "total": 131,
+        "categories": {
+          "retained_only_in_new_main": 30,
+          "all_deleted": 100,
+          "retained_only_in_one_new_nonmain": 1,
+          "retained_in_multiple_new_components": 0
+        },
+        "accounting_check_passed": true
+      },
+      "category_original_voxel_totals": {
+        "retained_only_in_new_main": 8198,
+        "all_deleted": 5266,
+        "retained_only_in_one_new_nonmain": 105,
+        "retained_in_multiple_new_components": 0
+      }
+    },
+    "pulmonary_vein": {
+      "before_path": "./inputs/before/pulmonary_vein.nii.gz",
+      "after_path": "./inputs/after/pulmonary_vein.nii.gz",
+      "before_sha256": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+      "after_sha256": "d392426c3835cbbe829289f6b1fb5d3b2f397d380df8f9e956c22627f00a0561",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "union_foreground_bbox_xyz_half_open": [
+        [
+          60,
+          413
+        ],
+        [
+          150,
+          401
+        ],
+        [
+          112,
+          595
+        ]
+      ],
+      "cropped_shape_xyz": [
+        353,
+        251,
+        483
+      ],
+      "estimated_resident_mask_and_label_arrays_bytes": 427952490,
+      "voxel_volume_mm3": 0.48065410897835115,
+      "before_components": 86,
+      "after_components": 46,
+      "before_main_component_id": 4,
+      "after_main_component_id": 4,
+      "before_foreground_voxels": 748838,
+      "after_foreground_voxels": 751130,
+      "added_voxels": 6150,
+      "deleted_voxels": 3858,
+      "after_components_containing_only_added_voxels": [
+        {
+          "after_component_id": 19,
+          "voxels": 15,
+          "is_main": false
+        },
+        {
+          "after_component_id": 20,
+          "voxels": 6,
+          "is_main": false
+        },
+        {
+          "after_component_id": 22,
+          "voxels": 5,
+          "is_main": false
+        },
+        {
+          "after_component_id": 34,
+          "voxels": 5,
+          "is_main": false
+        },
+        {
+          "after_component_id": 39,
+          "voxels": 46,
+          "is_main": false
+        },
+        {
+          "after_component_id": 42,
+          "voxels": 3,
+          "is_main": false
+        }
+      ],
+      "after_components_containing_only_added_voxels_count": 6,
+      "after_components_containing_any_retained_voxel_count": 40,
+      "original_main_retention": {
+        "structure": "pulmonary_vein",
+        "before_component_id": 4,
+        "before_is_main": true,
+        "before_voxels": 738339,
+        "retained_voxels": 738217,
+        "deleted_voxels": 122,
+        "retained_fraction": 0.999834764247859,
+        "retained_in_after_main_voxels": 738217,
+        "retained_in_after_nonmain_voxels": 0,
+        "number_of_after_components_containing_retained_voxels": 1,
+        "after_component_voxel_map": "{\"4\": 738217}",
+        "category": "retained_only_in_new_main"
+      },
+      "original_nonmain_voxels": {
+        "total": 10499,
+        "retained_in_after_main": 6526,
+        "retained_in_after_nonmain": 237,
+        "deleted": 3736,
+        "accounting_check_passed": true
+      },
+      "original_nonmain_components": {
+        "total": 85,
+        "categories": {
+          "retained_only_in_new_main": 18,
+          "all_deleted": 29,
+          "retained_only_in_one_new_nonmain": 37,
+          "retained_in_multiple_new_components": 1
+        },
+        "accounting_check_passed": true
+      },
+      "category_original_voxel_totals": {
+        "retained_only_in_new_main": 6976,
+        "all_deleted": 3020,
+        "retained_only_in_one_new_nonmain": 457,
+        "retained_in_multiple_new_components": 46
+      }
+    }
+  },
+  "complete": true
+}

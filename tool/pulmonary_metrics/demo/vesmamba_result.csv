@@ -1,0 +1,17 @@
+﻿stage,metric,value,status,delta_after_minus_before
+before,label_3.Dice,0.8125,ok,
+before,label_3.clDice,0.8125,ok,
+before,label_3.HD95_mm,7.211102583990686,ok,
+before,label_3.NSD,0.9137329902387011,ok,
+before,label_4.Dice,0.9375,ok,
+before,label_4.clDice,0.9375,ok,
+before,label_4.HD95_mm,0.800000011920929,ok,
+before,label_4.NSD,1.0,ok,
+after,label_3.Dice,0.9411764705882353,ok,0.12867647058823528
+after,label_3.clDice,0.9411764705882353,ok,0.12867647058823528
+after,label_3.HD95_mm,0.0,ok,-7.211102583990686
+after,label_3.NSD,0.9805031005904644,ok,0.06677011035176328
+after,label_4.Dice,0.9696969696969697,ok,0.032196969696969724
+after,label_4.clDice,0.9696969696969697,ok,0.032196969696969724
+after,label_4.HD95_mm,0.0,ok,-0.800000011920929
+after,label_4.NSD,1.0,ok,0.0

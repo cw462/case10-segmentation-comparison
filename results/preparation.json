@@ -1,0 +1,575 @@
+{
+  "created": "2026-10-21T16:30:10.117378",
+  "before_source": "data/before/Label",
+  "after_source": "data/after",
+  "reference_role": "supplemented_annotation_as_final_version_reference_not_independent_ground_truth",
+  "independent_gt_available": false,
+  "resampling": "none",
+  "mask_fusion": "none; overlapping channels retained separately",
+  "structures": {
+    "airway": {
+      "before_file": "./inputs/before/airway.nii.gz",
+      "after_file": "./inputs/after/airway.nii.gz",
+      "original_before_file": "data/before/Label/airway.nii.gz",
+      "original_after_file": "data/after/airway.seg.nrrd",
+      "before_source_sha256": "a1ceb57ff009eac50d1416911c21403d3e05c0644a8ecdf4e2f36e63eb4e6ddb",
+      "before_copy_sha256": "a1ceb57ff009eac50d1416911c21403d3e05c0644a8ecdf4e2f36e63eb4e6ddb",
+      "after_source_sha256": "3f469082f41d4be15ce7470a7c50416c125dab01658f4709c3a779a50a31c890",
+      "after_nifti_sha256": "1a976dccc1fb7e066baa813b17a7a778752add93ba20fd053ccf71db9dc2b733",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "spacing_xyz_mm": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "affine_ras": [
+        [
+          -0.8769530057907104,
+          0.0,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          -0.8769530057907104,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.6249999999999999,
+          -439.37399291992176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before_voxels": 183975,
+      "after_voxels": 183975,
+      "shared_voxels": 183975,
+      "added_voxels": 0,
+      "removed_voxels": 0,
+      "net_voxel_change": 0,
+      "identical_voxelwise": true,
+      "before_volume_ml": 88.42833969929214,
+      "after_volume_ml": 88.42833969929214,
+      "net_volume_change_ml": 0.0,
+      "version_agreement_Dice": 1.0,
+      "before_components": {
+        "6": {
+          "components": 156,
+          "largest_voxels": 181745,
+          "largest_fraction": 0.9878787878787879,
+          "outside_largest_voxels": 2230,
+          "components_ge20": 24,
+          "components_ge100": 4,
+          "largest10_sizes": [
+            181745,
+            764,
+            135,
+            112,
+            75,
+            58,
+            52,
+            51,
+            42,
+            40
+          ]
+        },
+        "26": {
+          "components": 66,
+          "largest_voxels": 182557,
+          "largest_fraction": 0.9922924310368256,
+          "outside_largest_voxels": 1418,
+          "components_ge20": 9,
+          "components_ge100": 3,
+          "largest10_sizes": [
+            182557,
+            764,
+            159,
+            79,
+            51,
+            42,
+            29,
+            29,
+            26,
+            19
+          ]
+        }
+      },
+      "after_components": {
+        "6": {
+          "components": 156,
+          "largest_voxels": 181745,
+          "largest_fraction": 0.9878787878787879,
+          "outside_largest_voxels": 2230,
+          "components_ge20": 24,
+          "components_ge100": 4,
+          "largest10_sizes": [
+            181745,
+            764,
+            135,
+            112,
+            75,
+            58,
+            52,
+            51,
+            42,
+            40
+          ]
+        },
+        "26": {
+          "components": 66,
+          "largest_voxels": 182557,
+          "largest_fraction": 0.9922924310368256,
+          "outside_largest_voxels": 1418,
+          "components_ge20": 9,
+          "components_ge100": 3,
+          "largest10_sizes": [
+            182557,
+            764,
+            159,
+            79,
+            51,
+            42,
+            29,
+            29,
+            26,
+            19
+          ]
+        }
+      }
+    },
+    "lung": {
+      "before_file": "./inputs/before/lung.nii.gz",
+      "after_file": "./inputs/after/lung.nii.gz",
+      "original_before_file": "data/before/Label/lung.nii.gz",
+      "original_after_file": "data/after/lung.seg.nrrd",
+      "before_source_sha256": "9039c45a7d8a1c3619d8574c8b7af16c8f492c5b61cfa40a604f62aaa4f439fb",
+      "before_copy_sha256": "9039c45a7d8a1c3619d8574c8b7af16c8f492c5b61cfa40a604f62aaa4f439fb",
+      "after_source_sha256": "e666956340ce510e138f2b6f7b47cc759b5c31d62e05cda8145d6c34f752b049",
+      "after_nifti_sha256": "e540128302c44425a9f2e75a9747f5777d4803ac95fc4c3342114dbe6cc30e58",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "spacing_xyz_mm": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "affine_ras": [
+        [
+          -0.8769530057907104,
+          0.0,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          -0.8769530057907104,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.6249999999999999,
+          -439.37399291992176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before_voxels": 16793887,
+      "after_voxels": 16793887,
+      "shared_voxels": 16793887,
+      "added_voxels": 0,
+      "removed_voxels": 0,
+      "net_voxel_change": 0,
+      "identical_voxelwise": true,
+      "before_volume_ml": 8072.050792268113,
+      "after_volume_ml": 8072.050792268113,
+      "net_volume_change_ml": 0.0,
+      "version_agreement_Dice": 1.0,
+      "before_components": {
+        "6": {
+          "components": 3,
+          "largest_voxels": 8830021,
+          "largest_fraction": 0.5257878060034583,
+          "outside_largest_voxels": 7963866,
+          "components_ge20": 2,
+          "components_ge100": 2,
+          "largest10_sizes": [
+            8830021,
+            7963864,
+            2
+          ]
+        },
+        "26": {
+          "components": 2,
+          "largest_voxels": 16793885,
+          "largest_fraction": 0.9999998809090475,
+          "outside_largest_voxels": 2,
+          "components_ge20": 1,
+          "components_ge100": 1,
+          "largest10_sizes": [
+            16793885,
+            2
+          ]
+        }
+      },
+      "after_components": {
+        "6": {
+          "components": 3,
+          "largest_voxels": 8830021,
+          "largest_fraction": 0.5257878060034583,
+          "outside_largest_voxels": 7963866,
+          "components_ge20": 2,
+          "components_ge100": 2,
+          "largest10_sizes": [
+            8830021,
+            7963864,
+            2
+          ]
+        },
+        "26": {
+          "components": 2,
+          "largest_voxels": 16793885,
+          "largest_fraction": 0.9999998809090475,
+          "outside_largest_voxels": 2,
+          "components_ge20": 1,
+          "components_ge100": 1,
+          "largest10_sizes": [
+            16793885,
+            2
+          ]
+        }
+      }
+    },
+    "pulmonary_artery": {
+      "before_file": "./inputs/before/pulmonary_artery.nii.gz",
+      "after_file": "./inputs/after/pulmonary_artery.nii.gz",
+      "original_before_file": "data/before/Label/pulmonary_artery.nii.gz",
+      "original_after_file": "data/after/pulmonary_artery.seg.nrrd",
+      "before_source_sha256": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+      "before_copy_sha256": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+      "after_source_sha256": "fcb30f79ee2884ce3e77a53dce7cc9a4c523cb415b0dc699fa683833c32f1b44",
+      "after_nifti_sha256": "ff3224dcc66767a1926a647ce5beb3a46b3eddb4423303fa137341cb6ebf67de",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "spacing_xyz_mm": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "affine_ras": [
+        [
+          -0.8769530057907104,
+          0.0,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          -0.8769530057907104,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.6249999999999999,
+          -439.37399291992176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before_voxels": 649130,
+      "after_voxels": 654909,
+      "shared_voxels": 643244,
+      "added_voxels": 11665,
+      "removed_voxels": 5886,
+      "net_voxel_change": 5779,
+      "identical_voxelwise": false,
+      "before_volume_ml": 312.007001761117,
+      "after_volume_ml": 314.7847018569029,
+      "net_volume_change_ml": 2.7777000957858906,
+      "version_agreement_Dice": 0.9865410467018241,
+      "before_components": {
+        "6": {
+          "components": 221,
+          "largest_voxels": 634934,
+          "largest_fraction": 0.9781307288216536,
+          "outside_largest_voxels": 14196,
+          "components_ge20": 69,
+          "components_ge100": 28,
+          "largest10_sizes": [
+            634934,
+            5034,
+            796,
+            747,
+            519,
+            491,
+            428,
+            384,
+            282,
+            272
+          ]
+        },
+        "26": {
+          "components": 132,
+          "largest_voxels": 635561,
+          "largest_fraction": 0.9790966370372652,
+          "outside_largest_voxels": 13569,
+          "components_ge20": 62,
+          "components_ge100": 27,
+          "largest10_sizes": [
+            635561,
+            5034,
+            796,
+            764,
+            520,
+            491,
+            430,
+            384,
+            324,
+            282
+          ]
+        }
+      },
+      "after_components": {
+        "6": {
+          "components": 185,
+          "largest_voxels": 653536,
+          "largest_fraction": 0.9979035255279741,
+          "outside_largest_voxels": 1373,
+          "components_ge20": 14,
+          "components_ge100": 3,
+          "largest10_sizes": [
+            653536,
+            125,
+            105,
+            68,
+            37,
+            31,
+            29,
+            29,
+            29,
+            28
+          ]
+        },
+        "26": {
+          "components": 3,
+          "largest_voxels": 654736,
+          "largest_fraction": 0.9997358411626653,
+          "outside_largest_voxels": 173,
+          "components_ge20": 3,
+          "components_ge100": 2,
+          "largest10_sizes": [
+            654736,
+            105,
+            68
+          ]
+        }
+      }
+    },
+    "pulmonary_vein": {
+      "before_file": "./inputs/before/pulmonary_vein.nii.gz",
+      "after_file": "./inputs/after/pulmonary_vein.nii.gz",
+      "original_before_file": "data/before/Label/pulmonary_vein.nii.gz",
+      "original_after_file": "data/after/pulmonary_vein.seg.nrrd",
+      "before_source_sha256": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+      "before_copy_sha256": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+      "after_source_sha256": "0a15f9e06b9ce936d3c1adffa258512cf71f70f01770da44d2ee85b874bb79ca",
+      "after_nifti_sha256": "d392426c3835cbbe829289f6b1fb5d3b2f397d380df8f9e956c22627f00a0561",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "spacing_xyz_mm": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "affine_ras": [
+        [
+          -0.8769530057907104,
+          0.0,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          -0.8769530057907104,
+          0.0,
+          224.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.6249999999999999,
+          -439.37399291992176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before_voxels": 748838,
+      "after_voxels": 751130,
+      "shared_voxels": 744980,
+      "added_voxels": 6150,
+      "removed_voxels": 3858,
+      "net_voxel_change": 2292,
+      "identical_voxelwise": false,
+      "before_volume_ml": 359.93206165913045,
+      "after_volume_ml": 361.03372087690883,
+      "net_volume_change_ml": 1.1016592177783806,
+      "version_agreement_Dice": 0.9933278576609634,
+      "before_components": {
+        "6": {
+          "components": 148,
+          "largest_voxels": 738155,
+          "largest_fraction": 0.9857338970511647,
+          "outside_largest_voxels": 10683,
+          "components_ge20": 50,
+          "components_ge100": 22,
+          "largest10_sizes": [
+            738155,
+            2686,
+            1273,
+            575,
+            542,
+            513,
+            452,
+            390,
+            311,
+            255
+          ]
+        },
+        "26": {
+          "components": 86,
+          "largest_voxels": 738339,
+          "largest_fraction": 0.9859796110774293,
+          "outside_largest_voxels": 10499,
+          "components_ge20": 49,
+          "components_ge100": 22,
+          "largest10_sizes": [
+            738339,
+            2686,
+            1273,
+            575,
+            542,
+            513,
+            452,
+            390,
+            311,
+            255
+          ]
+        }
+      },
+      "after_components": {
+        "6": {
+          "components": 102,
+          "largest_voxels": 750008,
+          "largest_fraction": 0.9985062505824558,
+          "outside_largest_voxels": 1122,
+          "components_ge20": 3,
+          "components_ge100": 2,
+          "largest10_sizes": [
+            750008,
+            650,
+            46,
+            18,
+            17,
+            17,
+            16,
+            15,
+            14,
+            13
+          ]
+        },
+        "26": {
+          "components": 46,
+          "largest_voxels": 750813,
+          "largest_fraction": 0.9995779691930824,
+          "outside_largest_voxels": 317,
+          "components_ge20": 2,
+          "components_ge100": 1,
+          "largest10_sizes": [
+            750813,
+            46,
+            18,
+            17,
+            17,
+            17,
+            16,
+            15,
+            14,
+            9
+          ]
+        }
+      }
+    }
+  },
+  "overlaps": {
+    "before": {
+      "airway__pulmonary_artery": {
+        "voxels": 0,
+        "components_26": 0,
+        "volume_ml": 0.0
+      },
+      "airway__pulmonary_vein": {
+        "voxels": 0,
+        "components_26": 0,
+        "volume_ml": 0.0
+      },
+      "pulmonary_artery__pulmonary_vein": {
+        "voxels": 0,
+        "components_26": 0,
+        "volume_ml": 0.0
+      }
+    },
+    "after": {
+      "airway__pulmonary_artery": {
+        "voxels": 27,
+        "components_26": 11,
+        "volume_ml": 0.012977660942415477
+      },
+      "airway__pulmonary_vein": {
+        "voxels": 0,
+        "components_26": 0,
+        "volume_ml": 0.0
+      },
+      "pulmonary_artery__pulmonary_vein": {
+        "voxels": 836,
+        "components_26": 24,
+        "volume_ml": 0.40182683510590145
+      }
+    }
+  },
+  "complete": true
+}

@@ -1,0 +1,63 @@
+{
+  "created": "2026-10-21T17:20:07",
+  "prediction": "before_initial_annotation",
+  "ground_truth": "after_supplemented_annotation",
+  "reference_role": "user_designated_supplemented_ground_truth",
+  "ground_truth_definition_zh": "按用户指定，将补标后版本视为本次评测的绝对真值（GT），评估补标前结果。",
+  "nsd_tolerance_mm": 1.0,
+  "structures": [
+    {
+      "structure": "pulmonary_artery",
+      "structure_zh": "肺动脉",
+      "Dice": 0.9865410467018241,
+      "clDice": 0.9352923164078595,
+      "NSD_1mm": 0.9714951280751596,
+      "HD95_mm": 0.0,
+      "Precision": 0.9909324788563154,
+      "Recall": 0.9821883651011056,
+      "FPR": 3.4305957348392893e-05
+    },
+    {
+      "structure": "pulmonary_vein",
+      "structure_zh": "肺静脉",
+      "Dice": 0.9933278576609634,
+      "clDice": 0.9818149066828317,
+      "NSD_1mm": 0.9867208324383689,
+      "HD95_mm": 0.0,
+      "Precision": 0.9948480178623413,
+      "Recall": 0.9918123360803057,
+      "FPR": 2.2498581417205122e-05
+    },
+    {
+      "structure": "airway",
+      "structure_zh": "气道",
+      "Dice": 1.0,
+      "clDice": 1.0,
+      "NSD_1mm": 1.0,
+      "HD95_mm": 0.0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "FPR": 0.0
+    },
+    {
+      "structure": "lung",
+      "structure_zh": "肺",
+      "Dice": 1.0,
+      "clDice": 1.0,
+      "NSD_1mm": 1.0,
+      "HD95_mm": 0.0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "FPR": 0.0
+    }
+  ],
+  "notes_zh": [
+    "动脉、静脉、气道沿用已完成的同方向计算，肺的Dice/clDice/HD95/NSD由相同原始函数补算。",
+    "GT为用户指定的补标版本；这些指标衡量补标前结果与该真值的吻合程度。",
+    "气道、肺两版逐体素完全相同，所以对该真值的Dice、clDice、NSD、Precision、Recall为100%。",
+    "肺的clDice按同一骨架公式补算，仅供统一表格比较；解释管状连通性时主要关注气道、血管。",
+    "HD95按表面元面积加权的双向95%分位数取最大值；少量局部修改时可为0。",
+    "动脉、静脉、气道和肺分别按独立二值通道计算，未覆盖标签重叠。",
+    "NSD使用1.0 mm阈值；全病例同一原生网格，不重采样。"
+  ]
+}

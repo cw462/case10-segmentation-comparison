@@ -1,0 +1,143 @@
+{
+  "paper_metric_set": "vesmamba",
+  "implementation_notice": "Independent implementation with explicit protocols; not an exact reproduction of undisclosed author evaluation code.",
+  "inputs": {
+    "before": "demo/initial.nii.gz",
+    "after": "demo/corrected.nii.gz",
+    "gt": "demo/gt.nii.gz"
+  },
+  "spacing_mm_array_axes": [
+    0.800000011920929,
+    0.800000011920929,
+    1.0
+  ],
+  "package_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "results": {
+    "before": {
+      "metrics": {
+        "label_3.Dice": 0.8125,
+        "label_3.clDice": 0.8125,
+        "label_3.HD95_mm": 7.211102583990686,
+        "label_3.NSD": 0.9137329902387011,
+        "label_4.Dice": 0.9375,
+        "label_4.clDice": 0.9375,
+        "label_4.HD95_mm": 0.800000011920929,
+        "label_4.NSD": 1.0
+      },
+      "status": {
+        "label_3.Dice": "ok",
+        "label_3.clDice": "ok",
+        "label_3.HD95_mm": "ok",
+        "label_3.NSD": "ok",
+        "label_4.Dice": "ok",
+        "label_4.clDice": "ok",
+        "label_4.HD95_mm": "ok",
+        "label_4.NSD": "ok"
+      },
+      "notes": [],
+      "protocol": {
+        "implementation": "independent fixed protocol, not VesMamba authors code",
+        "spacing_mm_array_axes": [
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "NSD_tolerance_mm": 1.0,
+        "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+        "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+        "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+        "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+        "scale": "Dice/clDice/NSD fractions, HD95 mm",
+        "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+      }
+    },
+    "after": {
+      "metrics": {
+        "label_3.Dice": 0.9411764705882353,
+        "label_3.clDice": 0.9411764705882353,
+        "label_3.HD95_mm": 0.0,
+        "label_3.NSD": 0.9805031005904644,
+        "label_4.Dice": 0.9696969696969697,
+        "label_4.clDice": 0.9696969696969697,
+        "label_4.HD95_mm": 0.0,
+        "label_4.NSD": 1.0
+      },
+      "status": {
+        "label_3.Dice": "ok",
+        "label_3.clDice": "ok",
+        "label_3.HD95_mm": "ok",
+        "label_3.NSD": "ok",
+        "label_4.Dice": "ok",
+        "label_4.clDice": "ok",
+        "label_4.HD95_mm": "ok",
+        "label_4.NSD": "ok"
+      },
+      "notes": [],
+      "protocol": {
+        "implementation": "independent fixed protocol, not VesMamba authors code",
+        "spacing_mm_array_axes": [
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "NSD_tolerance_mm": 1.0,
+        "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+        "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+        "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+        "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+        "scale": "Dice/clDice/NSD fractions, HD95 mm",
+        "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+      }
+    }
+  },
+  "changes": {
+    "label_3.Dice": {
+      "before": 0.8125,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.12867647058823528
+    },
+    "label_3.clDice": {
+      "before": 0.8125,
+      "after": 0.9411764705882353,
+      "delta_after_minus_before": 0.12867647058823528
+    },
+    "label_3.HD95_mm": {
+      "before": 7.211102583990686,
+      "after": 0.0,
+      "delta_after_minus_before": -7.211102583990686
+    },
+    "label_3.NSD": {
+      "before": 0.9137329902387011,
+      "after": 0.9805031005904644,
+      "delta_after_minus_before": 0.06677011035176328
+    },
+    "label_4.Dice": {
+      "before": 0.9375,
+      "after": 0.9696969696969697,
+      "delta_after_minus_before": 0.032196969696969724
+    },
+    "label_4.clDice": {
+      "before": 0.9375,
+      "after": 0.9696969696969697,
+      "delta_after_minus_before": 0.032196969696969724
+    },
+    "label_4.HD95_mm": {
+      "before": 0.800000011920929,
+      "after": 0.0,
+      "delta_after_minus_before": -0.800000011920929
+    },
+    "label_4.NSD": {
+      "before": 1.0,
+      "after": 1.0,
+      "delta_after_minus_before": 0.0
+    }
+  },
+  "notes": [],
+  "comparison_rule": "Deltas are after minus before. Counts and count ratios do not by themselves establish segmentation accuracy."
+}

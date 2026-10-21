@@ -1,0 +1,56 @@
+AirRC 指标实现与使用说明
+
+依据
+论文：A Custom Annotated Dataset for Segmentation of Pulmonary Veins, Arteries, and Airways
+Scientific Data，DOI 10.1038/s41597-025-06074-6
+https://www.nature.com/articles/s41597-025-06074-6
+位置：Technical Validation 的 Inference 节及内部、外部验证表。
+作者代码入口：https://github.com/b-niu/AirRC
+核查日期：2026-10-20。已读取仓库公开的config_loss.py、pulmonary_structure_segmentation_tools.py、train_stage1.py、train_stage2.py；两份训练脚本用MONAI DiceMetric作验证，所核文件未找到最终BDR/DLR评估实现。仓库主要提供粗分割、训练脚本。不能仅因训练代码公开，就声称本实现与作者最终评估脚本一致。
+
+1 仅有掩码即可计算的指标
+按 labels 显式指定每类 ID，分别计算 DSC=2TP/(2TP+FP+FN)、Precision=TP/(TP+FP)、Recall=TP/(TP+FN)。
+补充输出 FPR=FP/(FP+TN)，负类为当前整幅评价网格中所有非该GT类别体素。AirRC 原文计算过 FPR，但因数值均<0.001而未列结果表；不能只凭低 FPR 断言细血管分割很好。
+所有比率输出0–1，需百分数时再乘100；每例分别计算。分母为0返回None和原因，不用平滑项伪造满分。多类标签不得直接合并后冒充动脉或静脉分数。
+
+Python API 示例
+from airrc_metrics import evaluate_airrc
+result = evaluate_airrc(pred, gt, spacing=(1, 1, 1),
+    labels={'airway_lumen': 1, 'airway_wall': 2, 'artery': 3, 'vein': 4},
+    airway_label=1)
+
+pred/gt均为同一网格的三维整数数组。示例ID适用于已确认采用该编码的AirRC标签；换数据必须重新核对ID，不能把TotalSegmentator标签号直接照搬。
+spacing单位为毫米，按数组的第0、1、2轴顺序传入；本API无法核验NIfTI仿射矩阵，调用者须先核对方向、原点、尺寸、间距。无忽略区域功能；不完整或不确定标注不能直接按背景计算。
+
+2 气道腔 BDR 与 DLR
+这些指标仅用于气道腔，不对气道壁或动静脉自动计算。原文要求分支长度重叠严格大于80%，DLR分子为正确检出分支的中心线总长。原文未充分列明分支生成、端点/分叉归属、一对一匹配及长度离散实现；其“预测分支与真值分支重叠”的描述也不等同于本程序的参考骨架覆盖约定。
+因此本程序只提供明确命名的独立口径，不能标作作者原版BDR/DLR：
+  <airway>.BDR_gt80_independent
+  <airway>.DLR_matched_gt_length_independent
+未提供branch_labels时，二者返回None及缺少固定参考分支ID的原因。不会从连通分量数或骨架总长猜造分支检出率。
+
+固定参考分支ID如何提供
+从最终冻结的GT气道腔建立并人工审核中心线分支图。根点/端点到分叉点、相邻分叉点之间的路径分配固定ID，每个完整病例覆盖全部计划评价分支。另存与GT同网格的三维整数数组branch_labels：0为非参考路径体素，正整数为分支ID。同一ID必须是单一细线、26邻接连通、有两个端点且无环/分叉；不能给一段粗气道体素全部贴同一个ID充当中心线。
+本实现不自动生成分支ID。共享分叉点无法在单个整数数组中同时属于多条分支，因此须预先统一约定；本版仅计同ID内部的边，跨ID边及未标分叉点不计入分母。该约定须在所有病例及补标前后固定。应检查IDs完整性：遗漏参考分支会使两项分数偏高。
+遇到26邻接中由拐弯产生的三角捷径或重复邻接，本实现会拒绝非简单路径，要求修订参考图；不会静默累加不合理边长。
+
+独立计算规则
+每条GT分支长度L_b为其26邻接、去重中心线边的物理长度和。相邻索引差乘以spacing后取欧氏距离，单位mm。不是骨架体素数；这是本工具自选的统一物理长度协议，不代表作者已经明确采用该离散方式。单体素分支没有边长，本版拒绝这类输入并给出原因，不悄悄删去该分支。
+一条边只有两个端点均落入预测气道腔时才计为覆盖。覆盖长度/L_b严格>0.80才算分支检出；80%整不算检出，浮点容差仅用于避免把数值舍入误差当成严格超过。
+BDR独立值=检出的GT分支数/提供的GT分支总数。
+DLR独立值=所有已判检出GT分支的整条L_b之和/所有提供GT分支的L_b之和。
+例如10mm长分支覆盖9mm且判检出，则DLR分子纳入整条10mm，而不是9mm。故该DLR不是所有GT骨架覆盖率，也不是体素Recall；两项分数不直接惩罚额外假阳性，必须联合Precision/DSC解释。
+本实现不需要预测分支ID，也不做预测分支与GT分支的一对一匹配；这是预先固定的独立实验协议，不能据此直接对标论文表中数值。
+
+调用示例
+result = evaluate_airrc(pred, gt, spacing, labels,
+    airway_label='airway_lumen', branch_labels=frozen_reference_branch_ids)
+result['protocol']['branch_protocol']['branches']记录每条分支长度、覆盖比例及检出结论，便于复核。
+
+3 评价与补标
+补标前后均应对同一份冻结参考GT评价。若直接把补标后结果自身作为GT，则“补标后”Dice=1只表示自比较，不能证明达到专家质量。
+该模块计算的是给定标签之间的一致性，不能从影像判断哪些末梢在CT上真实可见，也不能给出标注停止阈值。
+
+4 测试
+python -m unittest test_airrc.py -v
+测试覆盖多类错分、空集合、无分支ID、严格80%边界、被检出分支全长DLR、各向异性物理长度，以及错误分支图与输入校验。全部为合成数组测试，非真实病例性能验证。

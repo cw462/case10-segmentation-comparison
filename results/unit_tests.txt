@@ -1,0 +1,39 @@
+﻿test_anisotropic_diagonal_physical_length (test_airrc.AirRCMetricsTests.test_anisotropic_diagonal_physical_length) ... ok
+test_empty_class_handling (test_airrc.AirRCMetricsTests.test_empty_class_handling) ... ok
+test_input_validation (test_airrc.AirRCMetricsTests.test_input_validation) ... ok
+test_invalid_branch_maps_rejected (test_airrc.AirRCMetricsTests.test_invalid_branch_maps_rejected) ... ok
+test_missing_branch_labels_not_faked (test_airrc.AirRCMetricsTests.test_missing_branch_labels_not_faked) ... ok
+test_multiclass_counts_and_class_swap (test_airrc.AirRCMetricsTests.test_multiclass_counts_and_class_swap) ... ok
+test_strict_80_percent_and_matched_whole_length (test_airrc.AirRCMetricsTests.test_strict_80_percent_and_matched_whole_length) ... ok
+test_auc_missing_scores_or_single_class_are_undefined (test_hipas.HiPaSMetricsTests.test_auc_missing_scores_or_single_class_are_undefined) ... .venv\Lib\site-packages\surface_distance\metrics.py:240: DeprecationWarning: Please import `correlate` from the `scipy.ndimage` namespace; the `scipy.ndimage.filters` namespace is deprecated and will be removed in SciPy 2.0.0.
+  neighbour_code_map_gt = ndimage.filters.correlate(
+.venv\Lib\site-packages\surface_distance\metrics.py:242: DeprecationWarning: Please import `correlate` from the `scipy.ndimage` namespace; the `scipy.ndimage.filters` namespace is deprecated and will be removed in SciPy 2.0.0.
+  neighbour_code_map_pred = ndimage.filters.correlate(
+.venv\Lib\site-packages\surface_distance\metrics.py:254: DeprecationWarning: Please import `distance_transform_edt` from the `scipy.ndimage` namespace; the `scipy.ndimage.morphology` namespace is deprecated and will be removed in SciPy 2.0.0.
+  distmap_gt = ndimage.morphology.distance_transform_edt(
+.venv\Lib\site-packages\surface_distance\metrics.py:260: DeprecationWarning: Please import `distance_transform_edt` from the `scipy.ndimage` namespace; the `scipy.ndimage.morphology` namespace is deprecated and will be removed in SciPy 2.0.0.
+  distmap_pred = ndimage.morphology.distance_transform_edt(
+ok
+test_auc_perfect_reverse_and_tied_probabilities (test_hipas.HiPaSMetricsTests.test_auc_perfect_reverse_and_tied_probabilities) ... ok
+test_auc_uses_roi_and_validates_probability_grid (test_hipas.HiPaSMetricsTests.test_auc_uses_roi_and_validates_probability_grid) ... ok
+test_empty_masks_are_serializable_and_explicit (test_hipas.HiPaSMetricsTests.test_empty_masks_are_serializable_and_explicit) ... ok
+test_fpr_denominator_is_one_vs_rest (test_hipas.HiPaSMetricsTests.test_fpr_denominator_is_one_vs_rest) ... ok
+test_hd95_uses_directional_area_weighted_percentiles (test_hipas.HiPaSMetricsTests.test_hd95_uses_directional_area_weighted_percentiles) ... ok
+test_hd95_uses_spacing_in_array_axis_order (test_hipas.HiPaSMetricsTests.test_hd95_uses_spacing_in_array_axis_order) ... ok
+test_invalid_inputs_fail_explicitly (test_hipas.HiPaSMetricsTests.test_invalid_inputs_fail_explicitly) ... ok
+test_native_grid_skeleton_count_does_not_become_mm (test_hipas.HiPaSMetricsTests.test_native_grid_skeleton_count_does_not_become_mm) ... ok
+test_one_empty_class_and_no_reference_negative (test_hipas.HiPaSMetricsTests.test_one_empty_class_and_no_reference_negative) ... ok
+test_perfect_two_classes (test_hipas.HiPaSMetricsTests.test_perfect_two_classes) ... ok
+test_roi_does_not_cut_surfaces_or_skeletons (test_hipas.HiPaSMetricsTests.test_roi_does_not_cut_surfaces_or_skeletons) ... ok
+test_swapped_classes_match_printed_mcs_denominator (test_hipas.HiPaSMetricsTests.test_swapped_classes_match_printed_mcs_denominator) ... ok
+test_anisotropic_shift_uses_physical_spacing (test_metrics.BinaryMetricsTests.test_anisotropic_shift_uses_physical_spacing) ... ok
+test_empty_masks_have_explicit_nonperfect_conventions (test_metrics.BinaryMetricsTests.test_empty_masks_have_explicit_nonperfect_conventions) ... ok
+test_identical_thin_branch_is_perfect (test_metrics.BinaryMetricsTests.test_identical_thin_branch_is_perfect) ... ok
+test_invalid_values_and_geometry_are_rejected (test_metrics.BinaryMetricsTests.test_invalid_values_and_geometry_are_rejected) ... ok
+test_isolated_false_positive_is_not_silently_removed (test_metrics.BinaryMetricsTests.test_isolated_false_positive_is_not_silently_removed) ... ok
+test_trunk_gap_loses_overlap_and_skeleton_coverage (test_metrics.BinaryMetricsTests.test_trunk_gap_loses_overlap_and_skeleton_coverage) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.077s
+
+OK

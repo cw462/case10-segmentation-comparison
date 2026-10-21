@@ -1,0 +1,137 @@
+{
+  "structure": "airway",
+  "reference_role": "after_supplemented_final_annotation_for_version_agreement_only",
+  "independent_gt_available": false,
+  "interpretation": "Before is compared against the supplemented version. Scores describe agreement between versions; no independent accuracy improvement is estimable.",
+  "grid_shape": [
+    512,
+    512,
+    657
+  ],
+  "spacing_mm_array_axes": [
+    0.8769530057907104,
+    0.8769530057907104,
+    0.625
+  ],
+  "evaluation_extent": "entire identical original grid",
+  "input_channels": "separate binary masks; no cross-class overlap overwritten or discarded",
+  "nsd_tolerance_mm": 1.0,
+  "nsd_tolerance_note": "Fixed exploratory tolerance chosen for this comparison; not a verified paper threshold.",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "metric_sets": {
+    "vesmamba": {
+      "metrics": {
+        "binary.Dice": 1.0,
+        "binary.clDice": 1.0,
+        "binary.HD95_mm": 0.0,
+        "binary.NSD": 1.0
+      },
+      "status": {
+        "binary.Dice": "ok",
+        "binary.clDice": "ok",
+        "binary.HD95_mm": "ok",
+        "binary.NSD": "ok"
+      },
+      "notes": [
+        "binary: prediction and reference are identical; check that the evaluation is not against itself."
+      ],
+      "protocol": {
+        "implementation": "independent fixed protocol, not VesMamba authors code",
+        "spacing_mm_array_axes": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "NSD_tolerance_mm": 1.0,
+        "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+        "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+        "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+        "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+        "scale": "Dice/clDice/NSD fractions, HD95 mm",
+        "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+      }
+    },
+    "airrc": {
+      "metrics": {
+        "airway.DSC": 1.0,
+        "airway.Precision": 1.0,
+        "airway.Recall": 1.0,
+        "airway.FPR": 0.0,
+        "airway.BDR_gt80_independent": null,
+        "airway.DLR_matched_gt_length_independent": null
+      },
+      "status": {
+        "airway.DSC": "ok_standard_definition",
+        "airway.Precision": "ok_standard_definition",
+        "airway.Recall": "ok_standard_definition",
+        "airway.FPR": "ok_supplementary_FPR",
+        "airway.BDR_gt80_independent": "not_computed_requires_fixed_reference_branch_labels",
+        "airway.DLR_matched_gt_length_independent": "not_computed_requires_fixed_reference_branch_labels"
+      },
+      "notes": [
+        "DSC/Precision/Recall use standard unsmoothed one-versus-rest voxel counts.",
+        "FPR is supplementary: the AirRC paper calculated it but omitted it from result tables.",
+        "No uncertainty/ignore mask is supported. Do not turn uncertain or unannotated voxels into background.",
+        "Array inputs do not retain image affine. Caller must verify identical orientation, origin and grid.",
+        "AirRC does not fully specify branch extraction/matching in the inspected text. These branch metrics are an independent GT-centreline coverage protocol, not author-exact BDR/DLR."
+      ],
+      "protocol": {
+        "name": "AirRC_independent_evaluation_v1",
+        "paper": "https://www.nature.com/articles/s41597-025-06074-6",
+        "author_repository": "https://github.com/b-niu/AirRC",
+        "author_code_check": {
+          "date": "2026-10-20",
+          "inspected_files": [
+            "config_loss.py",
+            "pulmonary_structure_segmentation_tools.py",
+            "train_stage1.py",
+            "train_stage2.py"
+          ],
+          "finding": "training validation uses MONAI DiceMetric; BDR/DLR final evaluation implementation not found in these files"
+        },
+        "scale": "ratios in [0,1], not percentages",
+        "spacing_mm_array_axes": [
+          0.8769530057907104,
+          0.8769530057907104,
+          0.625
+        ],
+        "labels": {
+          "airway": 1
+        },
+        "zero_denominator": "None, with reason in status; never add epsilon",
+        "FPR_definition": "FP/(FP+TN), negatives are all voxels not in this GT class",
+        "case_aggregation": "per-case outputs; aggregation is caller responsibility",
+        "branch_protocol": {
+          "id": "fixed_gt_branch_26edge_mm_strict_gt80_v1_independent",
+          "author_exact_reproduction": false,
+          "airway_name": "airway",
+          "airway_label": 1,
+          "branch_definition": "fixed supplied reference branch IDs; no automatic branch extraction",
+          "length": "sum of unique 26-neighbour intra-ID centerline edge lengths in mm",
+          "edge_coverage": "edge is covered only if BOTH endpoints lie in predicted airway lumen",
+          "detected": "covered_reference_branch_length / reference_branch_length > 0.80",
+          "BDR": "number of detected supplied GT branches / number of supplied GT branches",
+          "DLR": "FULL lengths of detected supplied GT branches / lengths of all supplied GT branches",
+          "prediction_branch_matching": "none; uses prediction lumen mask, not predicted branch IDs",
+          "reference_completeness": "caller must review completeness and freeze branch IDs before comparisons",
+          "junction_convention": "cross-ID edges and unlabelled junction voxels excluded from length denominator"
+        }
+      }
+    }
+  },
+  "not_computable": {
+    "independent_GT_accuracy_change": "No independent reference annotation supplied.",
+    "AUC": "No probability maps supplied.",
+    "airway_BDR_DLR": "No frozen reviewed reference branch-ID centerline map.",
+    "airway_wall": "No airway-wall mask; lung is not wall.",
+    "MCS": "Supplemented arterial/venous masks are nonexclusive; standard single-label MCS is not computed."
+  },
+  "elapsed_seconds": 17.287516593933105,
+  "complete": true
+}

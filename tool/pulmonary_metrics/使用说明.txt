@@ -1,0 +1,98 @@
+VesMamba / HiPaS / AirRC 指标评价脚本
+
+这套代码用于评价分割结果，输入是预测掩码与固定参考标注GT，不需要先训练VesMamba、HiPaS或AirRC网络。TotalSegmentator或其他模型的输出也可以作为预测输入。
+它按论文选用的指标建立明确、可重复的独立计算协议，不声称完全复现作者未公开的评估实现。输出各病例各类别的指标，不自动把不同论文分数混成总分。
+
+1 安装
+推荐新建Python 3.12环境，解压后在本文件所在目录运行：
+python -m pip install -r requirements.txt
+python -m unittest discover -p "test_*.py" -v
+依赖不需要GPU。固定版本为测试所用环境；大型三维图像的骨架化、表面距离和概率AUC可能需要较多内存。
+
+2 VesMamba四指标
+python evaluate.py --paper vesmamba --pred pred.nii.gz --gt gt.nii.gz --nsd-mm 1.0 --output results/vesmamba.json
+1.0 mm仅是运行示例，不是已核实的VesMamba论文容差。实际研究先定好δ，并对所有方法保持一致。
+如果输入是多类别标签，例如动脉3、静脉4：
+python evaluate.py --paper vesmamba --pred pred.nii.gz --gt gt.nii.gz --labels 3 4 --nsd-mm 1.0 --output results/vesmamba_av.json
+脚本分别计算label_3与label_4，不把气道并入血管，不默认合并动静脉。
+
+计算规则：
+Dice = 2|P∩G| / (|P|+|G|)。
+Tprec = |S(P)∩G|/|S(P)|；Tsens = |S(G)∩P|/|S(G)|。
+clDice = 2 Tprec Tsens/(Tprec+Tsens)，S采用skimage的3D Lee骨架化，不剪枝。
+HD95 = max(两个方向表面距离的95%分位)，本实现分位数按surfel表面积加权，距离单位毫米。
+NSD = 两个方向距离≤δ的表面积之和 / 两个表面总面积之和。
+HD95和NSD调用surface-distance 0.1；不同的体素中心点、表面面积权重和双向分位聚合实现不可混用。
+
+3 HiPaS指标
+必须明确本数据的A/V标签编号，下面3和4仅为示例：
+python evaluate.py --paper hipas --pred pred.nii.gz --gt gt.nii.gz --artery-label 3 --vein-label 4 --output results/hipas.json
+动脉与静脉分别输出DSC、SEN、SPE、FPR=1−SPE、HD95；另输出MCS、BC/SL及相对GT计数比。
+BC_proxy是独立骨架分叉代理量，SL_voxels_proxy是Lee骨架的体素计数。它们没有暗中重采样，不是已复刻的作者图提取结果。
+论文先统一空间再计算BC/SL；本脚本的native-grid代理量仅在固定分辨率和固定骨架算法下比较。不要把SL称为毫米长度，也不要把数量比当逐支匹配召回。
+HD95使用同一面积加权协议；原作者确切表面实现未完全锁定。
+若要评价肺内而非全部肺血管，需要另外制定固定肺内ROI协议，不能随意裁切后与全血管结果混报。
+
+可选概率AUC，必须是同一预测阶段的真实概率文件（非硬标签、非logits）：
+python evaluate.py --paper hipas --pred pred.nii.gz --gt gt.nii.gz --artery-label 3 --vein-label 4 --artery-prob artery_prob.nii.gz --vein-prob vein_prob.nii.gz --output results/hipas_auc.json
+没有概率时AUC为null并给出理由。采用带并列值处理的体素ROC AUC；逐病例计算，不默认拼接全部病例。人工修订掩码没有对应概率，因此不在before/after模式伪造AUC。
+临床读者评分需要医生打分，不由掩码自动生成。
+
+MCS更正：前面总指标说明及旧通用算法包曾把分母写成GT血管体素数，此处按HiPaS原文更正。
+原文Statistical analyses印为 MCS=(P_A·T_V+P_V·T_A)/(P+T)。本实现将其解释为二值集合计数：
+MCS = (|P_A∩G_V|+|P_V∩G_A|)/(|P_A∪P_V|+|G_A∪G_V|)。
+同样血管区域全体动静脉互换时，该原式结果为0.5；不是以GT归一化、全错为1的另一种错分率。
+MCS仅反映动静脉交换；全部漏检也可得到0，必须联合SEN/DSC解释。
+
+4 AirRC指标
+AirRC原标签示例为气道腔1、气道壁2、动脉3、静脉4；若你的文件重编码过，必须修改映射：
+python evaluate.py --paper airrc --pred pred.nii.gz --gt gt.nii.gz --output results/airrc.json
+自定义标签示例：
+python evaluate.py --paper airrc --pred pred.nii.gz --gt gt.nii.gz --classes artery=1 vein=2 airway=3 wall=4 --airway-label 3 --output results/airrc_custom.json
+各类别：DSC=2TP/(2TP+FP+FN)，Precision=TP/(TP+FP)，Recall=TP/(TP+FN)。另附FPR=FP/(FP+TN)；论文算过FPR但未放主结果表。
+
+AirRC的BDR/DLR只用于气道腔。本实现需要提前固定并复核的参考分支ID图：0为非参考中心线点，1、2、3……分别表示不同GT气道分支。它不是普通二值GT，也不是厚的气道区域标签。
+python evaluate.py --paper airrc --pred pred.nii.gz --gt gt.nii.gz --branch-labels gt_branch_ids.nii.gz --output results/airrc_branches.json
+无该文件时DSC/Precision/Recall仍正常计算，BDR/DLR返回null并说明缺少分支参考。
+独立分支协议：每个ID是一条无环的26邻接中心线路径；按真实spacing累计边长，两个端点均在预测气道腔内才算该边被覆盖；单分支覆盖比例严格>80%才计检出。
+BDR = 检出的参考分支数 / 提供的参考分支数。
+DLR = 检出分支的整条参考长度之和 / 所有参考分支长度之和。
+DLR不是直接累加所有被覆盖骨架点。分叉点及跨ID边的处理、完整性和长度口径详见airrc_notes.txt。
+未找到作者最终BDR/DLR实现，因此输出名称明确加independent；不要直接以本数值与论文榜单作严格横比。参考分支可由GT骨架化后分段生成并复核，无需重画CT，但本包不自动选择分段规则。
+
+5 人工补标前后对照
+三套指标均支持固定GT对照。以VesMamba为例：
+python evaluate.py --paper vesmamba --before initial.nii.gz --after corrected.nii.gz --gt independent_gt.nii.gz --nsd-mm 1.0 --output results/before_after.json
+HiPaS/AirRC把--paper及各自标签参数改成上面的设置即可。
+输出JSON含完整协议、依赖版本、before、after和after−before；配套CSV可用Excel打开。
+Dice、clDice、NSD等比率保存为0–1；例如0.03代表提高3个百分点。HD95为毫米。BC/SL为计数，计数比可大于1；数量增加不必然更准确。
+不要把corrected同时作为唯一GT再称修订稿满分为独立质量提升。没有独立参考时，只能衡量初稿与最终标注的一致性，不能证明修订后的真实性能。
+
+6 输入与空值
+支持.nii/.nii.gz/.npy/.npz。NPZ用mask键，或只含一个数组（HiPaS单data键文件也可以）。所有标签必须是3D非负整数。概率文件单独用--artery-prob/--vein-prob。
+NIfTI检查shape、spacing、方向和原点，拒绝网格不一致及shear；不自动重采样。
+NIfTI单位未知时会报错；确认其单位确为mm后才添加--assume-mm。
+NumPy输入必须添加--spacing S0 S1 S2，顺序对应数组axis0/axis1/axis2，不能看到三位数就默认xyz；不混用NumPy与NIfTI。
+没有ignore/不确定区协议，不能把未标清区域随意置为背景。
+零分母写null并附status，不加epsilon伪造完美分数。VesMamba两边皆空四项null；只有一边为空，Dice/clDice/NSD按0、HD95为null失败状态。其余指标以各脚本status为准。
+汇总多个病例时需报告每项有效例数和失败/空标签例数，不得静默剔除HD95失败病例后只给“均值改善”。
+
+7 原文及实现来源
+VesMamba：用户提供的CVPR2026主文§4.1与表1/2；主文未给NSD容差与HD95实现。
+https://github.com/Lzpbright/VesMamba
+HiPaS：Nature Communications 16,2262 (2025)，Statistical analyses；AUC见Results/Fig2a。
+https://www.nature.com/articles/s41467-025-56505-6
+https://github.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation
+AirRC：Scientific Data (2025)，Technical Validation之Inference。
+https://www.nature.com/articles/s41597-025-06074-6
+https://github.com/b-niu/AirRC
+clDice作者指标参考：https://github.com/jocpae/clDice/blob/master/cldice_metric/cldice.py
+表面距离参考：https://github.com/google-deepmind/surface-distance
+本包未复制论文PDF或第三方源码；通过依赖包调用表面距离实现。
+
+8 无患者数据也可先跑通接口
+python make_demo.py
+python evaluate.py --paper vesmamba --before demo/initial.nii.gz --after demo/corrected.nii.gz --gt demo/gt.nii.gz --labels 3 4 --nsd-mm 1.0 --output demo/vesmamba_result.json
+python evaluate.py --paper hipas --pred demo/corrected.nii.gz --gt demo/gt.nii.gz --artery-label 3 --vein-label 4 --artery-prob demo/artery_prob.nii.gz --vein-prob demo/vein_prob.nii.gz --output demo/hipas_result.json
+python evaluate.py --paper airrc --before demo/initial.nii.gz --after demo/corrected.nii.gz --gt demo/gt.nii.gz --branch-labels demo/gt_branch_ids.nii.gz --output demo/airrc_result.json
+这些是人工构造的细线与壁标签，仅验证算法及调用链，不能当作论文复现结果或真实患者性能。请替换为你的预测和固定参考标注再开展实测。

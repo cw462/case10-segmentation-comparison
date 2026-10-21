@@ -1,0 +1,82 @@
+{
+  "created": "2026-10-21T17:17:55",
+  "structure": "lung",
+  "reference_role": "user_designated_supplemented_ground_truth",
+  "prediction": "before supplementation",
+  "ground_truth": "after supplementation, designated by the user for this evaluation",
+  "inputs": {
+    "before": "./inputs/before/lung.nii.gz",
+    "after": "./inputs/after/lung.nii.gz"
+  },
+  "input_sha256": {
+    "before": "9039c45a7d8a1c3619d8574c8b7af16c8f492c5b61cfa40a604f62aaa4f439fb",
+    "after": "e540128302c44425a9f2e75a9747f5777d4803ac95fc4c3342114dbe6cc30e58"
+  },
+  "input_files_unchanged": true,
+  "grid_shape": [
+    512,
+    512,
+    657
+  ],
+  "spacing_mm_array_axes": [
+    0.8769530057907104,
+    0.8769530057907104,
+    0.625
+  ],
+  "evaluation_extent": "entire identical original grid; only the original package's shared-background bounding-box crop and zero padding are applied internally",
+  "before_foreground_voxels": 16793887,
+  "after_foreground_voxels": 16793887,
+  "voxelwise_identical": true,
+  "NSD_tolerance_mm": 1.0,
+  "computation": "evaluate_vesmamba(prediction, ground_truth, spacing, 1.0) was executed; no metric was filled from the equality check",
+  "metric_implementation_path": "./tool/pulmonary_metrics/vesmamba_metrics.py",
+  "metric_implementation_sha256": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "metrics": {
+    "binary.Dice": 1.0,
+    "binary.clDice": 1.0,
+    "binary.HD95_mm": 0.0,
+    "binary.NSD": 1.0
+  },
+  "package_result": {
+    "metrics": {
+      "binary.Dice": 1.0,
+      "binary.clDice": 1.0,
+      "binary.HD95_mm": 0.0,
+      "binary.NSD": 1.0
+    },
+    "status": {
+      "binary.Dice": "ok",
+      "binary.clDice": "ok",
+      "binary.HD95_mm": "ok",
+      "binary.NSD": "ok"
+    },
+    "notes": [
+      "binary: prediction and reference are identical; check that the evaluation is not against itself."
+    ],
+    "protocol": {
+      "implementation": "independent fixed protocol, not VesMamba authors code",
+      "spacing_mm_array_axes": [
+        0.8769530057907104,
+        0.8769530057907104,
+        0.625
+      ],
+      "NSD_tolerance_mm": 1.0,
+      "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+      "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+      "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+      "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+      "scale": "Dice/clDice/NSD fractions, HD95 mm",
+      "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+    }
+  },
+  "evaluation_elapsed_seconds": 37.54088360001333,
+  "elapsed_seconds": 39.219943600008264,
+  "complete": true
+}

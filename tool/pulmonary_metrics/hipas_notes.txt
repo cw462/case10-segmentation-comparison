@@ -1,0 +1,87 @@
+HiPaS hard-label evaluation implementation
+=========================================
+
+Source: Chu et al., Nature Communications 16, 2262 (2025).
+https://doi.org/10.1038/s41467-025-56505-6
+Methods > Statistical analyses (PDF p.12); Results/Fig.2.
+Official paper PDF (MCS p.12; AUC p.4/Fig.2a):
+https://raw.githubusercontent.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation/main/HiPaS.pdf
+Official code: https://github.com/Arturia-Pendragon-Iris/HiPaS_AV_Segmentation
+
+API: evaluate_hipas(pred, gt, spacing, artery_label, vein_label, roi=None,
+                    *, artery_probability=None, vein_probability=None)
+The required spacing is in mm and follows array axes 0/1/2. It does not
+establish anatomical orientation or validate affines. The caller must first
+verify equal, registered, orthogonal voxel geometry. The code performs no
+resampling. Nonnegative labels other than the two target classes are treated
+as nonvascular background; negative or fractional labels are rejected.
+
+The flat metrics contain artery_* and vein_* DSC, SEN, SPE, FPR=1-SPE,
+HD95_mm, AUC, BC_proxy_pred/gt/ratio, SL_voxels_proxy_pred/gt/ratio, plus MCS.
+Fractions are not multiplied by 100. Every metric has a status entry.
+
+MCS: the source prints (P_A*T_V + P_V*T_A)/(P+T), not division by only the
+reference vascular volume. P/T are predicted/reference segmentations.
+This implementation interprets dot products as overlapping voxel counts and
+P+T as the sum of predicted and reference vascular counts. A complete A/V
+swap therefore gives 0.5, not 1. No unprinted factor of two is inserted.
+This interpretation is stated explicitly; equivalence to the authors'
+unpublished/unchecked evaluator is not claimed. MCS alone does not penalize
+all vessel omissions: jointly interpret it with DSC/SEN/FPR.
+
+HD95: surface-distance 0.1 compute_surface_distances followed by
+compute_robust_hausdorff(..., 95): surfel-area-weighted 95th percentile in
+each direction, then the maximum, using supplied spacing in millimetres.
+This is the unified convention for this package. The paper does not fully
+specify its surface extraction/percentile implementation; equivalence to
+the authors' implementation is not claimed. If either mask is empty, HD95
+is None. DSC for both empty is None, consistent with the rest of this
+package; exactly one empty gives DSC=0. Other zero denominators in
+SEN/SPE/FPR/MCS/ratios give None, not NaN, infinity or an invented zero.
+
+BC/SL limitations: the paper counts bifurcations and skeleton pixels after
+standardizing to 334/512 x 334/512 x 1 mm, citing an octree skeleton method.
+Here Lee skeletonization (scikit-image) is run on the native mask grid with
+no pruning. BC_proxy counts 26-connected clusters of skeleton voxels with
+26-neighbour degree >=3. This may merge close junctions and react to diagonal
+contacts or voxelization; it is not a verified graph bifurcation count.
+SL_voxels_proxy is the number of skeleton voxels, never millimetres. Both
+are explicitly proxies. They must not be represented as exact reproduction
+of the paper. To compare cases, establish an explicit shared standard-grid
+protocol externally. Ratios are prediction count/reference count, not matched
+branch recall; values above 1 can arise from false positives. More branches
+or longer skeletons are not, by themselves, evidence of higher quality.
+
+ROI is optional and affects DSC/SEN/SPE/FPR/MCS/AUC only. HD95 and skeletons
+remain full-volume to avoid artificial ROI cut surfaces and branch breaks.
+The returned protocol records this scope. A lung-only or other restricted
+surface/branch experiment requires an explicitly designed separate protocol.
+
+The paper's Fig.2 ROC/AUC requires probability scores. Optional class
+probability arrays must be finite, in [0,1], and on the same grid. AUC is
+computed per case and one-vs-rest via the Mann-Whitney formula and scipy
+rankdata(method='average'), assigning half credit to ties. Missing probability
+maps or an ROI with only one reference class produce None with a status.
+Hard labels are never silently substituted for probabilities. Cohort ROC
+pooling used by the original authors has not been verified; arithmetic means
+of case AUCs are not automatically the same as a pooled cohort AUC. Ranking
+all voxels can use substantial memory on large scans.
+
+The clinical reader ratings are human-assessed outcomes, not automatic
+metrics; this evaluator does not invent them. No union-vessel auxiliary
+metrics or training losses are presented as published endpoints.
+
+This source code was written independently. No HiPaS repository source code
+has been copied. The original authors' HiPaS repository is MIT licensed
+(Copyright 2024 Yuetan Chu); any future reuse must retain its license notice.
+The repository's analysis/get_skeleton.py exposes a soft morphology skeleton
+function; it is not a verified implementation of the paper's cited octree
+method and supplies no verified final BC/SL evaluator. It is not reused.
+The implementation calls installed NumPy/SciPy/scikit-image/surface-distance
+public APIs; their source code is not vendored here.
+
+Tests: python -m unittest -v test_hipas.py
+Synthetic tests cover perfect masks, A/V swaps, empty classes, FPR scope,
+anisotropic spacing, HD95 percentile convention, ROI scope, native-grid
+skeleton voxel counts, JSON safety, and invalid inputs. They validate the
+declared implementation protocol, not equality with the authors' evaluator.

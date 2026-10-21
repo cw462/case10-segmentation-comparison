@@ -1,0 +1,136 @@
+{
+  "archive": "source_archive/VesMamba_HiPaS_AirRC_metrics.zip",
+  "archive_sha256": "b8bfcb878dc19473272d59eac55dec3876cd2a1f11026b19307a790572a4943c",
+  "files": [
+    {
+      "file": "pulmonary_metrics/airrc_metrics.py",
+      "sha256": "4682e505750cb2749e1191637d87b9bd406f59fdd5ac5eeae12caeafa5cc2f0e",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/airrc_notes.txt",
+      "sha256": "5390e0f13e17efc81742ddd18af95174bc1278d4f7e42e66352f96b134f81e89",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/airrc_result.csv",
+      "sha256": "2745fbc0104c4c8a34d77b2c2e2aa2e2d2bcb41455c178b7af5f472dc61d6245",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/airrc_result.json",
+      "sha256": "f8f3eb03cd1eadc789189390e02880c5149194b5007237ec757da20c75b1a82a",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/artery_prob.nii.gz",
+      "sha256": "1ddd382b15ca0a1bd3476cc8315f8248c95ccca3def554a4559d6c576a277792",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/corrected.nii.gz",
+      "sha256": "ac4d7e6991f143de5f1dcfaf473b3f7663c13e76bcf037ba7ca064b33eb03499",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/gt.nii.gz",
+      "sha256": "25822bbc8475f27d08538565152193ab19f6841fd00bc20a0210f8c671a99ed8",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/gt_branch_ids.nii.gz",
+      "sha256": "0049d3ca189442651367b7d99a2218d284f74a0124fab8cf9e7cc549de832763",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/hipas_result.csv",
+      "sha256": "1a5d364237dd874bd38b4534eddc25600b36dd17909939df5e78b1d19fab0d18",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/hipas_result.json",
+      "sha256": "66f5aec573cea06e1007f2b0cfef4b159ec4207dd664875400684644ce6b78c4",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/initial.nii.gz",
+      "sha256": "400e81d5c16630909ee430acafa71b15346238eb59120f5326768a28ae265cb8",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/vein_prob.nii.gz",
+      "sha256": "84572e958ce0cd3df19a79d657115870302a86058527c3f843a2bdb68ae37cb8",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/vesmamba_result.csv",
+      "sha256": "642919d3ee49d2ceded489dfcecca859e57e1943c93d2ad44dfb80c964988146",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/demo/vesmamba_result.json",
+      "sha256": "9078582741c9ef5f69d5057c43d625ed2fe29a577aa45cdc44c4257d941c2b75",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/evaluate.py",
+      "sha256": "f6a0d5b8a5d75d4291408821c6af75cccd77047f149824f911d13b056c96f293",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/hipas_metrics.py",
+      "sha256": "8f0ece28654585530ead22ed408bfa8dfecd7d38d32bdda9e3cc7875727a111d",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/hipas_notes.txt",
+      "sha256": "3217dcbd6047d8ff92793690ca0a93b53a0cab831306685f09a53fccc85fec6f",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/io_utils.py",
+      "sha256": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/make_demo.py",
+      "sha256": "410f2c674069464a06c38c0726690d47110716c17aa467aa9ff89711f1c9584d",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/requirements.txt",
+      "sha256": "96e27a075209e71a460af70150be62851edc67e578e3df37eb988dcc8ed3ed93",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/test_airrc.py",
+      "sha256": "8818e89dcc1150e8ca7112007b5b72a7660ccb23d8b7793244b3b618be08f2ae",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/test_hipas.py",
+      "sha256": "b77878b350830b2b51e99e74534782c7f60cb5509b632c63862f5921e481335d",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/test_metrics.py",
+      "sha256": "fad2b3df3998cc5e5b6592964b1b0f02fc87734d5c45ae4943d7e93be14466d0",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/vesmamba_metrics.py",
+      "sha256": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/使用说明.txt",
+      "sha256": "2f7c5f605f27ef1dc4005634f33b9f7ad3a0bd173a24606eb6b7447e176611c9",
+      "matches_previously_reviewed_copy": true
+    },
+    {
+      "file": "pulmonary_metrics/验证记录.txt",
+      "sha256": "e83e89ac6d480dbaab9d874aaff80b51218fb89b4984ee568bd39af5a5bda782",
+      "matches_previously_reviewed_copy": true
+    }
+  ]
+}

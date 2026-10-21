@@ -1,0 +1,137 @@
+{
+  "paper_metric_set": "hipas",
+  "implementation_notice": "Independent implementation with explicit protocols; not an exact reproduction of undisclosed author evaluation code.",
+  "inputs": {
+    "prediction": "demo/corrected.nii.gz",
+    "gt": "demo/gt.nii.gz",
+    "artery_probability": "demo/artery_prob.nii.gz",
+    "vein_probability": "demo/vein_prob.nii.gz"
+  },
+  "spacing_mm_array_axes": [
+    0.800000011920929,
+    0.800000011920929,
+    1.0
+  ],
+  "package_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "results": {
+    "prediction": {
+      "metrics": {
+        "artery_DSC": 0.9411764705882353,
+        "artery_SEN": 0.9411764705882353,
+        "artery_SPE": 0.9999275729702325,
+        "artery_FPR": 7.242702976750923e-05,
+        "artery_HD95_mm": 0.0,
+        "artery_AUC": 0.9705520217792339,
+        "artery_BC_proxy_pred": 0.0,
+        "artery_BC_proxy_gt": 0.0,
+        "artery_BC_proxy_ratio": null,
+        "artery_SL_voxels_proxy_pred": 17.0,
+        "artery_SL_voxels_proxy_gt": 17.0,
+        "artery_SL_voxels_proxy_ratio": 1.0,
+        "vein_DSC": 0.9696969696969697,
+        "vein_SEN": 0.9411764705882353,
+        "vein_SPE": 1.0,
+        "vein_FPR": 0.0,
+        "vein_HD95_mm": 0.0,
+        "vein_AUC": 0.9705882352941176,
+        "vein_BC_proxy_pred": 0.0,
+        "vein_BC_proxy_gt": 0.0,
+        "vein_BC_proxy_ratio": null,
+        "vein_SL_voxels_proxy_pred": 16.0,
+        "vein_SL_voxels_proxy_gt": 17.0,
+        "vein_SL_voxels_proxy_ratio": 0.9411764705882353,
+        "MCS": 0.014925373134328358
+      },
+      "status": {
+        "artery_DSC": "ok",
+        "artery_SEN": "ok",
+        "artery_SPE": "ok",
+        "artery_FPR": "ok",
+        "artery_HD95_mm": "ok_area_weighted_directional95_max",
+        "artery_AUC": "ok_supplied_probability_scores",
+        "artery_BC_proxy_pred": "native_grid_proxy_not_paper_exact",
+        "artery_BC_proxy_gt": "native_grid_proxy_not_paper_exact",
+        "artery_BC_proxy_ratio": "undefined_reference_proxy_zero",
+        "artery_SL_voxels_proxy_pred": "native_grid_proxy_not_paper_exact",
+        "artery_SL_voxels_proxy_gt": "native_grid_proxy_not_paper_exact",
+        "artery_SL_voxels_proxy_ratio": "native_grid_proxy_abundance_ratio",
+        "vein_DSC": "ok",
+        "vein_SEN": "ok",
+        "vein_SPE": "ok",
+        "vein_FPR": "ok",
+        "vein_HD95_mm": "ok_area_weighted_directional95_max",
+        "vein_AUC": "ok_supplied_probability_scores",
+        "vein_BC_proxy_pred": "native_grid_proxy_not_paper_exact",
+        "vein_BC_proxy_gt": "native_grid_proxy_not_paper_exact",
+        "vein_BC_proxy_ratio": "undefined_reference_proxy_zero",
+        "vein_SL_voxels_proxy_pred": "native_grid_proxy_not_paper_exact",
+        "vein_SL_voxels_proxy_gt": "native_grid_proxy_not_paper_exact",
+        "vein_SL_voxels_proxy_ratio": "native_grid_proxy_abundance_ratio",
+        "MCS": "paper_printed_formula_count_interpretation"
+      },
+      "notes": [
+        "Independent implementation; source-paper evaluator equivalence is not established.",
+        "HD95 follows the package-wide surface-distance 0.1 protocol: surfel-area-weighted directional 95th percentiles, then their maximum.",
+        "BC_proxy and SL_voxels_proxy use native-grid Lee skeletonization; no resampling is performed.",
+        "The paper standardizes to 334/512 x 334/512 x 1.00 mm and uses an octree-based skeleton method; these proxies are not paper-exact BC/SL.",
+        "SL_voxels_proxy counts skeleton voxels, not physical millimetres; compare only on explicitly matched grids.",
+        "BC/SL ratios are abundance ratios, not matched-branch recall; excess branches or length do not establish better segmentation.",
+        "MCS uses the printed numerator divided by predicted-plus-reference vascular voxel counts; no factor of two is added. Complete A/V swapping gives 0.5.",
+        "AUC uses only separately supplied probability maps, one-vs-rest per case; no AUC is inferred from hard labels.",
+        "The paper's expert reader scores require human review and are not automated by this evaluator."
+      ],
+      "protocol": {
+        "source": "https://doi.org/10.1038/s41467-025-56505-6",
+        "source_location": "Methods: Statistical analyses; Results: Fig. 2",
+        "implementation": "independent; hard-label metrics plus explicitly named native-grid skeleton proxies",
+        "spacing_mm_array_axis_order": [
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "geometry_requirement": "same shape, shared aligned orthogonal voxel grid; affine agreement must be checked by caller",
+        "artery_label": 3,
+        "vein_label": 4,
+        "other_labels": "treated as nonvascular background",
+        "fraction_scale": "0 to 1, not percent; MCS printed-formula interpretation is 0 to 0.5",
+        "roi_scope": "full_volume",
+        "roi_voxel_count": 13824,
+        "surface_and_skeleton_scope": "full_volume_even_when_roi_supplied",
+        "FPR": "FP/(FP+TN) = 1-SPE; negatives are one-vs-rest within the confusion-count scope",
+        "HD95": "surface-distance 0.1; surfel-area-weighted 95th percentile in each direction, then maximum, in mm",
+        "HD95_caveat": "unified package convention; the paper's exact surface implementation was not verified",
+        "empty_DSC": "both empty: None; exactly one empty: 0",
+        "empty_HD95": "None if either surface is empty",
+        "undefined_denominator": "None, with per-metric status; not replaced by zero or infinity",
+        "MCS": "(|P_A intersect G_V| + |P_V intersect G_A|) / (|P_A union P_V| + |G_A union G_V|)",
+        "MCS_caveat": "literal printed P+T denominator interpreted as total predicted plus reference vascular counts; official evaluator not verified",
+        "skeletonization": "scikit-image skeletonize(method='lee'), no pruning or component removal",
+        "BC_proxy": "26-connected component count of skeleton voxels with 26-neighbour degree >=3",
+        "SL_voxels_proxy": "number of foreground skeleton voxels, not length in mm",
+        "proxy_ratio": "prediction count / reference count; undefined when reference count is zero; not branch matching recall",
+        "resampling": "none; original paper's standardized grid is not silently applied",
+        "paper_standard_spacing_mm": [
+          0.65234375,
+          0.65234375,
+          1.0
+        ],
+        "AUC": "per-case one-vs-rest Mann-Whitney U/(n_positive*n_negative), scipy rankdata average ties; no hard-label substitution",
+        "AUC_probability_supplied": {
+          "artery": true,
+          "vein": true
+        },
+        "AUC_pooling_caveat": "author cohort-level ROC pooling/aggregation was not verified; this implementation returns per-case AUC",
+        "reader_scores": "human-assessed outcomes, not computed automatically"
+      }
+    }
+  },
+  "changes": {},
+  "notes": [],
+  "comparison_rule": "Deltas are after minus before. Counts and count ratios do not by themselves establish segmentation accuracy."
+}
