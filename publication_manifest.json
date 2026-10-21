@@ -1,5 +1,5 @@
 {
-  "created": "2026-10-21T17:21:22",
+  "created": "2026-10-21T17:28:19",
   "destination": "cw462/case10-segmentation-comparison",
   "visibility": "public",
   "patient_images_included": false,
@@ -8,8 +8,6 @@
   "original_tool_files_verified": 26,
   "path_sanitized_files": [
     "Case10补标前后指标对比.xlsx",
-    "tool_manifest.json",
-    "结果解读.txt",
     "results/comparison_report.json",
     "results/lineage_summary.json",
     "results/lung_reference_metrics.json",
@@ -17,7 +15,9 @@
     "results/preparation.json",
     "results/unit_tests.txt",
     "results/说明与结论.csv",
-    "results/重叠区域定位.csv"
+    "results/重叠区域定位.csv",
+    "tool_manifest.json",
+    "结果解读.txt"
   ],
   "files": [
     {
@@ -67,8 +67,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6300,
-      "sha256": "a3afddf24345025cee3b7f76435f7861c8bc6fb3ebe86924956a91f524093450"
+      "bytes": 6773,
+      "sha256": "b015e9d64304cbc8c8cc023437cae52fae3b503ec4029a73461afceaa63ceced"
+    },
+    {
+      "path": "recheck_source_masks.py",
+      "bytes": 2576,
+      "sha256": "9e3b3c6d0364fe6bb3a8aa64faf09bbc62e4be3e612f6c4e0eb19469b6c2645b"
     },
     {
       "path": "requirements.txt",
@@ -139,6 +144,11 @@
       "path": "results/pulmonary_vein_metrics.json",
       "bytes": 11002,
       "sha256": "461c9a47eba831b60a127bc42fadbc477b74e0e6333e30dbf326609901a24b7c"
+    },
+    {
+      "path": "results/source_masks_recheck.json",
+      "bytes": 2890,
+      "sha256": "807d3d5014b2644a48e05d0931d0a8e75cd7b48ffbd433cd3ecedbfe8241bb27"
     },
     {
       "path": "results/structural_changes.csv",

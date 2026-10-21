@@ -1,0 +1,79 @@
+{
+  "created": "2026-10-21T17:25:43",
+  "scope": "Original NIfTI masks vs original NRRD masks; not directory or bytewise file equality.",
+  "structures": [
+    {
+      "structure": "airway",
+      "before_filename": "airway.nii.gz",
+      "after_filename": "airway.seg.nrrd",
+      "same_shape": true,
+      "same_physical_grid": true,
+      "foreground_voxels_before": 183975,
+      "foreground_voxels_after": 183975,
+      "identical_voxelwise": true,
+      "different_voxels": 0,
+      "added_voxels": 0,
+      "removed_voxels": 0,
+      "source_hashes_match_previous_run": true,
+      "sha256": {
+        "before": "a1ceb57ff009eac50d1416911c21403d3e05c0644a8ecdf4e2f36e63eb4e6ddb",
+        "after": "3f469082f41d4be15ce7470a7c50416c125dab01658f4709c3a779a50a31c890"
+      }
+    },
+    {
+      "structure": "lung",
+      "before_filename": "lung.nii.gz",
+      "after_filename": "lung.seg.nrrd",
+      "same_shape": true,
+      "same_physical_grid": true,
+      "foreground_voxels_before": 16793887,
+      "foreground_voxels_after": 16793887,
+      "identical_voxelwise": true,
+      "different_voxels": 0,
+      "added_voxels": 0,
+      "removed_voxels": 0,
+      "source_hashes_match_previous_run": true,
+      "sha256": {
+        "before": "9039c45a7d8a1c3619d8574c8b7af16c8f492c5b61cfa40a604f62aaa4f439fb",
+        "after": "e666956340ce510e138f2b6f7b47cc759b5c31d62e05cda8145d6c34f752b049"
+      }
+    },
+    {
+      "structure": "pulmonary_artery",
+      "before_filename": "pulmonary_artery.nii.gz",
+      "after_filename": "pulmonary_artery.seg.nrrd",
+      "same_shape": true,
+      "same_physical_grid": true,
+      "foreground_voxels_before": 649130,
+      "foreground_voxels_after": 654909,
+      "identical_voxelwise": false,
+      "different_voxels": 17551,
+      "added_voxels": 11665,
+      "removed_voxels": 5886,
+      "source_hashes_match_previous_run": true,
+      "sha256": {
+        "before": "7391df6e38e23a96c7213f3018b784b98914f2f7fe95ca773e53f72cdac79eaa",
+        "after": "fcb30f79ee2884ce3e77a53dce7cc9a4c523cb415b0dc699fa683833c32f1b44"
+      }
+    },
+    {
+      "structure": "pulmonary_vein",
+      "before_filename": "pulmonary_vein.nii.gz",
+      "after_filename": "pulmonary_vein.seg.nrrd",
+      "same_shape": true,
+      "same_physical_grid": true,
+      "foreground_voxels_before": 748838,
+      "foreground_voxels_after": 751130,
+      "identical_voxelwise": false,
+      "different_voxels": 10008,
+      "added_voxels": 6150,
+      "removed_voxels": 3858,
+      "source_hashes_match_previous_run": true,
+      "sha256": {
+        "before": "30f0caa53fe765c6d0e693a92f73c6b2f1c153d03649363bc005eb7d304b5c47",
+        "after": "0a15f9e06b9ce936d3c1adffa258512cf71f70f01770da44d2ee85b874bb79ca"
+      }
+    }
+  ],
+  "all_original_source_hashes_match_previous_run": true
+}
