@@ -1,0 +1,1568 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-22T05:48:57+00:00",
+  "reference_role": "supplied_PARSE2022_dataset_reference_label",
+  "input_audit_sha256": "74e3c50fef2c0e5c2fbc7a5ab7fd3d15d07f62201614218fc8601e84f83f8a99",
+  "n_expected": 3,
+  "case_state_counts": {
+    "completed": 3
+  },
+  "nsd_tolerances_mm": [
+    1.0
+  ],
+  "complete": true,
+  "notes": [
+    "Reference is the actual supplied PARSE label, not a supplemented version or self-comparison.",
+    "Three-case descriptive results only; no population significance, confidence intervals, or generalization claim.",
+    "Macro means weight each valid case equally. Sample SD uses n-1 and is null for n<2. Min/max are per-case extremes.",
+    "Undefined metrics, including empty-surface HD95, stay null. Each metric reports valid, undefined, failed, missing, pending, and stale counts.",
+    "Do not interpret an HD95 mean without its valid n and the empty/failure counts; excluded undefined distances are not successful zero-distance cases.",
+    "Dice/clDice/NSD/Precision/Recall/IoU and largest-component fractions are 0-1, HD95 is mm, volumes are mL.",
+    "CC26 accepts face/edge/corner contacts; connected-component measurements do not establish anatomical correctness.",
+    "NSD is not pooled across different tolerances. Training-set independence of these cases has not been verified.",
+    "Completed server inference records and uploaded CT digests are verified; pending/failed inference and changed provenance are excluded."
+  ],
+  "cases": [
+    {
+      "case_id": "PA000005",
+      "state": "completed",
+      "reason": "",
+      "report": {
+        "schema_version": 1,
+        "case_id": "PA000005",
+        "evaluation_state": "completed",
+        "created_utc": "2026-10-22T05:48:01+00:00",
+        "reference_role": "supplied_PARSE2022_dataset_reference_label",
+        "reference_is_version_comparison": false,
+        "training_split_independence": "not_verified",
+        "interpretation": "Segmentation evaluated against the supplied reference label; not before/after annotation agreement. Three-case results are descriptive and do not establish population performance or training-set independence.",
+        "label_semantics": {
+          "gt_foreground": 1,
+          "prediction": "binary lung_arteries output of the declared TotalSegmentator lung_vessels task",
+          "dataset_definition_source": "https://parse2022.grand-challenge.org/Dataset/"
+        },
+        "inputs": {
+          "ct": {
+            "path": "local_run/sources/PA000005.nii",
+            "sha256": "104d6edf6d44c12bb80d078b2cc682210b0a5b4b47be690784602d5876e7d6b5",
+            "original_audit_path": "local_inputs/PA000005.nii"
+          },
+          "gt": {
+            "path": "local_run/gt/PA000005.nii",
+            "sha256": "4ddbc9c67c8c6165689211907412279bbd4c3108b509687e75f3aedc0c964707",
+            "original_audit_path": "local_inputs/PA000005.nii"
+          },
+          "prediction": {
+            "path": "local_run/predictions/PA000005/lung_arteries.nii.gz",
+            "sha256": "3101a4e2983d8bd9514e977205652f7a4b1a69330ac848384849e5e0980bcde8",
+            "original_audit_path": null
+          }
+        },
+        "input_audit_sha256": "74e3c50fef2c0e5c2fbc7a5ab7fd3d15d07f62201614218fc8601e84f83f8a99",
+        "geometry": {
+          "ct": {
+            "shape": [
+              512,
+              512,
+              258
+            ],
+            "affine_ras_mm": [
+              [
+                -0.646484375,
+                0.0,
+                0.0,
+                164.1767578125
+              ],
+              [
+                0.0,
+                -0.646484375,
+                0.0,
+                311.6767578125
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -684.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.646484375,
+              0.646484375,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 1
+          },
+          "gt": {
+            "shape": [
+              512,
+              512,
+              258
+            ],
+            "affine_ras_mm": [
+              [
+                -0.646484375,
+                0.0,
+                0.0,
+                164.1767578125
+              ],
+              [
+                0.0,
+                -0.646484375,
+                0.0,
+                311.6767578125
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -684.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.646484375,
+              0.646484375,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 0
+          },
+          "prediction": {
+            "shape": [
+              512,
+              512,
+              258
+            ],
+            "affine_ras_mm": [
+              [
+                -0.646484375,
+                0.0,
+                0.0,
+                164.1767578125
+              ],
+              [
+                0.0,
+                -0.646484375,
+                0.0,
+                311.6767578125
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -684.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.646484375,
+              0.646484375,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 1
+          }
+        },
+        "inference_source": {
+          "path": "local_run/predictions/PA000005/inference.json",
+          "sha256": "513b2cd631bc46cf9e6c8f844c37d061a0a122360ccdfd00f996d7975cb3dd5e",
+          "transfer_manifest_path": "local_run/transfer/image_manifest.json",
+          "transfer_manifest_sha256": "410f8136c215162efc4edd87d02010691ba308b347fc6a32d177e9a18470c38f",
+          "transfer_case": {
+            "case_id": "PA000005",
+            "file": "images/PA000005.nii.gz",
+            "bytes": 110387290,
+            "sha256": "662f98731430ea99c69abc96a483ce014632853d21c010c9701482d4ac67beae",
+            "source_sha256": "104d6edf6d44c12bb80d078b2cc682210b0a5b4b47be690784602d5876e7d6b5",
+            "copy_mode": "gzip_wrapping_preserves_decompressed_source_bytes",
+            "shape_xyz": [
+              512,
+              512,
+              258
+            ],
+            "affine_ras": [
+              [
+                -0.646484375,
+                0.0,
+                0.0,
+                164.1767578125
+              ],
+              [
+                0.0,
+                -0.646484375,
+                0.0,
+                311.6767578125
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -684.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "record": {
+            "case_id": "PA000005",
+            "status": "complete",
+            "input_sha256": "662f98731430ea99c69abc96a483ce014632853d21c010c9701482d4ac67beae",
+            "task": "lung_vessels",
+            "started_unix": 1792647517.7655146,
+            "environment": {
+              "hostname": "redacted",
+              "python": "local_environment/python",
+              "totalsegmentator": "2.13.0",
+              "torch": "2.6.0+cu118",
+              "cuda": "11.8",
+              "cuda_visible_devices": "0",
+              "task": "lung_vessels",
+              "class_map": {
+                "1": "lung_airways",
+                "2": "lung_airways_wall",
+                "3": "lung_arteries",
+                "4": "lung_veins"
+              },
+              "device": "gpu",
+              "fast": false,
+              "roi_subset": null,
+              "save_lowres": false,
+              "evaluation_mask": "lung_arteries.nii.gz"
+            },
+            "environment_fingerprint": "62b385c4e1db284acc2332fc673ccce38eff90cacca19b32b15000a68278aa3b",
+            "artery_sha256": "3101a4e2983d8bd9514e977205652f7a4b1a69330ac848384849e5e0980bcde8",
+            "artery_voxels": 420864,
+            "output_files": [
+              "lung_airways.nii.gz",
+              "lung_airways_wall.nii.gz",
+              "lung_arteries.nii.gz",
+              "lung_veins.nii.gz"
+            ],
+            "elapsed_seconds": 70.62658905982971
+          }
+        },
+        "source_path_map_sha256": "6a8ab94ce01e86c109249562723571f1ef89cc3c04ef44383eb614b7a84a9497",
+        "protocol": {
+          "nsd_tolerance_mm": 1.0,
+          "spacing_mm_array_axes": [
+            0.646484375,
+            0.646484375,
+            1.0
+          ],
+          "evaluation_extent": "entire supplied reference grid",
+          "resampling": "none in evaluation",
+          "postprocessing": "none in evaluation",
+          "affine_check_atol_mm": 0.0001,
+          "memory_cropping": {
+            "source_shape": [
+              512,
+              512,
+              258
+            ],
+            "foreground_bbox_start": [
+              64,
+              151,
+              3
+            ],
+            "foreground_bbox_stop_exclusive": [
+              449,
+              383,
+              232
+            ],
+            "zero_padding_voxels": 1,
+            "evaluated_array_shape": [
+              387,
+              234,
+              231
+            ],
+            "reason": "Only shared background removed; all foreground and original spacing preserved",
+            "confusion_count_extent": "Entire original grid, computed before cropping"
+          },
+          "CC26": "face, edge, or corner contact; largest fraction is descriptive, not anatomical accuracy"
+        },
+        "metrics": {
+          "Dice": 0.7398554713709209,
+          "clDice": 0.7218482680453138,
+          "HD95_mm": 8.906877462134993,
+          "NSD": 0.7505973910588746,
+          "Precision": 0.6275043719586375,
+          "Recall": 0.9012124500499926,
+          "IoU": 0.5871195363406572,
+          "TP": 264094,
+          "FP": 156770,
+          "FN": 28949,
+          "TN": 67183339,
+          "pred_voxels": 420864,
+          "gt_voxels": 293043,
+          "pred_volume_ml": 175.89676171875,
+          "gt_volume_ml": 122.47499131393432,
+          "pred_CC26_components": 91,
+          "pred_CC26_largest_fraction": 0.9493423053527981,
+          "gt_CC26_components": 1,
+          "gt_CC26_largest_fraction": 1.0
+        },
+        "metric_status": {
+          "Dice": "ok",
+          "clDice": "ok",
+          "HD95_mm": "ok",
+          "NSD": "ok",
+          "Precision": "ok",
+          "Recall": "ok",
+          "IoU": "ok",
+          "pred_CC26_largest_fraction": "ok_descriptive_geometry",
+          "gt_CC26_largest_fraction": "ok_descriptive_geometry",
+          "TP": "ok_descriptive_count_or_volume",
+          "FP": "ok_descriptive_count_or_volume",
+          "FN": "ok_descriptive_count_or_volume",
+          "TN": "ok_descriptive_count_or_volume",
+          "pred_voxels": "ok_descriptive_count_or_volume",
+          "gt_voxels": "ok_descriptive_count_or_volume",
+          "pred_volume_ml": "ok_descriptive_count_or_volume",
+          "gt_volume_ml": "ok_descriptive_count_or_volume",
+          "pred_CC26_components": "ok_descriptive_count_or_volume",
+          "gt_CC26_components": "ok_descriptive_count_or_volume"
+        },
+        "components26": {
+          "pred": {
+            "connectivity": 26,
+            "components": 91,
+            "foreground_voxels": 420864,
+            "largest_voxels": 399544,
+            "largest_fraction": 0.9493423053527981,
+            "outside_largest_voxels": 21320
+          },
+          "gt": {
+            "connectivity": 26,
+            "components": 1,
+            "foreground_voxels": 293043,
+            "largest_voxels": 293043,
+            "largest_fraction": 1.0,
+            "outside_largest_voxels": 0
+          }
+        },
+        "vesmamba_original_result": {
+          "metrics": {
+            "binary.Dice": 0.7398554713709209,
+            "binary.clDice": 0.7218482680453138,
+            "binary.HD95_mm": 8.906877462134993,
+            "binary.NSD": 0.7505973910588746
+          },
+          "status": {
+            "binary.Dice": "ok",
+            "binary.clDice": "ok",
+            "binary.HD95_mm": "ok",
+            "binary.NSD": "ok"
+          },
+          "notes": [],
+          "protocol": {
+            "implementation": "independent fixed protocol, not VesMamba authors code",
+            "spacing_mm_array_axes": [
+              0.646484375,
+              0.646484375,
+              1.0
+            ],
+            "NSD_tolerance_mm": 1.0,
+            "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+            "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+            "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+            "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+            "scale": "Dice/clDice/NSD fractions, HD95 mm",
+            "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+          }
+        },
+        "tool_source_sha256": {
+          "vesmamba_metrics.py": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+          "io_utils.py": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e"
+        },
+        "versions": {
+          "numpy": "2.4.4",
+          "scipy": "1.15.2",
+          "scikit-image": "0.26.0",
+          "nibabel": "5.4.2",
+          "surface-distance": "0.1"
+        },
+        "elapsed_seconds": 12.76925602927804
+      }
+    },
+    {
+      "case_id": "PA000016",
+      "state": "completed",
+      "reason": "",
+      "report": {
+        "schema_version": 1,
+        "case_id": "PA000016",
+        "evaluation_state": "completed",
+        "created_utc": "2026-10-22T05:48:19+00:00",
+        "reference_role": "supplied_PARSE2022_dataset_reference_label",
+        "reference_is_version_comparison": false,
+        "training_split_independence": "not_verified",
+        "interpretation": "Segmentation evaluated against the supplied reference label; not before/after annotation agreement. Three-case results are descriptive and do not establish population performance or training-set independence.",
+        "label_semantics": {
+          "gt_foreground": 1,
+          "prediction": "binary lung_arteries output of the declared TotalSegmentator lung_vessels task",
+          "dataset_definition_source": "https://parse2022.grand-challenge.org/Dataset/"
+        },
+        "inputs": {
+          "ct": {
+            "path": "local_environment/PA000016.nii.gz",
+            "sha256": "82770134c7d1d3acdf93d9f1eb7d84c3c25a60789a3cc89f264a2431e51232f3",
+            "original_audit_path": "local_inputs/PA000016.nii.gz"
+          },
+          "gt": {
+            "path": "local_run/gt/PA000016.nii.gz",
+            "sha256": "687d0bc9071c8211a71890d1f2c36a43d58ed4bc33f2ad08e1e59ad7faad57a9",
+            "original_audit_path": "local_inputs/PA000016.nii.gz"
+          },
+          "prediction": {
+            "path": "local_run/predictions/PA000016/lung_arteries.nii.gz",
+            "sha256": "9536c2ede07ac466a18646eb7d6a9bb3f0fcc679a53c87ca3e1b476f031294af",
+            "original_audit_path": null
+          }
+        },
+        "input_audit_sha256": "74e3c50fef2c0e5c2fbc7a5ab7fd3d15d07f62201614218fc8601e84f83f8a99",
+        "geometry": {
+          "ct": {
+            "shape": [
+              512,
+              512,
+              295
+            ],
+            "affine_ras_mm": [
+              [
+                -0.64453125,
+                0.0,
+                0.0,
+                166.677734375
+              ],
+              [
+                0.0,
+                -0.64453125,
+                0.0,
+                297.177734375
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -771.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.64453125,
+              0.64453125,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 1
+          },
+          "gt": {
+            "shape": [
+              512,
+              512,
+              295
+            ],
+            "affine_ras_mm": [
+              [
+                -0.64453125,
+                0.0,
+                0.0,
+                166.677734375
+              ],
+              [
+                0.0,
+                -0.64453125,
+                0.0,
+                297.177734375
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -771.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.64453125,
+              0.64453125,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 0
+          },
+          "prediction": {
+            "shape": [
+              512,
+              512,
+              295
+            ],
+            "affine_ras_mm": [
+              [
+                -0.64453125,
+                0.0,
+                0.0,
+                166.677734375
+              ],
+              [
+                0.0,
+                -0.64453125,
+                0.0,
+                297.177734375
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -771.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.64453125,
+              0.64453125,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 1
+          }
+        },
+        "inference_source": {
+          "path": "local_run/predictions/PA000016/inference.json",
+          "sha256": "aa9288c8130d9bfa19bbced0f37ae377424a0f9c82c836d111bdf85ffe156c84",
+          "transfer_manifest_path": "local_run/transfer/image_manifest.json",
+          "transfer_manifest_sha256": "410f8136c215162efc4edd87d02010691ba308b347fc6a32d177e9a18470c38f",
+          "transfer_case": {
+            "case_id": "PA000016",
+            "file": "images/PA000016.nii.gz",
+            "bytes": 90273074,
+            "sha256": "82770134c7d1d3acdf93d9f1eb7d84c3c25a60789a3cc89f264a2431e51232f3",
+            "source_sha256": "82770134c7d1d3acdf93d9f1eb7d84c3c25a60789a3cc89f264a2431e51232f3",
+            "copy_mode": "byte_identical_gzip_copy",
+            "shape_xyz": [
+              512,
+              512,
+              295
+            ],
+            "affine_ras": [
+              [
+                -0.64453125,
+                0.0,
+                0.0,
+                166.677734375
+              ],
+              [
+                0.0,
+                -0.64453125,
+                0.0,
+                297.177734375
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -771.9000244140625
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "record": {
+            "case_id": "PA000016",
+            "status": "complete",
+            "input_sha256": "82770134c7d1d3acdf93d9f1eb7d84c3c25a60789a3cc89f264a2431e51232f3",
+            "task": "lung_vessels",
+            "started_unix": 1792647588.6386957,
+            "environment": {
+              "hostname": "redacted",
+              "python": "local_environment/python",
+              "totalsegmentator": "2.13.0",
+              "torch": "2.6.0+cu118",
+              "cuda": "11.8",
+              "cuda_visible_devices": "0",
+              "task": "lung_vessels",
+              "class_map": {
+                "1": "lung_airways",
+                "2": "lung_airways_wall",
+                "3": "lung_arteries",
+                "4": "lung_veins"
+              },
+              "device": "gpu",
+              "fast": false,
+              "roi_subset": null,
+              "save_lowres": false,
+              "evaluation_mask": "lung_arteries.nii.gz"
+            },
+            "environment_fingerprint": "62b385c4e1db284acc2332fc673ccce38eff90cacca19b32b15000a68278aa3b",
+            "artery_sha256": "9536c2ede07ac466a18646eb7d6a9bb3f0fcc679a53c87ca3e1b476f031294af",
+            "artery_voxels": 447836,
+            "output_files": [
+              "lung_airways.nii.gz",
+              "lung_airways_wall.nii.gz",
+              "lung_arteries.nii.gz",
+              "lung_veins.nii.gz"
+            ],
+            "elapsed_seconds": 65.62271022796631
+          }
+        },
+        "source_path_map_sha256": "6a8ab94ce01e86c109249562723571f1ef89cc3c04ef44383eb614b7a84a9497",
+        "protocol": {
+          "nsd_tolerance_mm": 1.0,
+          "spacing_mm_array_axes": [
+            0.64453125,
+            0.64453125,
+            1.0
+          ],
+          "evaluation_extent": "entire supplied reference grid",
+          "resampling": "none in evaluation",
+          "postprocessing": "none in evaluation",
+          "affine_check_atol_mm": 0.0001,
+          "memory_cropping": {
+            "source_shape": [
+              512,
+              512,
+              295
+            ],
+            "foreground_bbox_start": [
+              31,
+              88,
+              17
+            ],
+            "foreground_bbox_stop_exclusive": [
+              439,
+              369,
+              295
+            ],
+            "zero_padding_voxels": 1,
+            "evaluated_array_shape": [
+              410,
+              283,
+              280
+            ],
+            "reason": "Only shared background removed; all foreground and original spacing preserved",
+            "confusion_count_extent": "Entire original grid, computed before cropping"
+          },
+          "CC26": "face, edge, or corner contact; largest fraction is descriptive, not anatomical accuracy"
+        },
+        "metrics": {
+          "Dice": 0.7223254378087113,
+          "clDice": 0.6910747668769908,
+          "HD95_mm": 12.890353335205567,
+          "NSD": 0.7217711602001241,
+          "Precision": 0.574717083932511,
+          "Recall": 0.9719603933475325,
+          "IoU": 0.5653438357337879,
+          "TP": 257379,
+          "FP": 190457,
+          "FN": 7425,
+          "TN": 76877219,
+          "pred_voxels": 447836,
+          "gt_voxels": 264804,
+          "pred_volume_ml": 186.04026947021484,
+          "gt_volume_ml": 110.00501861572266,
+          "pred_CC26_components": 91,
+          "pred_CC26_largest_fraction": 0.9852535303102028,
+          "gt_CC26_components": 1,
+          "gt_CC26_largest_fraction": 1.0
+        },
+        "metric_status": {
+          "Dice": "ok",
+          "clDice": "ok",
+          "HD95_mm": "ok",
+          "NSD": "ok",
+          "Precision": "ok",
+          "Recall": "ok",
+          "IoU": "ok",
+          "pred_CC26_largest_fraction": "ok_descriptive_geometry",
+          "gt_CC26_largest_fraction": "ok_descriptive_geometry",
+          "TP": "ok_descriptive_count_or_volume",
+          "FP": "ok_descriptive_count_or_volume",
+          "FN": "ok_descriptive_count_or_volume",
+          "TN": "ok_descriptive_count_or_volume",
+          "pred_voxels": "ok_descriptive_count_or_volume",
+          "gt_voxels": "ok_descriptive_count_or_volume",
+          "pred_volume_ml": "ok_descriptive_count_or_volume",
+          "gt_volume_ml": "ok_descriptive_count_or_volume",
+          "pred_CC26_components": "ok_descriptive_count_or_volume",
+          "gt_CC26_components": "ok_descriptive_count_or_volume"
+        },
+        "components26": {
+          "pred": {
+            "connectivity": 26,
+            "components": 91,
+            "foreground_voxels": 447836,
+            "largest_voxels": 441232,
+            "largest_fraction": 0.9852535303102028,
+            "outside_largest_voxels": 6604
+          },
+          "gt": {
+            "connectivity": 26,
+            "components": 1,
+            "foreground_voxels": 264804,
+            "largest_voxels": 264804,
+            "largest_fraction": 1.0,
+            "outside_largest_voxels": 0
+          }
+        },
+        "vesmamba_original_result": {
+          "metrics": {
+            "binary.Dice": 0.7223254378087113,
+            "binary.clDice": 0.6910747668769908,
+            "binary.HD95_mm": 12.890353335205567,
+            "binary.NSD": 0.7217711602001241
+          },
+          "status": {
+            "binary.Dice": "ok",
+            "binary.clDice": "ok",
+            "binary.HD95_mm": "ok",
+            "binary.NSD": "ok"
+          },
+          "notes": [],
+          "protocol": {
+            "implementation": "independent fixed protocol, not VesMamba authors code",
+            "spacing_mm_array_axes": [
+              0.64453125,
+              0.64453125,
+              1.0
+            ],
+            "NSD_tolerance_mm": 1.0,
+            "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+            "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+            "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+            "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+            "scale": "Dice/clDice/NSD fractions, HD95 mm",
+            "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+          }
+        },
+        "tool_source_sha256": {
+          "vesmamba_metrics.py": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+          "io_utils.py": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e"
+        },
+        "versions": {
+          "numpy": "2.4.4",
+          "scipy": "1.15.2",
+          "scikit-image": "0.26.0",
+          "nibabel": "5.4.2",
+          "surface-distance": "0.1"
+        },
+        "elapsed_seconds": 18.34362130239606
+      }
+    },
+    {
+      "case_id": "PA000024",
+      "state": "completed",
+      "reason": "",
+      "report": {
+        "schema_version": 1,
+        "case_id": "PA000024",
+        "evaluation_state": "completed",
+        "created_utc": "2026-10-22T05:48:35+00:00",
+        "reference_role": "supplied_PARSE2022_dataset_reference_label",
+        "reference_is_version_comparison": false,
+        "training_split_independence": "not_verified",
+        "interpretation": "Segmentation evaluated against the supplied reference label; not before/after annotation agreement. Three-case results are descriptive and do not establish population performance or training-set independence.",
+        "label_semantics": {
+          "gt_foreground": 1,
+          "prediction": "binary lung_arteries output of the declared TotalSegmentator lung_vessels task",
+          "dataset_definition_source": "https://parse2022.grand-challenge.org/Dataset/"
+        },
+        "inputs": {
+          "ct": {
+            "path": "local_environment/PA000024.nii.gz",
+            "sha256": "611ff31c308fd2d18a621d96d2da96e150c5187d18db89bd0019e4ab925f66ca",
+            "original_audit_path": "local_inputs/PA000024.nii.gz"
+          },
+          "gt": {
+            "path": "local_run/gt/PA000024.nii.gz",
+            "sha256": "0f32b7cddf795d506792eceda4d3b0aae80b59285c65a1294dbb3323d54c734b",
+            "original_audit_path": "local_inputs/PA000024.nii.gz"
+          },
+          "prediction": {
+            "path": "local_run/predictions/PA000024/lung_arteries.nii.gz",
+            "sha256": "a6cf54665403e4537aa9e34ca96e971ffdad3685faac11d7cbc68798327fbc3e",
+            "original_audit_path": null
+          }
+        },
+        "input_audit_sha256": "74e3c50fef2c0e5c2fbc7a5ab7fd3d15d07f62201614218fc8601e84f83f8a99",
+        "geometry": {
+          "ct": {
+            "shape": [
+              512,
+              512,
+              256
+            ],
+            "affine_ras_mm": [
+              [
+                -0.60546875,
+                0.0,
+                0.0,
+                166.697265625
+              ],
+              [
+                0.0,
+                -0.60546875,
+                0.0,
+                324.697265625
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -672.5999755859375
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.60546875,
+              0.60546875,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 1
+          },
+          "gt": {
+            "shape": [
+              512,
+              512,
+              256
+            ],
+            "affine_ras_mm": [
+              [
+                -0.60546875,
+                0.0,
+                0.0,
+                166.697265625
+              ],
+              [
+                0.0,
+                -0.60546875,
+                0.0,
+                324.697265625
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -672.5999755859375
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.60546875,
+              0.60546875,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 0
+          },
+          "prediction": {
+            "shape": [
+              512,
+              512,
+              256
+            ],
+            "affine_ras_mm": [
+              [
+                -0.60546875,
+                0.0,
+                0.0,
+                166.697265625
+              ],
+              [
+                0.0,
+                -0.60546875,
+                0.0,
+                324.697265625
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -672.5999755859375
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "spacing_mm_array_axes": [
+              0.60546875,
+              0.60546875,
+              1.0
+            ],
+            "spatial_units": "mm",
+            "qform_code": 1,
+            "sform_code": 1
+          }
+        },
+        "inference_source": {
+          "path": "local_run/predictions/PA000024/inference.json",
+          "sha256": "47da9f1b153facfd98aaee3d266eabddf26cc2cfe7e1925839cc8863e3afb9ed",
+          "transfer_manifest_path": "local_run/transfer/image_manifest.json",
+          "transfer_manifest_sha256": "410f8136c215162efc4edd87d02010691ba308b347fc6a32d177e9a18470c38f",
+          "transfer_case": {
+            "case_id": "PA000024",
+            "file": "images/PA000024.nii.gz",
+            "bytes": 76095017,
+            "sha256": "611ff31c308fd2d18a621d96d2da96e150c5187d18db89bd0019e4ab925f66ca",
+            "source_sha256": "611ff31c308fd2d18a621d96d2da96e150c5187d18db89bd0019e4ab925f66ca",
+            "copy_mode": "byte_identical_gzip_copy",
+            "shape_xyz": [
+              512,
+              512,
+              256
+            ],
+            "affine_ras": [
+              [
+                -0.60546875,
+                0.0,
+                0.0,
+                166.697265625
+              ],
+              [
+                0.0,
+                -0.60546875,
+                0.0,
+                324.697265625
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -672.5999755859375
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "record": {
+            "case_id": "PA000024",
+            "status": "complete",
+            "input_sha256": "611ff31c308fd2d18a621d96d2da96e150c5187d18db89bd0019e4ab925f66ca",
+            "task": "lung_vessels",
+            "started_unix": 1792647654.5044851,
+            "environment": {
+              "hostname": "redacted",
+              "python": "local_environment/python",
+              "totalsegmentator": "2.13.0",
+              "torch": "2.6.0+cu118",
+              "cuda": "11.8",
+              "cuda_visible_devices": "0",
+              "task": "lung_vessels",
+              "class_map": {
+                "1": "lung_airways",
+                "2": "lung_airways_wall",
+                "3": "lung_arteries",
+                "4": "lung_veins"
+              },
+              "device": "gpu",
+              "fast": false,
+              "roi_subset": null,
+              "save_lowres": false,
+              "evaluation_mask": "lung_arteries.nii.gz"
+            },
+            "environment_fingerprint": "62b385c4e1db284acc2332fc673ccce38eff90cacca19b32b15000a68278aa3b",
+            "artery_sha256": "a6cf54665403e4537aa9e34ca96e971ffdad3685faac11d7cbc68798327fbc3e",
+            "artery_voxels": 445067,
+            "output_files": [
+              "lung_airways.nii.gz",
+              "lung_airways_wall.nii.gz",
+              "lung_arteries.nii.gz",
+              "lung_veins.nii.gz"
+            ],
+            "elapsed_seconds": 56.208882331848145
+          }
+        },
+        "source_path_map_sha256": "6a8ab94ce01e86c109249562723571f1ef89cc3c04ef44383eb614b7a84a9497",
+        "protocol": {
+          "nsd_tolerance_mm": 1.0,
+          "spacing_mm_array_axes": [
+            0.60546875,
+            0.60546875,
+            1.0
+          ],
+          "evaluation_extent": "entire supplied reference grid",
+          "resampling": "none in evaluation",
+          "postprocessing": "none in evaluation",
+          "affine_check_atol_mm": 0.0001,
+          "memory_cropping": {
+            "source_shape": [
+              512,
+              512,
+              256
+            ],
+            "foreground_bbox_start": [
+              44,
+              191,
+              0
+            ],
+            "foreground_bbox_stop_exclusive": [
+              451,
+              445,
+              242
+            ],
+            "zero_padding_voxels": 1,
+            "evaluated_array_shape": [
+              409,
+              256,
+              244
+            ],
+            "reason": "Only shared background removed; all foreground and original spacing preserved",
+            "confusion_count_extent": "Entire original grid, computed before cropping"
+          },
+          "CC26": "face, edge, or corner contact; largest fraction is descriptive, not anatomical accuracy"
+        },
+        "metrics": {
+          "Dice": 0.7337270603477386,
+          "clDice": 0.7217271658026692,
+          "HD95_mm": 9.948016282360095,
+          "NSD": 0.7452857878778927,
+          "Precision": 0.5980582698784678,
+          "Recall": 0.9490084783833314,
+          "IoU": 0.5794383164732492,
+          "TP": 266176,
+          "FP": 178891,
+          "FN": 14302,
+          "TN": 66649495,
+          "pred_voxels": 445067,
+          "gt_voxels": 280478,
+          "pred_volume_ml": 163.1581829071045,
+          "gt_volume_ml": 102.8211051940918,
+          "pred_CC26_components": 50,
+          "pred_CC26_largest_fraction": 0.9852246965063687,
+          "gt_CC26_components": 1,
+          "gt_CC26_largest_fraction": 1.0
+        },
+        "metric_status": {
+          "Dice": "ok",
+          "clDice": "ok",
+          "HD95_mm": "ok",
+          "NSD": "ok",
+          "Precision": "ok",
+          "Recall": "ok",
+          "IoU": "ok",
+          "pred_CC26_largest_fraction": "ok_descriptive_geometry",
+          "gt_CC26_largest_fraction": "ok_descriptive_geometry",
+          "TP": "ok_descriptive_count_or_volume",
+          "FP": "ok_descriptive_count_or_volume",
+          "FN": "ok_descriptive_count_or_volume",
+          "TN": "ok_descriptive_count_or_volume",
+          "pred_voxels": "ok_descriptive_count_or_volume",
+          "gt_voxels": "ok_descriptive_count_or_volume",
+          "pred_volume_ml": "ok_descriptive_count_or_volume",
+          "gt_volume_ml": "ok_descriptive_count_or_volume",
+          "pred_CC26_components": "ok_descriptive_count_or_volume",
+          "gt_CC26_components": "ok_descriptive_count_or_volume"
+        },
+        "components26": {
+          "pred": {
+            "connectivity": 26,
+            "components": 50,
+            "foreground_voxels": 445067,
+            "largest_voxels": 438491,
+            "largest_fraction": 0.9852246965063687,
+            "outside_largest_voxels": 6576
+          },
+          "gt": {
+            "connectivity": 26,
+            "components": 1,
+            "foreground_voxels": 280478,
+            "largest_voxels": 280478,
+            "largest_fraction": 1.0,
+            "outside_largest_voxels": 0
+          }
+        },
+        "vesmamba_original_result": {
+          "metrics": {
+            "binary.Dice": 0.7337270603477386,
+            "binary.clDice": 0.7217271658026692,
+            "binary.HD95_mm": 9.948016282360095,
+            "binary.NSD": 0.7452857878778927
+          },
+          "status": {
+            "binary.Dice": "ok",
+            "binary.clDice": "ok",
+            "binary.HD95_mm": "ok",
+            "binary.NSD": "ok"
+          },
+          "notes": [],
+          "protocol": {
+            "implementation": "independent fixed protocol, not VesMamba authors code",
+            "spacing_mm_array_axes": [
+              0.60546875,
+              0.60546875,
+              1.0
+            ],
+            "NSD_tolerance_mm": 1.0,
+            "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+            "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+            "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+            "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+            "scale": "Dice/clDice/NSD fractions, HD95 mm",
+            "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+          }
+        },
+        "tool_source_sha256": {
+          "vesmamba_metrics.py": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+          "io_utils.py": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e"
+        },
+        "versions": {
+          "numpy": "2.4.4",
+          "scipy": "1.15.2",
+          "scikit-image": "0.26.0",
+          "nibabel": "5.4.2",
+          "surface-distance": "0.1"
+        },
+        "elapsed_seconds": 15.213820522651076
+      }
+    }
+  ],
+  "macro": [
+    {
+      "metric": "Dice",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.7319693231757903,
+      "sample_sd": 0.008896221059938068,
+      "min": 0.7223254378087113,
+      "max": 0.7398554713709209,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "clDice",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.7115500669083246,
+      "sample_sd": 0.01773223336097703,
+      "min": 0.6910747668769908,
+      "max": 0.7218482680453138,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "NSD",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.7392181130456305,
+      "sample_sd": 0.015341134403395525,
+      "min": 0.7217711602001241,
+      "max": 0.7505973910588746,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "HD95_mm",
+      "unit": "mm",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 10.581749026566884,
+      "sample_sd": 2.0659702081936575,
+      "min": 8.906877462134993,
+      "max": 12.890353335205567,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "Precision",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.6000932419232053,
+      "sample_sd": 0.026452415347288386,
+      "min": 0.574717083932511,
+      "max": 0.6275043719586375,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "Recall",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.9407271072602855,
+      "sample_sd": 0.03609367951548016,
+      "min": 0.9012124500499926,
+      "max": 0.9719603933475325,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "IoU",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.5773005628492314,
+      "sample_sd": 0.011044128627816351,
+      "min": 0.5653438357337879,
+      "max": 0.5871195363406572,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "TP",
+      "unit": "voxels",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 262549.6666666667,
+      "sample_sd": 4597.339049203717,
+      "min": 257379,
+      "max": 266176,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "FP",
+      "unit": "voxels",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 175372.66666666666,
+      "sample_sd": 17116.87747030203,
+      "min": 156770,
+      "max": 190457,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "FN",
+      "unit": "voxels",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 16892.0,
+      "sample_sd": 10993.257888360484,
+      "min": 7425,
+      "max": 28949,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "TN",
+      "unit": "voxels",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 70236684.33333333,
+      "sample_sd": 5757062.866469788,
+      "min": 66649495,
+      "max": 76877219,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "pred_voxels",
+      "unit": "voxels",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 437922.3333333333,
+      "sample_sd": 14837.684871075182,
+      "min": 420864,
+      "max": 447836,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "gt_voxels",
+      "unit": "voxels",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 279441.6666666667,
+      "sample_sd": 14147.995276127756,
+      "min": 264804,
+      "max": 293043,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "pred_volume_ml",
+      "unit": "mL",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 175.03173803202313,
+      "sample_sd": 11.465542763182542,
+      "min": 163.1581829071045,
+      "max": 186.04026947021484,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "gt_volume_ml",
+      "unit": "mL",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 111.76703837458292,
+      "sample_sd": 9.944714431591043,
+      "min": 102.8211051940918,
+      "max": 122.47499131393432,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "pred_CC26_components",
+      "unit": "components",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 77.33333333333333,
+      "sample_sd": 23.671361036774655,
+      "min": 50,
+      "max": 91,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "gt_CC26_components",
+      "unit": "components",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1,
+      "max": 1,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "pred_CC26_largest_fraction",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 0.9732735107231232,
+      "sample_sd": 0.0207250368082802,
+      "min": 0.9493423053527981,
+      "max": 0.9852535303102028,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    },
+    {
+      "metric": "gt_CC26_largest_fraction",
+      "unit": "fraction",
+      "n_expected": 3,
+      "n_completed_cases": 3,
+      "n_valid": 3,
+      "n_undefined_metric": 0,
+      "n_failed_cases": 0,
+      "n_missing_predictions": 0,
+      "n_pending_inferences": 0,
+      "n_pending_evaluations": 0,
+      "n_stale_results": 0,
+      "n_unavailable_cases": 0,
+      "mean": 1.0,
+      "sample_sd": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "aggregation_status": "ok_descriptive_macro",
+      "undefined_metric_status_counts": {}
+    }
+  ],
+  "exported_workbook_sha256": "8a75e416277dbc9380e180963e4f57b54b84cb115ecc6f44d408854d36b41395"
+}

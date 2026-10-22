@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "case_id": "PA000005",
+  "evaluation_state": "completed",
+  "created_utc": "2026-10-22T05:48:01+00:00",
+  "reference_role": "supplied_PARSE2022_dataset_reference_label",
+  "reference_is_version_comparison": false,
+  "training_split_independence": "not_verified",
+  "interpretation": "Segmentation evaluated against the supplied reference label; not before/after annotation agreement. Three-case results are descriptive and do not establish population performance or training-set independence.",
+  "label_semantics": {
+    "gt_foreground": 1,
+    "prediction": "binary lung_arteries output of the declared TotalSegmentator lung_vessels task",
+    "dataset_definition_source": "https://parse2022.grand-challenge.org/Dataset/"
+  },
+  "inputs": {
+    "ct": {
+      "path": "local_run/sources/PA000005.nii",
+      "sha256": "104d6edf6d44c12bb80d078b2cc682210b0a5b4b47be690784602d5876e7d6b5",
+      "original_audit_path": "local_inputs/PA000005.nii"
+    },
+    "gt": {
+      "path": "local_run/gt/PA000005.nii",
+      "sha256": "4ddbc9c67c8c6165689211907412279bbd4c3108b509687e75f3aedc0c964707",
+      "original_audit_path": "local_inputs/PA000005.nii"
+    },
+    "prediction": {
+      "path": "local_run/predictions/PA000005/lung_arteries.nii.gz",
+      "sha256": "3101a4e2983d8bd9514e977205652f7a4b1a69330ac848384849e5e0980bcde8",
+      "original_audit_path": null
+    }
+  },
+  "input_audit_sha256": "74e3c50fef2c0e5c2fbc7a5ab7fd3d15d07f62201614218fc8601e84f83f8a99",
+  "geometry": {
+    "ct": {
+      "shape": [
+        512,
+        512,
+        258
+      ],
+      "affine_ras_mm": [
+        [
+          -0.646484375,
+          0.0,
+          0.0,
+          164.1767578125
+        ],
+        [
+          0.0,
+          -0.646484375,
+          0.0,
+          311.6767578125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -684.9000244140625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing_mm_array_axes": [
+        0.646484375,
+        0.646484375,
+        1.0
+      ],
+      "spatial_units": "mm",
+      "qform_code": 1,
+      "sform_code": 1
+    },
+    "gt": {
+      "shape": [
+        512,
+        512,
+        258
+      ],
+      "affine_ras_mm": [
+        [
+          -0.646484375,
+          0.0,
+          0.0,
+          164.1767578125
+        ],
+        [
+          0.0,
+          -0.646484375,
+          0.0,
+          311.6767578125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -684.9000244140625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing_mm_array_axes": [
+        0.646484375,
+        0.646484375,
+        1.0
+      ],
+      "spatial_units": "mm",
+      "qform_code": 1,
+      "sform_code": 0
+    },
+    "prediction": {
+      "shape": [
+        512,
+        512,
+        258
+      ],
+      "affine_ras_mm": [
+        [
+          -0.646484375,
+          0.0,
+          0.0,
+          164.1767578125
+        ],
+        [
+          0.0,
+          -0.646484375,
+          0.0,
+          311.6767578125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -684.9000244140625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "spacing_mm_array_axes": [
+        0.646484375,
+        0.646484375,
+        1.0
+      ],
+      "spatial_units": "mm",
+      "qform_code": 1,
+      "sform_code": 1
+    }
+  },
+  "inference_source": {
+    "path": "local_run/predictions/PA000005/inference.json",
+    "sha256": "513b2cd631bc46cf9e6c8f844c37d061a0a122360ccdfd00f996d7975cb3dd5e",
+    "transfer_manifest_path": "local_run/transfer/image_manifest.json",
+    "transfer_manifest_sha256": "410f8136c215162efc4edd87d02010691ba308b347fc6a32d177e9a18470c38f",
+    "transfer_case": {
+      "case_id": "PA000005",
+      "file": "images/PA000005.nii.gz",
+      "bytes": 110387290,
+      "sha256": "662f98731430ea99c69abc96a483ce014632853d21c010c9701482d4ac67beae",
+      "source_sha256": "104d6edf6d44c12bb80d078b2cc682210b0a5b4b47be690784602d5876e7d6b5",
+      "copy_mode": "gzip_wrapping_preserves_decompressed_source_bytes",
+      "shape_xyz": [
+        512,
+        512,
+        258
+      ],
+      "affine_ras": [
+        [
+          -0.646484375,
+          0.0,
+          0.0,
+          164.1767578125
+        ],
+        [
+          0.0,
+          -0.646484375,
+          0.0,
+          311.6767578125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -684.9000244140625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "record": {
+      "case_id": "PA000005",
+      "status": "complete",
+      "input_sha256": "662f98731430ea99c69abc96a483ce014632853d21c010c9701482d4ac67beae",
+      "task": "lung_vessels",
+      "started_unix": 1792647517.7655146,
+      "environment": {
+        "hostname": "redacted",
+        "python": "local_environment/python",
+        "totalsegmentator": "2.13.0",
+        "torch": "2.6.0+cu118",
+        "cuda": "11.8",
+        "cuda_visible_devices": "0",
+        "task": "lung_vessels",
+        "class_map": {
+          "1": "lung_airways",
+          "2": "lung_airways_wall",
+          "3": "lung_arteries",
+          "4": "lung_veins"
+        },
+        "device": "gpu",
+        "fast": false,
+        "roi_subset": null,
+        "save_lowres": false,
+        "evaluation_mask": "lung_arteries.nii.gz"
+      },
+      "environment_fingerprint": "62b385c4e1db284acc2332fc673ccce38eff90cacca19b32b15000a68278aa3b",
+      "artery_sha256": "3101a4e2983d8bd9514e977205652f7a4b1a69330ac848384849e5e0980bcde8",
+      "artery_voxels": 420864,
+      "output_files": [
+        "lung_airways.nii.gz",
+        "lung_airways_wall.nii.gz",
+        "lung_arteries.nii.gz",
+        "lung_veins.nii.gz"
+      ],
+      "elapsed_seconds": 70.62658905982971
+    }
+  },
+  "source_path_map_sha256": "6a8ab94ce01e86c109249562723571f1ef89cc3c04ef44383eb614b7a84a9497",
+  "protocol": {
+    "nsd_tolerance_mm": 1.0,
+    "spacing_mm_array_axes": [
+      0.646484375,
+      0.646484375,
+      1.0
+    ],
+    "evaluation_extent": "entire supplied reference grid",
+    "resampling": "none in evaluation",
+    "postprocessing": "none in evaluation",
+    "affine_check_atol_mm": 0.0001,
+    "memory_cropping": {
+      "source_shape": [
+        512,
+        512,
+        258
+      ],
+      "foreground_bbox_start": [
+        64,
+        151,
+        3
+      ],
+      "foreground_bbox_stop_exclusive": [
+        449,
+        383,
+        232
+      ],
+      "zero_padding_voxels": 1,
+      "evaluated_array_shape": [
+        387,
+        234,
+        231
+      ],
+      "reason": "Only shared background removed; all foreground and original spacing preserved",
+      "confusion_count_extent": "Entire original grid, computed before cropping"
+    },
+    "CC26": "face, edge, or corner contact; largest fraction is descriptive, not anatomical accuracy"
+  },
+  "metrics": {
+    "Dice": 0.7398554713709209,
+    "clDice": 0.7218482680453138,
+    "HD95_mm": 8.906877462134993,
+    "NSD": 0.7505973910588746,
+    "Precision": 0.6275043719586375,
+    "Recall": 0.9012124500499926,
+    "IoU": 0.5871195363406572,
+    "TP": 264094,
+    "FP": 156770,
+    "FN": 28949,
+    "TN": 67183339,
+    "pred_voxels": 420864,
+    "gt_voxels": 293043,
+    "pred_volume_ml": 175.89676171875,
+    "gt_volume_ml": 122.47499131393432,
+    "pred_CC26_components": 91,
+    "pred_CC26_largest_fraction": 0.9493423053527981,
+    "gt_CC26_components": 1,
+    "gt_CC26_largest_fraction": 1.0
+  },
+  "metric_status": {
+    "Dice": "ok",
+    "clDice": "ok",
+    "HD95_mm": "ok",
+    "NSD": "ok",
+    "Precision": "ok",
+    "Recall": "ok",
+    "IoU": "ok",
+    "pred_CC26_largest_fraction": "ok_descriptive_geometry",
+    "gt_CC26_largest_fraction": "ok_descriptive_geometry",
+    "TP": "ok_descriptive_count_or_volume",
+    "FP": "ok_descriptive_count_or_volume",
+    "FN": "ok_descriptive_count_or_volume",
+    "TN": "ok_descriptive_count_or_volume",
+    "pred_voxels": "ok_descriptive_count_or_volume",
+    "gt_voxels": "ok_descriptive_count_or_volume",
+    "pred_volume_ml": "ok_descriptive_count_or_volume",
+    "gt_volume_ml": "ok_descriptive_count_or_volume",
+    "pred_CC26_components": "ok_descriptive_count_or_volume",
+    "gt_CC26_components": "ok_descriptive_count_or_volume"
+  },
+  "components26": {
+    "pred": {
+      "connectivity": 26,
+      "components": 91,
+      "foreground_voxels": 420864,
+      "largest_voxels": 399544,
+      "largest_fraction": 0.9493423053527981,
+      "outside_largest_voxels": 21320
+    },
+    "gt": {
+      "connectivity": 26,
+      "components": 1,
+      "foreground_voxels": 293043,
+      "largest_voxels": 293043,
+      "largest_fraction": 1.0,
+      "outside_largest_voxels": 0
+    }
+  },
+  "vesmamba_original_result": {
+    "metrics": {
+      "binary.Dice": 0.7398554713709209,
+      "binary.clDice": 0.7218482680453138,
+      "binary.HD95_mm": 8.906877462134993,
+      "binary.NSD": 0.7505973910588746
+    },
+    "status": {
+      "binary.Dice": "ok",
+      "binary.clDice": "ok",
+      "binary.HD95_mm": "ok",
+      "binary.NSD": "ok"
+    },
+    "notes": [],
+    "protocol": {
+      "implementation": "independent fixed protocol, not VesMamba authors code",
+      "spacing_mm_array_axes": [
+        0.646484375,
+        0.646484375,
+        1.0
+      ],
+      "NSD_tolerance_mm": 1.0,
+      "NSD": "surfel-area weighted surface Dice, inclusive distance <= tolerance",
+      "HD95": "max of directional area-weighted 95th percentiles, surface-distance 0.1, mm",
+      "clDice": "3D Lee skeleton, voxel-count precision/sensitivity, no pruning",
+      "postprocessing": "none; union bbox crop removes only shared background, then zero padding",
+      "scale": "Dice/clDice/NSD fractions, HD95 mm",
+      "empty_policy": "both empty=null; one empty overlap metrics=0, HD95=null with failure status"
+    }
+  },
+  "tool_source_sha256": {
+    "vesmamba_metrics.py": "d50dd83dfe237da03dada2018c7d185e72f4178b26495fb39bb068f2b6fa38d7",
+    "io_utils.py": "c4a6bab81318eccf1f80c47d19b26325eb298c239ac15735deca6e23d9a0827e"
+  },
+  "versions": {
+    "numpy": "2.4.4",
+    "scipy": "1.15.2",
+    "scikit-image": "0.26.0",
+    "nibabel": "5.4.2",
+    "surface-distance": "0.1"
+  },
+  "elapsed_seconds": 12.76925602927804
+}

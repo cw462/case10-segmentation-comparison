@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-10-22T05:47:48+00:00",
+  "selected_cases": [
+    "PA000005",
+    "PA000016",
+    "PA000024"
+  ],
+  "nsd_tolerance_mm": 1.0,
+  "missing_predictions": [],
+  "case_states": {
+    "PA000005": "completed",
+    "PA000016": "completed",
+    "PA000024": "completed"
+  },
+  "complete": true,
+  "finished_utc": "2026-10-22T05:48:35+00:00"
+}

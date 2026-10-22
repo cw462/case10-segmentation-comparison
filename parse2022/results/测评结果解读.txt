@@ -1,0 +1,49 @@
+PARSE 2022 三例肺动脉测评结果
+完成：三例已由服务器TotalSegmentator 2.13.0真实分割，并以原始label为参考完成评分。
+
+病例       Dice      clDice    NSD@1mm   HD95(mm)  Precision  Recall
+PA000005   73.99%    72.18%    75.06%      8.91     62.75%    90.12%
+PA000016   72.23%    69.11%    72.18%     12.89     57.47%    97.20%
+PA000024   73.37%    72.17%    74.53%      9.95     59.81%    94.90%
+
+三例等权均值 ± 样本标准差：
+Dice: 73.20 ± 0.89%
+clDice: 71.16 ± 1.77%
+NSD: 73.92 ± 1.53%
+HD95_mm: 10.58 ± 2.07 mm
+Precision: 60.01 ± 2.65%
+Recall: 94.07 ± 3.61%
+IoU: 57.73 ± 1.10%
+
+结果解读
+1. 平均Dice 73.20%；PA000005的四项核心指标最好，PA000016相对较低。
+2. 平均Recall 94.07%、Precision 60.01%。相对所给标签，大部分前景被检出，但标签外阳性较多；三例预测体积是标签的1.44–1.69倍。
+3. HD95在8.91–12.89 mm之间，说明仍存在较明显的表面距离偏差；HD95不等于所有位置误差上限。
+4. 标签外阳性的具体原因须在原CT上叠加预测和标签复核，不能仅凭汇总指标判定为静脉误分、细分支漏标或其他原因。
+5. 这三个label只有肺动脉，因此当前准确率仅对应肺动脉。静脉、气道及气道壁预测也已保存，但没有对应真值，未评分。
+
+测评协议与限制
+模型：服务器TotalSegmentator 2.13.0；lung_vessels任务；Dataset117_lung_airways_arteries_veins_282subj；RTX 3090 GPU 0。
+模型选项：fast=False，save_lowres=False；无roi_subset；逐例串行推理。模型自带内部预处理/后处理以安装版本默认行为为准。
+真值与预测：原始PARSE标签1=肺动脉；预测使用lung_arteries.nii.gz，不合并肺静脉。
+几何核对：每例CT、GT与预测的3D形状、mm单位、实际affine一致；评估没有额外重采样、平滑或碎片删除。
+空间范围：全部原始网格；为了降低内存，只裁剪双方共同背景并补零，保留全部前景；TN按完整原网格计数。
+代码来源：沿用此前VesMamba_HiPaS_AirRC_metrics.zip中的pulmonary_metrics原包；这是独立固定协议实现，不是VesMamba论文作者官方评估代码。
+Dice：2TP/(预测体素数+真值体素数)。
+clDice：用户所说cDice按clDice解释；Lee三维骨架，骨架精确率与敏感度的调和平均；不剪枝。
+NSD：表面元面积加权的归一化表面Dice；距离≤1mm计为容差内。1mm是本次预先固定容差，不宣称是PARSE挑战赛官方阈值。
+HD95：surface-distance 0.1：两个方向各自表面元面积加权95百分位距离，再取最大值；单位mm。
+附加指标：Precision=TP/(TP+FP)，Recall=TP/(TP+FN)，IoU=TP/(TP+FP+FN)；体积=体素数×单体素mm³/1000。
+汇总：三例等权宏平均；样本SD采用n−1，非体素池化；有效例数3；原始CSV/JSON保留完整精度。
+结果解释：Recall高于Precision，说明相对所给标签，标签外阳性是主要差异。仅凭这些数值不能确定具体解剖误分原因，须叠加影像复核。
+主要限制：仅三例描述性测评，是否独立于模型训练集尚未核实；不能据此声称严格外部验证或总体性能。
+其他输出：lung_veins、lung_airways、lung_airways_wall已保存；没有它们的对应真值，本次未报准确率；该任务没有输出肺实质分割。
+实际评估环境：{"numpy": "2.4.4", "scipy": "1.15.2", "scikit-image": "0.26.0", "nibabel": "5.4.2", "surface-distance": "0.1"}
+验证：服务器原指标包26项自测通过；输入、上传CT、实际预测及推理记录SHA-256链已核对。
+
+主要文件
+Excel：local_run\results\PARSE2022_TotalSegmentator_metrics.xlsx
+逐例CSV：local_run\results\metrics_per_case.csv
+宏平均CSV：local_run\results\metrics_macro.csv
+预测：local_run\predictions
+每例目录包含肺动脉、肺静脉、气道、气道壁四个NIfTI，以及实际推理记录inference.json。

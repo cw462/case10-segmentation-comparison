@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "file": "results/evaluation_run.json",
+      "original_sha256": "0f630ec611b8cd5dae592854f85ab4f518c8d01136904f4ae04ac2a812986bcd",
+      "published_sha256": "93713e562a94e9b5031394ac328f1f08e9e60b92c8008d740366fc011737f85f"
+    },
+    {
+      "file": "results/metrics_macro.csv",
+      "original_sha256": "ebb844b18eff190d4fdc70921aa35fcd6d2f32315eebc312adc8777fb1e8d3d8",
+      "published_sha256": "e18517a94609e4db2a2baea61f21059d681a5b7b140fa9159e1613dd021d42e9"
+    },
+    {
+      "file": "results/metrics_per_case.csv",
+      "original_sha256": "d1d29c54587f6aed32e25076e14bf743afe7fa93fba84c1e475b1290aacee297",
+      "published_sha256": "60d47d2aea2ca1de2b8529fc7213df0a0c16a78e1cac0caeeb4906a02932c4e2"
+    },
+    {
+      "file": "results/metrics_summary.json",
+      "original_sha256": "3a5e66bf3fa6e944628785bf04b073689dda4a218136ed284d3357f6759bada2",
+      "published_sha256": "7e45bd4070a63727a3a7c47688210a1ad521ddc75640859220e1f43a818f2d28"
+    },
+    {
+      "file": "results/PA000005_metrics.csv",
+      "original_sha256": "55d1df946b1b31721311ddc78b84ae5aa09c73e6d5effafa97de6b6c4f7ace68",
+      "published_sha256": "de18eb86511a017d61339d03a4aa2737ecae82bf28e7b0bbe0acaeb09de3db22"
+    },
+    {
+      "file": "results/PA000005_metrics.json",
+      "original_sha256": "faf6ff342f19be70047ac3f0d9860babbb275d0d58e01e3e2fbc8bb8da19c674",
+      "published_sha256": "611e60244046b39d8f2a7c6ceda099ca2ebcd1f7f493d01d35d753747d163167"
+    },
+    {
+      "file": "results/PA000016_metrics.csv",
+      "original_sha256": "b05fdd7d10ede0704b4617ec74d1a642917a47b065eec3bee05c490dc94c4cdb",
+      "published_sha256": "fa3f38f488e84622d6e74970f251c19cae137c6577eb230504c18cae78e54022"
+    },
+    {
+      "file": "results/PA000016_metrics.json",
+      "original_sha256": "ca40b29faef648fd9cfe137c9aa17a0cfb25869e43a87b0da1d7555296ed9cf1",
+      "published_sha256": "f1123b110f3f489abebbffba048af1a210b8a7adb9df34416968f1ebb2ab0361"
+    },
+    {
+      "file": "results/PA000024_metrics.csv",
+      "original_sha256": "b58f20956272b0f708e4bcae66d6e326149cc5fdb67f80766359f106411f8b04",
+      "published_sha256": "0d5a41a4bed7eccd1e8aca81e6cc4d67c0a3addbcddbc5e6a4064d3d36e795cd"
+    },
+    {
+      "file": "results/PA000024_metrics.json",
+      "original_sha256": "779f5fb87b9f6e39abccf6314fdfdd6fafdf04d30f1cc55919fbdc59f60a4d7a",
+      "published_sha256": "48930cc3bc6c999ebb5d38688e4bad358a0be4ea5bcf2043684d10f4a0f3caaa"
+    },
+    {
+      "file": "results/PARSE2022_TotalSegmentator_metrics.xlsx",
+      "original_sha256": "8a75e416277dbc9380e180963e4f57b54b84cb115ecc6f44d408854d36b41395",
+      "published_sha256": "a1d5d18b5294d2e97ca2201f336d8fb58b889c1ce54aedbc7b008506999e3153"
+    },
+    {
+      "file": "results/测评结果解读.txt",
+      "original_sha256": "b489872f5ef0274ad0594185256ae87ec5ff966ee73f0ac986624decf7a74ff9",
+      "published_sha256": "c0541b44fce5beac688644c11593c3d09eeb08df21905fab962c7bd82fd4ceff"
+    }
+  ],
+  "policy": "Result-only publication; paths sanitized; numerical values unchanged; original evidence hashes retained."
+}
