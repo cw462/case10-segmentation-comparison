@@ -1,0 +1,173 @@
+{
+  "evaluation_date": "2026-10-22",
+  "publication_date": "2026-10-23",
+  "dataset": "AirRC",
+  "cases": [
+    "case01",
+    "case02",
+    "case03"
+  ],
+  "policy": "Existing results and evaluation code only; no clinical images or masks. Result files preserved byte-for-byte; script paths generalized.",
+  "validation": {
+    "case_structure_rows": 12,
+    "screenshot_visible_per_case_values_checked": 56,
+    "screenshot_summary_values_checked": 56,
+    "summary_mean_and_sample_sd_values_recomputed": 56,
+    "count_derived_metric_values_checked": 48,
+    "volume_values_checked": 24,
+    "workbook_csv_json_and_individual_json_consistent": true,
+    "metric_implementation_matches_repository": true,
+    "inference_or_image_scoring_rerun": false
+  },
+  "files": [
+    {
+      "file": "results/AirRC三例分割效果评估.xlsx",
+      "published_sha256": "e07d164f7e065fe7504e98ee129ca4d5bfb4be5e028d2f1f65b47becda034ec8",
+      "original_sha256": "e07d164f7e065fe7504e98ee129ca4d5bfb4be5e028d2f1f65b47becda034ec8",
+      "changed": false
+    },
+    {
+      "file": "results/metrics_per_case.csv",
+      "published_sha256": "1a7fa881de457b5dd8b3bbb215ec49081ecca20d2e58a2cf98e7315409db7e65",
+      "original_sha256": "1a7fa881de457b5dd8b3bbb215ec49081ecca20d2e58a2cf98e7315409db7e65",
+      "changed": false
+    },
+    {
+      "file": "results/metrics_per_case.json",
+      "published_sha256": "fd72b15bc0f0574bc681b2408a4811878db0b9a7732b8f2c400b7c94b4fc2828",
+      "original_sha256": "fd72b15bc0f0574bc681b2408a4811878db0b9a7732b8f2c400b7c94b4fc2828",
+      "changed": false
+    },
+    {
+      "file": "results/metrics_summary.json",
+      "published_sha256": "343ece585b403093943d9c1e8abcab46935f60e113ccae3c878be58c3e5b8642",
+      "original_sha256": "343ece585b403093943d9c1e8abcab46935f60e113ccae3c878be58c3e5b8642",
+      "changed": false
+    },
+    {
+      "file": "results/input_audit.json",
+      "published_sha256": "33dda7b03914756813719fddcdebda7dcf57ec4f2bdb653f7460e15f02cd75e1",
+      "original_sha256": "33dda7b03914756813719fddcdebda7dcf57ec4f2bdb653f7460e15f02cd75e1",
+      "changed": false
+    },
+    {
+      "file": "results/environment.json",
+      "published_sha256": "2a832819802428ed683bd035ec876de852039fafc01a4f1f1f2f3b1a3b3c9cd9",
+      "original_sha256": "2a832819802428ed683bd035ec876de852039fafc01a4f1f1f2f3b1a3b3c9cd9",
+      "changed": false
+    },
+    {
+      "file": "results/结果解读.txt",
+      "published_sha256": "67cb9f27fd66194a30f817cf8be61b7eabb941c4e6080edb64a7e032970eb2ab",
+      "original_sha256": "67cb9f27fd66194a30f817cf8be61b7eabb941c4e6080edb64a7e032970eb2ab",
+      "changed": false
+    },
+    {
+      "file": "results/case01_label1.json",
+      "published_sha256": "91692d8d577cb796c0203835bd4104e2cc3ab7b03c00efefcd0dd6e7bceb7320",
+      "original_sha256": "91692d8d577cb796c0203835bd4104e2cc3ab7b03c00efefcd0dd6e7bceb7320",
+      "changed": false
+    },
+    {
+      "file": "results/case01_label2.json",
+      "published_sha256": "97ef111f8d79b452252dbe08a6c4087d42013d61c6afccd34483d62ea3660a88",
+      "original_sha256": "97ef111f8d79b452252dbe08a6c4087d42013d61c6afccd34483d62ea3660a88",
+      "changed": false
+    },
+    {
+      "file": "results/case01_label3.json",
+      "published_sha256": "57302771aa11d8d9df2de5451a6220f7c0886c3e3212df77768129edad7416bb",
+      "original_sha256": "57302771aa11d8d9df2de5451a6220f7c0886c3e3212df77768129edad7416bb",
+      "changed": false
+    },
+    {
+      "file": "results/case01_label4.json",
+      "published_sha256": "034bdb62e7169b3fdbddb41ad70a6fdf2182c92951595f429f99149a303a6e00",
+      "original_sha256": "034bdb62e7169b3fdbddb41ad70a6fdf2182c92951595f429f99149a303a6e00",
+      "changed": false
+    },
+    {
+      "file": "results/case02_label1.json",
+      "published_sha256": "9d876bf7785b0fdd5eaa4c486c10b05f5fd1d9cdee1dba7e58c505cbec534d36",
+      "original_sha256": "9d876bf7785b0fdd5eaa4c486c10b05f5fd1d9cdee1dba7e58c505cbec534d36",
+      "changed": false
+    },
+    {
+      "file": "results/case02_label2.json",
+      "published_sha256": "bb1df88651b7cd6d8be73430be8391a1e9494799765d83039dd0338db23705dd",
+      "original_sha256": "bb1df88651b7cd6d8be73430be8391a1e9494799765d83039dd0338db23705dd",
+      "changed": false
+    },
+    {
+      "file": "results/case02_label3.json",
+      "published_sha256": "dba32d17519e75a25310f9dfeb1112a7d8c4a9da9eb3f52a6355c64a3030fa29",
+      "original_sha256": "dba32d17519e75a25310f9dfeb1112a7d8c4a9da9eb3f52a6355c64a3030fa29",
+      "changed": false
+    },
+    {
+      "file": "results/case02_label4.json",
+      "published_sha256": "858b3ad70c7d5e07ce9b3657118c5482470dc776db6a1505b08afa68a885510a",
+      "original_sha256": "858b3ad70c7d5e07ce9b3657118c5482470dc776db6a1505b08afa68a885510a",
+      "changed": false
+    },
+    {
+      "file": "results/case03_label1.json",
+      "published_sha256": "1be8ca7c0afa2094bbf4cad88b372fd9b126bc15440ee0015b8bec063abf91e9",
+      "original_sha256": "1be8ca7c0afa2094bbf4cad88b372fd9b126bc15440ee0015b8bec063abf91e9",
+      "changed": false
+    },
+    {
+      "file": "results/case03_label2.json",
+      "published_sha256": "48652aaf7e4180167f2052d0d7a1ed7139a88ea197ed01e0bb301a54fe3bca9c",
+      "original_sha256": "48652aaf7e4180167f2052d0d7a1ed7139a88ea197ed01e0bb301a54fe3bca9c",
+      "changed": false
+    },
+    {
+      "file": "results/case03_label3.json",
+      "published_sha256": "7df3cb523f71131755b16ff7f59d4bc89db12454df85ccf98ed8e0f25230fe5d",
+      "original_sha256": "7df3cb523f71131755b16ff7f59d4bc89db12454df85ccf98ed8e0f25230fe5d",
+      "changed": false
+    },
+    {
+      "file": "results/case03_label4.json",
+      "published_sha256": "503b09b1f9e5d563b466203ba52f9234749a52e95c16eeeac26e2e36734798bd",
+      "original_sha256": "503b09b1f9e5d563b466203ba52f9234749a52e95c16eeeac26e2e36734798bd",
+      "changed": false
+    },
+    {
+      "file": "code/evaluate_airrc_three.py",
+      "published_sha256": "757bf98b5f02b04f3fae70dbd7ebe5d570116fd599897806ccebdeec71be9c33",
+      "original_sha256": "4812f1b343954967a9335b626c263e58c3485dca82e4f6c2ba41e24770faa3e9",
+      "changed": true,
+      "change": "Only local data, dependency and script lookup paths generalized; scoring logic retained."
+    },
+    {
+      "file": "code/summarize_airrc_three.py",
+      "published_sha256": "e59df2408c602ecfc7693c023de391e594c061475a78655eba6d57752d8e7f57",
+      "original_sha256": "2fb9a8eda65039035925586cd89ca829595d2a730daa572856b3160e5ac45b6b",
+      "changed": true,
+      "change": "Only local data, dependency and script lookup paths generalized; scoring logic retained."
+    },
+    {
+      "file": "code/vesmamba_metrics.py",
+      "published_sha256": "0e3ae657a10035d4b4a6bbaed4f40c0e265ca14037e74087c6f1e349beaa3ed9",
+      "original_sha256": "0e3ae657a10035d4b4a6bbaed4f40c0e265ca14037e74087c6f1e349beaa3ed9",
+      "changed": false
+    },
+    {
+      "file": "results/metrics_macro.csv",
+      "published_sha256": "c0255720e194bd08bd440eebc3aab83a9a48d380750b502a5be996fa6195410e",
+      "change": "CSV export of the unchanged full-precision metrics_summary.json."
+    },
+    {
+      "file": "README.md",
+      "published_sha256": "ad1227648c84afd431fd9f4c892af85ef13ec04f2195f17b4e6e701bcf2deeb3",
+      "change": "Generated from full-precision original results."
+    },
+    {
+      "file": ".gitattributes",
+      "published_sha256": "bd9663d71ffce4f030fba3bf7285472e2fab87ce8f71d180d20c14060d0c42a1",
+      "change": "Disable Git newline conversion within this archive so published hashes match committed bytes."
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Case10 补充标注前后指标对比
 
+新增：[AirRC 三例四结构分割效果评估（2026-10-22）](airrc/README.md)，含气道腔、气道壁、肺动脉、肺静脉的逐例评分、三例汇总及完整 Excel。
+
 新增：[PARSE2022 三例 TotalSegmentator 肺动脉测评（2026-10-22）](parse2022/README.md)，含 Excel、逐例指标和测评说明。
 
 使用 `VesMamba_HiPaS_AirRC_metrics.zip` 中的指标代码，对 Case10 初始分割与补充标注进行逐体素、表面、骨架代理及连通块比较。
